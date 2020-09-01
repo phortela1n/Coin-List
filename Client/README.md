@@ -54,6 +54,8 @@ CoinList objective is offer the user the posibility of seeing visual information
 
 Future place for links and documentation about which APIs Coinlist will consume
 
+npx json-server --watch src/db.json --port 3002
+
 ```
 
 ## **Workflow**

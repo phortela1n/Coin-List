@@ -2,15 +2,30 @@
   "movements": [
     {
       "id": 1,
-      "type": "buy"
+      "name": "Bitcoin",
+      "moves": [
+        { "type": "buy", "buyPrice": 500 },
+        { "type": "sell", "sellPrice": 600 }
+      ],
+      "img": "https://img2.freepng.es/20171220/bhe/bitcoin-png-5a3a2702388611.73714972151376051423153857.jpg"
     },
     {
-      "id": 2,
-      "type": "sell"
+      "id": 1,
+      "name": "Ethereum",
+      "moves": [
+        { "type": "buy", "buyPrice": 400 },
+        { "type": "sell", "sellPrice": 800 }
+      ],
+      "img": "https://img2.freepng.es/20171220/bhe/bitcoin-png-5a3a2702388611.73714972151376051423153857.jpg"
     },
     {
-      "id": 3,
-      "type": "change"
+      "id": 1,
+      "name": "Litecoin",
+      "moves": [
+        { "type": "buy", "buyPrice": 800 },
+        { "type": "sell", "sellPrice": 600 }
+      ],
+      "img": "https://img2.freepng.es/20171220/bhe/bitcoin-png-5a3a2702388611.73714972151376051423153857.jpg"
     }
   ]
 }
