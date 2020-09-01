@@ -4,8 +4,10 @@
       "id": 1,
       "name": "Bitcoin",
       "moves": [
-        { "type": "buy", "buyPrice": 500 },
-        { "type": "sell", "sellPrice": 600 }
+        { "type": "buy", "buyPrice": 500, "quantity": "100" },
+        { "type": "sell", "sellPrice": 600, "quantity": "200" },
+        { "type": "buy", "buyPrice": 700, "quantity": "150" },
+        { "type": "sell", "sellPrice": 900, "quantity": "300" }
       ],
       "img": "https://img2.freepng.es/20171220/bhe/bitcoin-png-5a3a2702388611.73714972151376051423153857.jpg"
     },
@@ -13,8 +15,8 @@
       "id": 1,
       "name": "Ethereum",
       "moves": [
-        { "type": "buy", "buyPrice": 400 },
-        { "type": "sell", "sellPrice": 800 }
+        { "type": "buy", "buyPrice": 400, "quantity": "100" },
+        { "type": "sell", "sellPrice": 800, "quantity": "100" }
       ],
       "img": "https://i0.pngocean.com/files/906/776/980/ethereum-blockchain-bitcoin-logo-see-you-there.jpg"
     },
@@ -22,8 +24,8 @@
       "id": 1,
       "name": "Litecoin",
       "moves": [
-        { "type": "buy", "buyPrice": 800 },
-        { "type": "sell", "sellPrice": 600 }
+        { "type": "buy", "buyPrice": 800, "quantity": "100" },
+        { "type": "sell", "sellPrice": 600, "quantity": "100" }
       ],
       "img": "https://w7.pngwing.com/pngs/777/875/png-transparent-bitcoin-computer-icons-cryptocurrency-litecoin-bitcoin-text-trademark-logo.png"
     }

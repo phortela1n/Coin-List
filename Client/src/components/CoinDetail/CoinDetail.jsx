@@ -34,17 +34,11 @@ const StyledTableRow = withStyles((theme) => ({
   },
 }))(TableRow);
 
-function createData(name, price) {
-  return { name, price };
-}
-
-const rows = [
-  createData("Buy", 159, 6.0, 24, 4.0),
-  createData("Sell", 237, 9.0, 37, 4.3),
-  createData("Change", 262, 16.0, 24, 6.0),
-];
-
 function CoinDetail(props) {
+  const properCoin = props.movements.find(
+    (elem) => elem.name === props.location.coinDetailProps
+  );
+  console.log(properCoin);
   return (
     <>
       <Header />
@@ -60,20 +54,29 @@ function CoinDetail(props) {
                   List of Movements (
                   {props.location && props.location.coinDetailProps})
                 </StyledTableCell>
-                <StyledTableCell align="left">From</StyledTableCell>
-                <StyledTableCell align="right">To</StyledTableCell>
+                <StyledTableCell align="left">Quantity</StyledTableCell>
+                <StyledTableCell align="right">Price</StyledTableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {rows.map((row) => (
-                <StyledTableRow key={row.name}>
-                  <StyledTableCell component="th" scope="row">
-                    {row.name}
-                  </StyledTableCell>
-                  <StyledTableCell align="left">{row.price}</StyledTableCell>
-                  <StyledTableCell align="right">{row.price}</StyledTableCell>
-                </StyledTableRow>
-              ))}
+              {properCoin &&
+                properCoin.moves.map((row) => (
+                  <StyledTableRow key={row.type}>
+                    <StyledTableCell component="th" scope="row">
+                      {row.type}
+                    </StyledTableCell>
+                    <StyledTableCell align="left">
+                      {row.quantity || row.sellPrice}
+                    </StyledTableCell>
+                    {
+                      <StyledTableCell align="right">
+                        {row.buyPrice || row.sellPrice}€
+                      </StyledTableCell>
+                    }
+                    {/*<StyledTableCell align="left">{row.price}</StyledTableCell>
+                  <StyledTableCell align="right">{row.price}</StyledTableCell> */}
+                  </StyledTableRow>
+                ))}
             </TableBody>
           </Table>
         </TableContainer>
