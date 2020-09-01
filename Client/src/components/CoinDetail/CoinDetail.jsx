@@ -1,13 +1,17 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { withStyles } from "@material-ui/core/styles";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import Paper from "@material-ui/core/Paper";
+import Header from "../Common/Header.jsx";
+import {
+  Container,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+} from "@material-ui/core/";
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -40,33 +44,34 @@ const rows = [
 function CoinDetail(props) {
   return (
     <>
-      <NavLink to={``}>Landing</NavLink>;
-      <TableContainer component={Paper}>
-        <Table aria-label="customized table">
-          <TableHead>
-            <TableRow>
-              <StyledTableCell>
-                List of Movements (
-                {props.location && props.location.coinDetailProps})
-              </StyledTableCell>
-              <StyledTableCell align="left">From</StyledTableCell>
-              <StyledTableCell align="right">To</StyledTableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows.map((row) => (
-              <StyledTableRow key={row.name}>
-                <StyledTableCell component="th" scope="row">
-                  {row.name}
+      <Header />
+      <Container maxWidth="sm">
+        <TableContainer component={Paper}>
+          <Table aria-label="customized table">
+            <TableHead>
+              <TableRow>
+                <StyledTableCell>
+                  List of Movements (
+                  {props.location && props.location.coinDetailProps})
                 </StyledTableCell>
-                <StyledTableCell align="left">{row.price}</StyledTableCell>
-                <StyledTableCell align="right">{row.price}</StyledTableCell>
-              </StyledTableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-      ;
+                <StyledTableCell align="left">From</StyledTableCell>
+                <StyledTableCell align="right">To</StyledTableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {rows.map((row) => (
+                <StyledTableRow key={row.name}>
+                  <StyledTableCell component="th" scope="row">
+                    {row.name}
+                  </StyledTableCell>
+                  <StyledTableCell align="left">{row.price}</StyledTableCell>
+                  <StyledTableCell align="right">{row.price}</StyledTableCell>
+                </StyledTableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </Container>
     </>
   );
 }

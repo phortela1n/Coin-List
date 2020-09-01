@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "@material-ui/core";
+import Header from "../Common/Header.jsx";
 import CoinDetail from "../CoinDetail/CoinDetail.jsx";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
@@ -14,14 +15,15 @@ function Landing(props) {
 
   return (
     <>
+      <Header />
       <Button color="primary">Hello World</Button>
       <NavLink
         to={{
           pathname: "/CoinDetail",
-          coinDetailProps: "bitcoin",
+          coinDetailProps: "Bitcoin",
         }}
       >
-        Details
+        Bitcoin
       </NavLink>
     </>
   );
