@@ -12,6 +12,7 @@ import {
   TableRow,
   Paper,
 } from "@material-ui/core/";
+import { connect } from "react-redux";
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -76,4 +77,10 @@ function CoinDetail(props) {
   );
 }
 
-export default CoinDetail;
+function mapStateToProps(state) {
+  return {
+    movements: state.movements,
+  };
+}
+
+export default connect(mapStateToProps)(CoinDetail);

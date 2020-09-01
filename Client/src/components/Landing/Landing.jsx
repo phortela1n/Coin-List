@@ -26,13 +26,21 @@ const useStyles = makeStyles({
 });
 
 function Landing(props) {
-  const [coinDetailList, setcoinDetailList] = useState([]);
-
   useEffect(() => {
-    props.dispatch(coinActions.getCoinMovements(coinDetailList));
-  }, [coinDetailList]);
+    fetch("http://localhost:3002/movements")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        props.dispatch(coinActions.getCoinMovements(data));
+      });
+  }, []);
 
   const classes = useStyles();
+
+  console.log("the movements", props.movements);
+
+  const types = props.movements.map((movement) => <div>{movement.type}</div>);
+
   return (
     <>
       <Header />
@@ -56,6 +64,7 @@ function Landing(props) {
               <Typography variant="body2" color="textSecondary" component="p">
                 See All features
               </Typography>
+              {types}
             </CardContent>
           </CardActionArea>
           <CardActions>
