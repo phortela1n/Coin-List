@@ -1,0 +1,16 @@
+{
+  "movments": [
+    {
+      "id": 1,
+      "type": "buy"
+    },
+    {
+      "id": 2,
+      "type": "sell"
+    },
+    {
+      "id": 3,
+      "type": "change"
+    }
+  ]
+}
