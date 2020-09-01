@@ -1,3 +1,3 @@
 export function getCoinMovements(movements) {
-  return { type: "GET_MOVEMENTS", movements: movements };
+  return { type: "GET_MOVEMENTS", movements };
 }
