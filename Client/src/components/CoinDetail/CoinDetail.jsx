@@ -27,16 +27,14 @@ const StyledTableRow = withStyles((theme) => ({
   },
 }))(TableRow);
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
+function createData(name, price) {
+  return { name, price };
 }
 
 const rows = [
-  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-  createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
-  createData("Eclair", 262, 16.0, 24, 6.0),
-  createData("Cupcake", 305, 3.7, 67, 4.3),
-  createData("Gingerbread", 356, 16.0, 49, 3.9),
+  createData("Buy", 159, 6.0, 24, 4.0),
+  createData("Sell", 237, 9.0, 37, 4.3),
+  createData("Change", 262, 16.0, 24, 6.0),
 ];
 
 function CoinDetail(props) {
@@ -51,8 +49,8 @@ function CoinDetail(props) {
                 List of Movements (
                 {props.location && props.location.coinDetailProps})
               </StyledTableCell>
-              <StyledTableCell align="left">Calories</StyledTableCell>
-              <StyledTableCell align="right">Calories</StyledTableCell>
+              <StyledTableCell align="left">From</StyledTableCell>
+              <StyledTableCell align="right">To</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -61,8 +59,8 @@ function CoinDetail(props) {
                 <StyledTableCell component="th" scope="row">
                   {row.name}
                 </StyledTableCell>
-                <StyledTableCell align="left">{row.calories}</StyledTableCell>
-                <StyledTableCell align="right">{row.calories}</StyledTableCell>
+                <StyledTableCell align="left">{row.price}</StyledTableCell>
+                <StyledTableCell align="right">{row.price}</StyledTableCell>
               </StyledTableRow>
             ))}
           </TableBody>
