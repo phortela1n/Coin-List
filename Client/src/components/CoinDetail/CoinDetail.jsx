@@ -13,6 +13,8 @@ import {
   Paper,
 } from "@material-ui/core/";
 import { connect } from "react-redux";
+import "../../App.css";
+import "./CoinDetail.css";
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -46,8 +48,11 @@ function CoinDetail(props) {
   return (
     <>
       <Header />
-      <Container maxWidth="sm">
-        <TableContainer component={Paper}>
+      <Container maxWidth="sm" className="big-container-detail">
+        <TableContainer
+          component={Paper}
+          className="big-container-detail__table"
+        >
           <Table aria-label="customized table">
             <TableHead>
               <TableRow>
