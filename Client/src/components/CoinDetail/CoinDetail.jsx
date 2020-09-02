@@ -18,7 +18,6 @@ import "./CoinDetail.css";
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
-    backgroundColor: theme.palette.common.black,
     color: theme.palette.common.white,
   },
   body: {
@@ -47,8 +46,8 @@ function CoinDetail(props) {
           component={Paper}
           className="big-container-detail__table"
         >
-          <Table aria-label="customized table">
-            <TableHead>
+          <Table aria-label="customized table" className="coin-detail-table">
+            <TableHead className="coin-detail-table__header">
               <TableRow>
                 <StyledTableCell>
                   List of Movements (

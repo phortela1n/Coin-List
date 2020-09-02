@@ -5,3 +5,8 @@
   justify-content: space-around;
   align-items: center;
 }
+
+.coin-detail-table__header {
+  background-color: #ff3d6b !important;
+  color: white;
+}
