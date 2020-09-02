@@ -54,7 +54,7 @@ function Landing(props) {
   return (
     <>
       <Header />
-      <Example props={props.movements} />
+      {/* <Example props={props.movements} /> */}
       <Container maxWidth="sm" className="big-container">
         <SubMenu />
         <Container maxWidth="sm" className="big-container__coin-container">

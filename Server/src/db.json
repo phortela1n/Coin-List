@@ -3,6 +3,7 @@
     {
       "id": 1,
       "name": "Bitcoin",
+      "description": "BTC",
       "moves": [
         { "type": "buy", "buyPrice": 500, "quantity": "100" },
         { "type": "sell", "sellPrice": 600, "quantity": "200" },
@@ -14,6 +15,7 @@
     {
       "id": 1,
       "name": "Ethereum",
+      "description": "ETH",
       "moves": [
         { "type": "buy", "buyPrice": 400, "quantity": "100" },
         { "type": "sell", "sellPrice": 800, "quantity": "100" }
@@ -23,6 +25,7 @@
     {
       "id": 1,
       "name": "Litecoin",
+      "description": "LTC",
       "moves": [
         { "type": "buy", "buyPrice": 800, "quantity": "100" },
         { "type": "sell", "sellPrice": 600, "quantity": "100" }

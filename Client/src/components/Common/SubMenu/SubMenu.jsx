@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import { BottomNavigation, BottomNavigationAction } from "@material-ui/core/";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
@@ -15,9 +16,10 @@ const useStyles = makeStyles({
   },
 });
 
-function SubMenu() {
+function SubMenu(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
+  /* console.log(props.location.pathname); */
   return (
     <>
       <BottomNavigation
@@ -29,12 +31,21 @@ function SubMenu() {
         showLabels
         className={classes.root}
       >
-        <BottomNavigationAction label="Your Coins" icon={<CreateIcon />} />
         <BottomNavigationAction
+          label="Your Coins"
+          icon={<CreateIcon />}
+          component={NavLink}
+          to="/"
+        />
+        <BottomNavigationAction
+          component={NavLink}
+          to="/AddCoin"
           label="Add Coin"
           icon={<AddCircleOutlineIcon />}
         />
         <BottomNavigationAction
+          component={NavLink}
+          to="/AddMovement"
           className="big-container__sub-menu--third"
           label="Add Movement"
           icon={<CreateIcon />}

@@ -6,10 +6,12 @@ function Example(props) {
   const data = props.props;
   console.log(data);
   let items2 = [];
-  data.map((elem) => items2.push({ elem }));
+  data.map((elem) => items2.push(elem));
   console.log("hola", items2);
   const items = [
     {
+      image:
+        "https://img2.freepng.es/20171220/bhe/bitcoin-png-5a3a2702388611.73714972151376051423153857.jpg",
       name: "Random name 1",
       description: "Probably the most random thing you have ever seen!",
     },
@@ -21,7 +23,7 @@ function Example(props) {
 
   return (
     <Carousel
-      interval={2000}
+      interval={1000000}
       animation={"slide"}
       indicator={true}
       navButtonsAlwaysVisible={true}
@@ -38,6 +40,7 @@ function Item(props) {
   return (
     <Paper>
       <h2>{props.data}</h2>
+      <img src={props.item.image}></img>
       <p>{props.item.description}</p>
 
       <Button className="CheckButton">Check it out!</Button>
