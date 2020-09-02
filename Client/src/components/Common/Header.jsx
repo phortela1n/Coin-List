@@ -15,6 +15,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
+import "./Header.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -96,7 +97,7 @@ export default function ButtonAppBar() {
     <>
       <div></div>
       <div className={classes.root}>
-        <AppBar position="static">
+        <AppBar position="static" className="test">
           <Toolbar>
             <IconButton
               edge="start"
@@ -109,7 +110,12 @@ export default function ButtonAppBar() {
             </Typography>
             {["left"].map((anchor) => (
               <React.Fragment key={anchor}>
-                <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
+                <Button
+                  onClick={toggleDrawer(anchor, true)}
+                  className="header__button"
+                >
+                  MENU
+                </Button>
                 <Drawer
                   anchor={anchor}
                   open={state[anchor]}
