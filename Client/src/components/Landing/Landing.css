@@ -3,6 +3,18 @@ body {
 }
 
 .big-container {
+  height: 70%;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center !important;
+}
+
+.MuiBottomNavigation-root {
+  margin-top: 15% !important;
+}
+
+.big-container__coin-container {
   height: 100%;
   display: flex !important;
   justify-content: space-between;

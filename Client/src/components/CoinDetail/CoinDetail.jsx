@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { withStyles } from "@material-ui/core/styles";
-import Header from "../Common/Header.jsx";
+import Header from "../Common/Header/Header";
 import {
   Container,
   Table,

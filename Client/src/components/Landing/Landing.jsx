@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "@material-ui/core";
-import Header from "../Common/Header.jsx";
+import Header from "../Common/Header/Header";
+import SubMenu from "../Common/SubMenu/SubMenu";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import * as coinActions from "../../redux/actions/coinactions";
@@ -13,8 +14,12 @@ import {
   Typography,
   CardContent,
   CardActionArea,
-  Paper,
+  BottomNavigation,
+  BottomNavigationAction,
 } from "@material-ui/core/";
+import LocationOnIcon from "@material-ui/icons/LocationOn";
+import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
+import CreateIcon from "@material-ui/icons/Create";
 import "../../App.css";
 import "./Landing.css";
 
@@ -40,6 +45,7 @@ function Landing(props) {
   }, []);
 
   const classes = useStyles();
+  const [value, setValue] = React.useState(0);
 
   console.log("the movements", props.movements);
 
@@ -49,47 +55,50 @@ function Landing(props) {
     <>
       <Header />
       <Container maxWidth="sm" className="big-container">
-        {props.movements.map((coin) => (
-          <NavLink
-            to={{
-              pathname: "/CoinDetail",
-              coinDetailProps: coin.name,
-            }}
-          >
-            <Card className={classes.root}>
-              <CardActionArea>
-                <CardMedia
-                  className={classes.media}
-                  image={coin.img}
-                  title="Crypto"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
-                    {coin.name}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                    component="p"
-                  >
-                    See All features
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions>
-                <Button size="small" color="primary">
-                  Coin Details
-                </Button>
-              </CardActions>
-            </Card>
-          </NavLink>
-        ))}
+        <SubMenu />
+        <Container maxWidth="sm" className="big-container__coin-container">
+          {props.movements.map((coin) => (
+            <NavLink
+              to={{
+                pathname: "/CoinDetail",
+                coinDetailProps: coin.name,
+              }}
+            >
+              <Card className={classes.root}>
+                <CardActionArea>
+                  <CardMedia
+                    className={classes.media}
+                    image={coin.img}
+                    title="Crypto"
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      {coin.name}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                      component="p"
+                    >
+                      See All features
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+                <CardActions>
+                  <Button size="small" color="primary">
+                    Coin Details
+                  </Button>
+                </CardActions>
+              </Card>
+            </NavLink>
+          ))}
+        </Container>
       </Container>
     </>
   );
 }
 
-function mapStateToProps(state, ownProps) {
+function mapStateToProps(state) {
   return {
     movements: state.movements,
   };

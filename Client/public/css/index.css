@@ -3,10 +3,10 @@ html {
   margin: 0;
   padding: 0;
   height: 100vh;
-  width: 99vw;
+  width: 100vw;
 }
 
 #root {
   height: 100vh;
-  width: 99vw;
+  width: 100vw;
 }

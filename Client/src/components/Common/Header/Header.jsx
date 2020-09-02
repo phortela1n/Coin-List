@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ButtonAppBar() {
+export default function Header() {
   const classes = useStyles();
   const [state, setState] = React.useState({
     left: false,
