@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "@material-ui/core";
 import Header from "../Common/Header.jsx";
-import CoinDetail from "../CoinDetail/CoinDetail.jsx";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import * as coinActions from "../../redux/actions/coinactions";
@@ -85,12 +84,6 @@ function Landing(props) {
             </Card>
           </NavLink>
         ))}
-        <NavLink
-          to={{
-            pathname: "/CoinDetail",
-            coinDetailProps: "Bitcoin",
-          }}
-        ></NavLink>
       </Container>
     </>
   );

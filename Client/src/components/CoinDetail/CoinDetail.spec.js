@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import App from "./App";
+import CoinDetail from "./CoinDetail";
 
-test("renders learn react link", () => {
+test("That CoinDetail exists", () => {
   expect(1).toBe(1);
 });
