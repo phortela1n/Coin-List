@@ -36,7 +36,8 @@ const useStyles = makeStyles({
 function Landing(props) {
   useEffect(() => {
     if (props.movements.length === 0) {
-      fetch("http://localhost:3002/movements")
+      /* fetch("http://localhost:3002/movements") */
+      fetch("http://localhost:3003/movements/")
         .then((response) => response.json())
         .then((data) => {
           /* console.log(data); */
