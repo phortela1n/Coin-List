@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button } from "@material-ui/core";
 import Header from "../Common/Header/Header";
 import SubMenu from "../Common/SubMenu/SubMenu";
+import Example from "../Common/Carrousel/Carrousel";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import * as coinActions from "../../redux/actions/coinactions";
@@ -38,22 +39,22 @@ function Landing(props) {
       fetch("http://localhost:3002/movements")
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
+          /* console.log(data); */
           props.dispatch(coinActions.getCoinMovements(data));
         });
     }
   }, []);
 
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
-
-  console.log("the movements", props.movements);
+  /* 
+  console.log("the movements", props.movements); */
 
   /*   const types = props.movements.map((movement) => <div>{movement.type}</div>); */
 
   return (
     <>
       <Header />
+      <Example props={props.movements} />
       <Container maxWidth="sm" className="big-container">
         <SubMenu />
         <Container maxWidth="sm" className="big-container__coin-container">
