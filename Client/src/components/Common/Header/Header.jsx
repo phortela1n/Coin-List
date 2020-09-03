@@ -1,4 +1,5 @@
 import React from "react";
+import Login from "../../LoginButton/LoginButton";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -87,7 +88,7 @@ export default function Header() {
             <ListItemIcon>
               <InboxIcon />
             </ListItemIcon>
-            <ListItemText primary={"Profile"} />
+            <Login />
           </ListItem>
         </NavLink>
       </List>
