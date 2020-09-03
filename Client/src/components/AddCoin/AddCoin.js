@@ -10,9 +10,10 @@ function AddCoin() {
       <Header />
       <Container maxWidth="sm" className="big-container">
         <SubMenu />
-        <Container maxWidth="sm" className="big-container__coin-container">
-          <LoginButton />
-        </Container>
+        <Container
+          maxWidth="sm"
+          className="big-container__coin-container"
+        ></Container>
       </Container>
     </>
   );

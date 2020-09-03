@@ -1,5 +1,6 @@
 import React from "react";
 import Login from "../../LoginButton/LoginButton";
+import LogOut from "../../LogOut/LogOut";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -78,19 +79,21 @@ export default function Header() {
       </List>
       <Divider />
       <List>
-        <NavLink
-          to={{
-            pathname: "/CoinDetail",
-            coinDetailProps: "Bitcoin",
-          }}
-        >
-          <ListItem button>
-            <ListItemIcon>
-              <InboxIcon />
-            </ListItemIcon>
-            <Login />
-          </ListItem>
-        </NavLink>
+        <ListItem button>
+          <ListItemIcon>
+            <InboxIcon />
+          </ListItemIcon>
+          <Login />
+        </ListItem>
+      </List>
+      <Divider />
+      <List>
+        <ListItem button>
+          <ListItemIcon>
+            <InboxIcon />
+          </ListItemIcon>
+          <LogOut />
+        </ListItem>
       </List>
     </div>
   );

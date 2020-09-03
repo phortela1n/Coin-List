@@ -12,9 +12,10 @@ function AddMovement() {
       <Container maxWidth="sm" className="big-container">
         <SubMenu />
         <Profile />
-        <Container maxWidth="sm" className="big-container__coin-container">
-          <LogOut />
-        </Container>
+        <Container
+          maxWidth="sm"
+          className="big-container__coin-container"
+        ></Container>
       </Container>
     </>
   );
