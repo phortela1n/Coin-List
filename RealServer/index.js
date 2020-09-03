@@ -1,14 +1,13 @@
 const express = require("express");
 const cors = require("cors");
 const chalk = require("chalk");
-const morgan = require("morgan");
-const path = require("path");
 const bodyParser = require("body-parser");
-const cookieParser = require("cookie-parser");
-const expressSession = require("express-session");
 
 const app = express();
 app.use(cors());
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 const PORT = 3003;
 

@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { withStyles } from "@material-ui/core/styles";
 import Header from "../Common/Header/Header";
+import BackMenu from "../Common/BackMenu/BackMenu";
 import {
   Container,
   Table,
@@ -42,6 +43,7 @@ function CoinDetail(props) {
     <>
       <Header />
       <Container maxWidth="sm" className="big-container-detail">
+        <BackMenu />
         <TableContainer
           component={Paper}
           className="big-container-detail__table"

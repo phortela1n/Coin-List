@@ -5,7 +5,7 @@ const coinRouter = express.Router();
 
 function router() {
   const collectionName = "movements";
-  /* 
+
   coinRouter.route("/:coin").get((req, res) => {
     const { coin } = req.params;
     (async function doQuery() {
@@ -18,8 +18,6 @@ function router() {
         });
     })();
   });
-  return coinRouter;
-*/
 
   coinRouter.route("/").get((req, res) => {
     (async function doQuery() {

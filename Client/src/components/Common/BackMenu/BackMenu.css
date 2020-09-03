@@ -1,9 +1,9 @@
 .big-container-detail {
-  height: 70%;
+  height: 100%;
   display: flex !important;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center !important;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .coin-detail-table__header {
