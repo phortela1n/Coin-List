@@ -1,0 +1,21 @@
+.big-container-default {
+  height: 70%;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center !important;
+}
+.default-authorization {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.default-authorization__authorized-title {
+  text-align: center;
+}
+
+.pointer {
+  cursor: pointer;
+}
