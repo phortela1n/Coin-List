@@ -71,9 +71,23 @@ export default function Header() {
         >
           <ListItem button>
             <ListItemIcon>
-              <HomeIcon />
+              <HomeIcon></HomeIcon>
             </ListItemIcon>
             <ListItemText primary={"Landing"} />
+          </ListItem>
+        </NavLink>
+      </List>
+      <List>
+        <NavLink
+          to={{
+            pathname: "/Profile",
+          }}
+        >
+          <ListItem button>
+            <ListItemIcon>
+              <InboxIcon />
+            </ListItemIcon>
+            <ListItemText primary={"Profile"} />
           </ListItem>
         </NavLink>
       </List>
@@ -86,7 +100,6 @@ export default function Header() {
           <Login />
         </ListItem>
       </List>
-      <Divider />
       <List>
         <ListItem button>
           <ListItemIcon>
@@ -95,6 +108,7 @@ export default function Header() {
           <LogOut />
         </ListItem>
       </List>
+      <Divider />
     </div>
   );
   return (

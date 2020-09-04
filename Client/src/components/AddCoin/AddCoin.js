@@ -2,7 +2,6 @@ import React from "react";
 import Header from "../Common/Header/Header";
 import SubMenu from "../Common/SubMenu/SubMenu";
 import { Container } from "@material-ui/core/";
-import LoginButton from "../LoginButton/LoginButton";
 
 function AddCoin() {
   return (
