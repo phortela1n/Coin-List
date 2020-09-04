@@ -18,6 +18,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import HomeIcon from "@material-ui/icons/MoveToInbox";
 import "./Header.css";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -38,6 +39,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Header() {
+  const { user, isAuthenticated, isLoading } = useAuth0();
   const classes = useStyles();
   const [state, setState] = React.useState({
     left: false,
@@ -97,14 +99,6 @@ export default function Header() {
           <ListItemIcon>
             <InboxIcon />
           </ListItemIcon>
-          <Login />
-        </ListItem>
-      </List>
-      <List>
-        <ListItem button>
-          <ListItemIcon>
-            <InboxIcon />
-          </ListItemIcon>
           <LogOut />
         </ListItem>
       </List>
@@ -113,40 +107,72 @@ export default function Header() {
   );
 
   return (
-    <>
-      <div></div>
-      <div className={classes.root}>
-        <AppBar position="static" className="test">
-          <Toolbar>
-            <IconButton
-              edge="start"
-              className={classes.menuButton}
-              color="inherit"
-              aria-label="menu"
-            ></IconButton>
-            <Typography variant="h6" className={classes.title}>
-              CoinList
-            </Typography>
-            {["left"].map((anchor) => (
-              <React.Fragment key={anchor}>
-                <Button
-                  onClick={toggleDrawer(anchor, true)}
-                  className="header__button"
-                >
-                  MENU
-                </Button>
-                <Drawer
-                  anchor={anchor}
-                  open={state[anchor]}
-                  onClose={toggleDrawer(anchor, false)}
-                >
-                  {list(anchor)}
-                </Drawer>
-              </React.Fragment>
-            ))}
-          </Toolbar>
-        </AppBar>
-      </div>
-    </>
+    (isAuthenticated && (
+      <>
+        <div></div>
+        <div className={classes.root}>
+          <AppBar position="static" className="test">
+            <Toolbar>
+              <IconButton
+                edge="start"
+                className={classes.menuButton}
+                color="inherit"
+                aria-label="menu"
+              ></IconButton>
+              <Typography variant="h6" className={classes.title}>
+                CoinList
+              </Typography>
+              {["left"].map((anchor) => (
+                <React.Fragment key={anchor}>
+                  <Button
+                    onClick={toggleDrawer(anchor, true)}
+                    className="header__button"
+                  >
+                    MENU
+                  </Button>
+                  <Drawer
+                    anchor={anchor}
+                    open={state[anchor]}
+                    onClose={toggleDrawer(anchor, false)}
+                  >
+                    {list(anchor)}
+                  </Drawer>
+                </React.Fragment>
+              ))}
+            </Toolbar>
+          </AppBar>
+        </div>
+      </>
+    )) || (
+      <>
+        <div></div>
+        <div className={classes.root}>
+          <AppBar position="static" className="test">
+            <Toolbar>
+              <IconButton
+                edge="start"
+                className={classes.menuButton}
+                color="inherit"
+                aria-label="menu"
+              ></IconButton>
+              <Typography variant="h6" className={classes.title}>
+                CoinList
+              </Typography>
+              {["left"].map((anchor) => (
+                <React.Fragment key={anchor}>
+                  <Drawer
+                    anchor={anchor}
+                    open={state[anchor]}
+                    onClose={toggleDrawer(anchor, false)}
+                  >
+                    {list(anchor)}
+                  </Drawer>
+                </React.Fragment>
+              ))}
+            </Toolbar>
+          </AppBar>
+        </div>
+      </>
+    )
   );
 }

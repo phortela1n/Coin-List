@@ -13,9 +13,10 @@ function AddCoin() {
         <Header />
         <Container maxWidth="sm" className="big-container">
           <SubMenu />
-          <Container maxWidth="sm" className="big-container__coin-container">
-            <h2>You are authorized : ) </h2>
-          </Container>
+          <Container
+            maxWidth="sm"
+            className="big-container__coin-container"
+          ></Container>
         </Container>
       </>
     )) || <NoAuthorized />
