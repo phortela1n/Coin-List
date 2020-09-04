@@ -6,7 +6,7 @@ import "./NoAuthorized.css";
 
 function NoAuthorized() {
   return (
-    <>
+    <section className="full-page">
       <Header />
       <Container maxWidth="sm" className="big-container-default">
         <Container
@@ -21,7 +21,7 @@ function NoAuthorized() {
           </buttom>
         </Container>
       </Container>
-    </>
+    </section>
   );
 }
 
