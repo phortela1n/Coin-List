@@ -8,8 +8,8 @@ function ShowProfile() {
   return (
     <>
       <Header />
-      <Container maxWidth="sm" className="big-container">
-        <Container maxWidth="sm" className="big-container__coin-container">
+      <Container maxWidth="sm" className="big-container__profile">
+        <Container maxWidth="sm" className="big-container__profi__subprofile">
           <Profile />
         </Container>
       </Container>
