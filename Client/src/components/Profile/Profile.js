@@ -18,6 +18,7 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
+import { Button } from "@material-ui/core";
 import "./Profile.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -127,14 +128,17 @@ const Profile = () => {
 
         <div className="profile-container__rest">
           <Card>
-            <CardHeader title="User Details"></CardHeader>
-            <CardContent>{user.name}</CardContent>
-            <CardContent>{user.email}</CardContent>
+            <CardHeader title="User Detail"></CardHeader>
+            <CardContent>
+              Username: {user.name[0].toUpperCase() + user.name.substring(1)}
+            </CardContent>
+            <CardContent>Mail: {user.email}</CardContent>
           </Card>
           <Card>
             <CardHeader title="Upgrade your account"></CardHeader>
-            <CardContent>{user.name}</CardContent>
-            <CardContent>{user.email}</CardContent>
+            <CardContent>
+              <Button>Upgrade</Button>
+            </CardContent>
           </Card>
         </div>
       </section>
