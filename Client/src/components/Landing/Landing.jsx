@@ -37,6 +37,7 @@ const useStyles = makeStyles({
 
 function Landing(props) {
   const { user, isAuthenticated, isLoading } = useAuth0();
+
   useEffect(() => {
     if (props.movements.length === 0) {
       /* fetch("http://localhost:3002/movements") */

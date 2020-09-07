@@ -18,7 +18,7 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
-import { Button } from "@material-ui/core";
+import { Button, CircularProgress } from "@material-ui/core";
 import "./Profile.css";
 
 const useStyles = makeStyles((theme) => ({
@@ -54,7 +54,13 @@ const Profile = () => {
   };
 
   if (isLoading) {
-    return <div>Loading ...</div>;
+    return (
+      <center>
+        <>
+          <CircularProgress color="secondary" />
+        </>
+      </center>
+    );
   }
   console.log(user);
   return (
@@ -87,9 +93,9 @@ const Profile = () => {
               </Typography>
             </CardContent>
             <CardActions disableSpacing>
-              <IconButton aria-label="add to favorites">
+              {/*               <IconButton aria-label="add to favorites">
                 <FavoriteIcon />
-              </IconButton>
+              </IconButton> */}
               <IconButton aria-label="share">
                 <ShareIcon />
               </IconButton>
@@ -106,20 +112,13 @@ const Profile = () => {
             </CardActions>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
               <CardContent>
-                <Typography paragraph>Method:</Typography>
+                <Typography paragraph>Title:</Typography>
                 <Typography paragraph>
                   Heat 1/2 cup of the broth in a pot until simmering, add
                   saffron and set aside for 10 minutes.
                 </Typography>
                 <Typography paragraph>
                   Heat oil in a (14- to 16-inch)
-                </Typography>
-                <Typography paragraph>
-                  Add rice and stir very gently to distribute.
-                </Typography>
-                <Typography>
-                  Set aside off of the heat to let rest for 10 minutes, and then
-                  serve.
                 </Typography>
               </CardContent>
             </Collapse>

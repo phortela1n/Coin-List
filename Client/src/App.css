@@ -8,3 +8,26 @@ html {
 a {
   text-decoration: none;
 }
+
+/*Overwrite some material rules */
+
+/*Steppers*/
+.MuiStepIcon-root.MuiStepIcon-completed {
+  color: #ff144b !important;
+}
+
+.MuiStepIcon-root.MuiStepIcon-active {
+  color: #ff144b !important;
+}
+/*SubMenu*/
+.MuiBottomNavigationAction-root.Mui-selected {
+  color: #ff144b !important;
+}
+/*Button*/
+.MuiButton-containedPrimary {
+  background-color: #ff144b !important;
+}
+
+.MuiButton-textPrimary {
+  color: #ff144b !important;
+}
