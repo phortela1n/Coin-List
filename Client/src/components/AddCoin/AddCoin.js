@@ -176,6 +176,8 @@ function AddCoin(props) {
     }); */
     if (cryptoName.length > 0) {
       console.log("pulsaste");
+      let prueba = cryptoName;
+      console.log("La prueba es", prueba);
       props.dispatch(addCoinsActions.addCoins(cryptoName));
       setcryptoName([]);
     }
@@ -371,7 +373,7 @@ function AddCoin(props) {
                     <Typography className={classes.instructions}>
                       <center className="green_text">
                         <a href="...">{"\u2705"}</a> All right - New Coin/s
-                        added {handleClick()}
+                        added
                       </center>
                     </Typography>
                     <center>
@@ -400,6 +402,7 @@ function AddCoin(props) {
                         color="primary"
                         onClick={(e) => {
                           handleNext();
+                          handleClick();
                         }}
                         className={classes.button}
                       >

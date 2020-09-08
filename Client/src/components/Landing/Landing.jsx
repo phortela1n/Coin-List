@@ -48,7 +48,7 @@ function Landing(props) {
         });
     }
   }, []);
-
+  console.log(props);
   const classes = useStyles();
   return (
     (isAuthenticated && (
@@ -92,6 +92,9 @@ function Landing(props) {
                 </Card>
               </NavLink>
             ))}
+            {props.newCoins.map((elem) => (
+              <p>{elem}</p>
+            ))}
           </Container>
         </Container>
       </>
@@ -102,6 +105,7 @@ function Landing(props) {
 function mapStateToProps(state) {
   return {
     movements: state.movements,
+    newCoins: state.newCoins,
   };
 }
 
