@@ -62,7 +62,7 @@ function Landing(props) {
         <Header />
         {/* <Example props={props.movements} /> */}
         <Container maxWidth="sm" className="big-container">
-          <SubMenu />
+          <SubMenu changeValue={0} />
           <Container maxWidth="sm" className="big-container__coin-container">
             {props.movements.map((coin) => (
               <NavLink

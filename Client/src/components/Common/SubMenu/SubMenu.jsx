@@ -18,8 +18,10 @@ const useStyles = makeStyles({
 
 function SubMenu(props) {
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
-  /* console.log(props.location.pathname); */
+
+  const [value, setValue] = React.useState(props.changeValue);
+
+  console.log("El valor es" + value);
   return (
     <>
       <BottomNavigation

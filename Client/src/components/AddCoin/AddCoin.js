@@ -3,44 +3,34 @@ import clsx from "clsx";
 import Header from "../Common/Header/Header";
 import NoAuthorized from "../Common/NoAuthorized/NoAuthorized";
 import SubMenu from "../Common/SubMenu/SubMenu";
-import { Container } from "@material-ui/core/";
+import {
+  Container,
+  List,
+  ListItem,
+  ListItemText,
+  ListSubheader,
+  Card,
+  CardActions,
+  CardContent,
+  Select,
+  Checkbox,
+  Stepper,
+  Step,
+  StepLabel,
+  Button,
+  Typography,
+  Input,
+  InputLabel,
+  MenuItem,
+  FormControl,
+} from "@material-ui/core/";
 import { useAuth0 } from "@auth0/auth0-react";
-import { makeStyles } from "@material-ui/core/styles";
-/* import CircularProgress from "@material-ui/core/CircularProgress"; */
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { green } from "@material-ui/core/colors";
-/* import Fab from "@material-ui/core/Fab";
-import CheckIcon from "@material-ui/icons/Check";
-import SaveIcon from "@material-ui/icons/Save"; */
-/*STEPPER IMPORTS*/
-import Stepper from "@material-ui/core/Stepper";
-import Step from "@material-ui/core/Step";
-import StepLabel from "@material-ui/core/StepLabel";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
-/*END STEPPER IMPORTS*/
-/*SELECT IMPORTS*/
-import { useTheme } from "@material-ui/core/styles";
-import Input from "@material-ui/core/Input";
-import InputLabel from "@material-ui/core/InputLabel";
-import MenuItem from "@material-ui/core/MenuItem";
-import FormControl from "@material-ui/core/FormControl";
-import ListItemText from "@material-ui/core/ListItemText";
-import Select from "@material-ui/core/Select";
-import Checkbox from "@material-ui/core/Checkbox";
-/*END SELECT IMPORTS*/
-/*CARD*/
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-/*END CARD*/
-/*LIST*/
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-/* import ListItemText from "@material-ui/core/ListItemText"; */
-import ListSubheader from "@material-ui/core/ListSubheader";
-/*END LIST*/
+
 import "./addCoin.css";
 
+//Styling Material Components
 const useStyles = makeStyles((theme) => ({
   rootList: {
     width: "100%",
@@ -217,9 +207,6 @@ function AddCoin() {
                   color="textSecondary"
                   gutterBottom
                 ></Typography>
-                {/* {cryptoName.map((elem) => (
-                  <p>{elem}</p>
-                ))} */}
                 <List className={classes.rootList} subheader={<li />}>
                   {[0].map((sectionId) => (
                     <li
@@ -330,7 +317,7 @@ function AddCoin() {
           maxWidth="sm"
           className="big-container big-container--addCoin"
         >
-          <SubMenu />
+          <SubMenu changeValue={1} />
           <Container maxWidth="sm" className="big-container__coin-container">
             {/* Save Button -> <div className={classes.root}>
               <div className={classes.wrapper}>

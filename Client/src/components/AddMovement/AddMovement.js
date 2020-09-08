@@ -12,7 +12,7 @@ function AddMovement() {
       <>
         <Header />
         <Container maxWidth="sm" className="big-container">
-          <SubMenu />
+          <SubMenu changeValue={2} />
           <Container
             maxWidth="sm"
             className="big-container__coin-container"
