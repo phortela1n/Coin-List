@@ -4,6 +4,7 @@ import Header from "../Common/Header/Header";
 import NoAuthorized from "../Common/NoAuthorized/NoAuthorized";
 import SubMenu from "../Common/SubMenu/SubMenu";
 import { connect } from "react-redux";
+import * as addCoinsActions from "../../redux/actions/addCoinsactions";
 import {
   Container,
   List,
@@ -154,7 +155,7 @@ function getStyles(name, cryptoName, theme) {
 
 /*END CARD FUNCTIONS*/
 
-function AddCoin() {
+function AddCoin(props) {
   const { user, isAuthenticated, isLoading } = useAuth0();
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
@@ -175,6 +176,7 @@ function AddCoin() {
     }); */
     if (cryptoName.length > 0) {
       console.log("pulsaste");
+      props.dispatch(addCoinsActions.addCoins(cryptoName));
       setcryptoName([]);
     }
   }
@@ -418,5 +420,7 @@ function AddCoin() {
 export default connect(mapStateToProps)(AddCoin);
 
 function mapStateToProps(state) {
-  return {};
+  return {
+    newCoins: state.newCoins,
+  };
 }

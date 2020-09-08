@@ -1,5 +1,3 @@
-/* export function getCoinMovements(newCoins) {
+export function addCoins(newCoins) {
   return { type: "INCREMENT", newCoins };
-  debugger;
 }
- */
