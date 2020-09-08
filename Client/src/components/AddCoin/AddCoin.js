@@ -39,6 +39,7 @@ import ListItem from "@material-ui/core/ListItem";
 /* import ListItemText from "@material-ui/core/ListItemText"; */
 import ListSubheader from "@material-ui/core/ListSubheader";
 /*END LIST*/
+import "./addCoin.css";
 
 const useStyles = makeStyles((theme) => ({
   rootList: {
@@ -179,9 +180,11 @@ function AddCoin() {
     switch (step) {
       case 0:
         return (
-          <>
-            "Select one or more crypto from the List..."
-            <FormControl className={classes.formControl}>
+          <section className="addCoin-box">
+            <p className="addCoin-box__title">
+              "Select one or more crypto from the List..."
+            </p>
+            <FormControl className={(classes.formControl, "addCoin-box__form")}>
               <InputLabel id="demo-mutiple-checkbox-label">Crypto</InputLabel>
               <Select
                 labelId="demo-mutiple-checkbox-label"
@@ -201,7 +204,7 @@ function AddCoin() {
                 ))}
               </Select>
             </FormControl>
-          </>
+          </section>
         );
       case 1:
         return (
@@ -323,7 +326,10 @@ function AddCoin() {
     (isAuthenticated && (
       <>
         <Header />
-        <Container maxWidth="sm" className="big-container">
+        <Container
+          maxWidth="sm"
+          className="big-container big-container--addCoin"
+        >
           <SubMenu />
           <Container maxWidth="sm" className="big-container__coin-container">
             {/* Save Button -> <div className={classes.root}>
@@ -358,23 +364,26 @@ function AddCoin() {
               </Stepper>
               <div>
                 {activeStep === steps.length ? (
-                  <div>
+                  <div className="addCoin-box--reset-status">
                     <Typography className={classes.instructions}>
                       <center className="green_text">
                         <a href="...">{"\u2705"}</a> All right - New Coin/s
                         added
                       </center>
                     </Typography>
-                    <Button onClick={handleReset} className={classes.button}>
-                      Reset
-                    </Button>
+                    <center>
+                      {" "}
+                      <Button onClick={handleReset} className={classes.button}>
+                        Reset
+                      </Button>
+                    </center>
                   </div>
                 ) : (
                   <div>
                     <Typography className={classes.instructions}>
                       {getStepContent(activeStep)}
                     </Typography>
-                    <div>
+                    <div className="button-box">
                       <Button
                         disabled={activeStep === 0}
                         onClick={handleBack}
@@ -389,7 +398,7 @@ function AddCoin() {
                         onClick={handleNext}
                         className={classes.button}
                       >
-                        {activeStep === steps.length - 1 ? "Finish" : "Next"}
+                        {activeStep === steps.length - 1 ? "Confirm" : "Next"}
                       </Button>
                     </div>
                   </div>

@@ -47,7 +47,7 @@ function SubMenu(props) {
           component={NavLink}
           to="/AddMovement"
           className="big-container__sub-menu--third"
-          label="Add Movement"
+          label="Add Move"
           icon={<CreateIcon />}
         />
       </BottomNavigation>
