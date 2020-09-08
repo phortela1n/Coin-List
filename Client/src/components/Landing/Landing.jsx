@@ -40,27 +40,20 @@ function Landing(props) {
 
   useEffect(() => {
     if (props.movements.length === 0) {
-      /* fetch("http://localhost:3002/movements") */
       fetch("http://localhost:3003/movements/")
         .then((response) => response.json())
         .then((data) => {
-          /* console.log(data); */
+          /* let data2 = data.filter((elem) => elem.name === "Bitcoin"); */
           props.dispatch(coinActions.getCoinMovements(data));
         });
     }
   }, []);
 
   const classes = useStyles();
-  /* 
-  console.log("the movements", props.movements); */
-
-  /*   const types = props.movements.map((movement) => <div>{movement.type}</div>); */
-
   return (
     (isAuthenticated && (
       <>
         <Header />
-        {/* <Example props={props.movements} /> */}
         <Container maxWidth="sm" className="big-container">
           <SubMenu changeValue={0} />
           <Container maxWidth="sm" className="big-container__coin-container">

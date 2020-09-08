@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { BottomNavigation, BottomNavigationAction } from "@material-ui/core/";
-import LocationOnIcon from "@material-ui/icons/LocationOn";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
+import FormatListBulletedIcon from "@material-ui/icons/FormatListBulleted";
 import CreateIcon from "@material-ui/icons/Create";
 import { makeStyles } from "@material-ui/core/styles";
 import "./SubMenu.css";
@@ -35,7 +35,7 @@ function SubMenu(props) {
       >
         <BottomNavigationAction
           label="Your Coins"
-          icon={<CreateIcon />}
+          icon={<FormatListBulletedIcon />}
           component={NavLink}
           to="/"
         />
