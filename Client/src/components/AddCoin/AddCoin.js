@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import clsx from "clsx";
 import Header from "../Common/Header/Header";
 import NoAuthorized from "../Common/NoAuthorized/NoAuthorized";
 import SubMenu from "../Common/SubMenu/SubMenu";
+import { connect } from "react-redux";
 import {
   Container,
   List,
@@ -160,10 +161,23 @@ function AddCoin() {
   const [loading, setLoading] = React.useState(false);
   const [success, setSuccess] = React.useState(false);
 
+  /* useEffect(() => {}, []); */
+
   const classes = useStyles();
   const timer = React.useRef();
   const steps = getSteps();
   const bull = <span className={classes.bullet}>•</span>;
+
+  /*HANDLE CLICK*/
+  function handleClick() {
+    /* props.dispatch({
+      type: "INCREMENT",
+    }); */
+    if (cryptoName.length > 0) {
+      console.log("pulsaste");
+      setcryptoName([]);
+    }
+  }
 
   /*STEPPER FUNCTIONS */
   function getStepContent(step) {
@@ -355,7 +369,7 @@ function AddCoin() {
                     <Typography className={classes.instructions}>
                       <center className="green_text">
                         <a href="...">{"\u2705"}</a> All right - New Coin/s
-                        added
+                        added {handleClick()}
                       </center>
                     </Typography>
                     <center>
@@ -382,7 +396,9 @@ function AddCoin() {
                       <Button
                         variant="contained"
                         color="primary"
-                        onClick={handleNext}
+                        onClick={(e) => {
+                          handleNext();
+                        }}
                         className={classes.button}
                       >
                         {activeStep === steps.length - 1 ? "Confirm" : "Next"}
@@ -399,4 +415,8 @@ function AddCoin() {
   );
 }
 
-export default AddCoin;
+export default connect(mapStateToProps)(AddCoin);
+
+function mapStateToProps(state) {
+  return {};
+}
