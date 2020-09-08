@@ -27,10 +27,31 @@ import FormControl from "@material-ui/core/FormControl";
 import ListItemText from "@material-ui/core/ListItemText";
 import Select from "@material-ui/core/Select";
 import Checkbox from "@material-ui/core/Checkbox";
-import Chip from "@material-ui/core/Chip";
 /*END SELECT IMPORTS*/
+/*CARD*/
+import Card from "@material-ui/core/Card";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+/*END CARD*/
+/*LIST*/
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+/* import ListItemText from "@material-ui/core/ListItemText"; */
+import ListSubheader from "@material-ui/core/ListSubheader";
+/*END LIST*/
 
 const useStyles = makeStyles((theme) => ({
+  rootList: {
+    width: "100%",
+    maxWidth: 360,
+    backgroundColor: theme.palette.background.paper,
+    position: "relative",
+    overflow: "auto",
+    maxHeight: 300,
+  },
+  root3: {
+    minWidth: 275,
+  },
   root2: {
     width: "100%",
   },
@@ -78,6 +99,24 @@ const useStyles = makeStyles((theme) => ({
   noLabel: {
     marginTop: theme.spacing(3),
   },
+  bullet: {
+    display: "inline-block",
+    margin: "0 2px",
+    transform: "scale(0.8)",
+  },
+  title: {
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
+  },
+  listSection: {
+    backgroundColor: "inherit",
+  },
+  ul: {
+    backgroundColor: "inherit",
+    padding: 0,
+  },
 }));
 
 /*STEPPER FUNCTIONS */
@@ -85,23 +124,6 @@ function getSteps() {
   return ["Add New Coin", "Check Coin"];
 }
 
-function getStepContent(step) {
-  switch (step) {
-    case 0:
-      return (
-        <>
-          "Select one or more coins from the List..."
-          <Button>Mira</Button>
-        </>
-      );
-    case 1:
-      return "What is an ad group anyways?";
-    case 2:
-      return "This is the bit I really care about!";
-    default:
-      return "Unknown step";
-  }
-}
 /*END STEPPER FUNCTIONS */
 /* SELECT CONST & FUNCTIONS */
 const ITEM_HEIGHT = 48;
@@ -116,28 +138,29 @@ const MenuProps = {
 };
 
 const names = [
-  "Oliver Hansen",
-  "Van Henry",
-  "April Tucker",
-  "Ralph Hubbard",
-  "Omar Alexander",
-  "Carlos Abbott",
-  "Miriam Wagner",
-  "Bradley Wilkerson",
-  "Virginia Andrews",
-  "Kelly Snyder",
+  "Bitcoin",
+  "Ethereum",
+  "Litecoin",
+  "Swipe",
+  "BNB",
+  "Monero",
+  "XRP",
+  "MIOTA",
 ];
 
-function getStyles(name, personName, theme) {
+function getStyles(name, cryptoName, theme) {
   return {
     fontWeight:
-      personName.indexOf(name) === -1
+      cryptoName.indexOf(name) === -1
         ? theme.typography.fontWeightRegular
         : theme.typography.fontWeightMedium,
   };
 }
 
 /* END SELECT CONST & FUNCTIONS */
+/*CARD FUNCTIONS*/
+
+/*END CARD FUNCTIONS*/
 
 function AddCoin() {
   const { user, isAuthenticated, isLoading } = useAuth0();
@@ -149,8 +172,79 @@ function AddCoin() {
   const classes = useStyles();
   const timer = React.useRef();
   const steps = getSteps();
+  const bull = <span className={classes.bullet}>•</span>;
 
   /*STEPPER FUNCTIONS */
+  function getStepContent(step) {
+    switch (step) {
+      case 0:
+        return (
+          <>
+            "Select one or more crypto from the List..."
+            <FormControl className={classes.formControl}>
+              <InputLabel id="demo-mutiple-checkbox-label">Crypto</InputLabel>
+              <Select
+                labelId="demo-mutiple-checkbox-label"
+                id="demo-mutiple-checkbox"
+                multiple
+                value={cryptoName}
+                onChange={handleChange}
+                input={<Input />}
+                renderValue={(selected) => selected.join(", ")}
+                MenuProps={MenuProps}
+              >
+                {names.map((name) => (
+                  <MenuItem key={name} value={name}>
+                    <Checkbox checked={cryptoName.indexOf(name) > -1} />
+                    <ListItemText primary={name} />
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+          </>
+        );
+      case 1:
+        return (
+          <>
+            <Card>
+              Is the list ok? {console.log(cryptoName)}
+              <CardContent>
+                <Typography
+                  className={classes.title}
+                  color="textSecondary"
+                  gutterBottom
+                ></Typography>
+                {/* {cryptoName.map((elem) => (
+                  <p>{elem}</p>
+                ))} */}
+                <List className={classes.rootList} subheader={<li />}>
+                  {[0].map((sectionId) => (
+                    <li
+                      key={`section-${sectionId}`}
+                      className={classes.listSection}
+                    >
+                      <ul className={classes.ul}>
+                        <ListSubheader>{`List`}</ListSubheader>
+                        {cryptoName.map((item) => (
+                          <ListItem key={`crypto-${sectionId}-${item}`}>
+                            <ListItemText primary={`${item}`} />
+                          </ListItem>
+                        ))}
+                      </ul>
+                    </li>
+                  ))}
+                </List>
+              </CardContent>
+              <CardActions>
+                {/* <Button size="small">Learn More</Button> */}
+              </CardActions>
+            </Card>
+          </>
+        );
+      default:
+        return "Unknown step";
+    }
+  }
   const isStepSkipped = (step) => {
     return skipped.has(step);
   };
@@ -207,10 +301,10 @@ function AddCoin() {
   /*SELECT CONST & FUNCTIONS */
   /* const classes = useStyles(); */
   const theme = useTheme();
-  const [personName, setPersonName] = React.useState([]);
+  const [cryptoName, setcryptoName] = React.useState([]);
 
   const handleChange = (event) => {
-    setPersonName(event.target.value);
+    setcryptoName(event.target.value);
   };
 
   const handleChangeMultiple = (event) => {
@@ -221,7 +315,7 @@ function AddCoin() {
         value.push(options[i].value);
       }
     }
-    setPersonName(value);
+    setcryptoName(value);
   };
   /*SELECT CONST & FUNCTIONS */
 
@@ -266,7 +360,10 @@ function AddCoin() {
                 {activeStep === steps.length ? (
                   <div>
                     <Typography className={classes.instructions}>
-                      All right - New Coin added
+                      <center className="green_text">
+                        <a href="...">{"\u2705"}</a> All right - New Coin/s
+                        added
+                      </center>
                     </Typography>
                     <Button onClick={handleReset} className={classes.button}>
                       Reset
@@ -299,26 +396,6 @@ function AddCoin() {
                 )}
               </div>
             </div>
-            <FormControl className={classes.formControl}>
-              <InputLabel id="demo-mutiple-checkbox-label">Tag</InputLabel>
-              <Select
-                labelId="demo-mutiple-checkbox-label"
-                id="demo-mutiple-checkbox"
-                multiple
-                value={personName}
-                onChange={handleChange}
-                input={<Input />}
-                renderValue={(selected) => selected.join(", ")}
-                MenuProps={MenuProps}
-              >
-                {names.map((name) => (
-                  <MenuItem key={name} value={name}>
-                    <Checkbox checked={personName.indexOf(name) > -1} />
-                    <ListItemText primary={name} />
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
           </Container>
         </Container>
       </>

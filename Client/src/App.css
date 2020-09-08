@@ -31,3 +31,9 @@ a {
 .MuiButton-textPrimary {
   color: #ff144b !important;
 }
+
+/* Common */
+
+.green_text {
+  color: green;
+}
