@@ -4,6 +4,7 @@ import Header from "../Common/Header/Header";
 import NoAuthorized from "../Common/NoAuthorized/NoAuthorized";
 import SubMenu from "../Common/SubMenu/SubMenu";
 import { connect } from "react-redux";
+import axios from "axios";
 import * as addCoinsActions from "../../redux/actions/addCoinsactions";
 import {
   Container,
@@ -174,9 +175,39 @@ function AddCoin(props) {
     /* props.dispatch({
       type: "INCREMENT",
     }); */
-    if (cryptoName.length > 0) {
+    if (cryptoNames.length > 0) {
       console.log("pulsaste");
-      props.dispatch(addCoinsActions.addCoins(cryptoName));
+      // make axios call, and when the call returns, dispatch the action (extra credit: show a spinner while call is happening)
+      // can use "thunk"
+
+      const data = JSON.stringify({
+        userID: user.email,
+        coins: cryptoNames,
+      });
+      const config = {
+        method: "post",
+        url: "http://localhost:3003/coins",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        data: data,
+      };
+
+      axios(config)
+        .then(function (response) {
+          console.log(JSON.stringify(response.data));
+          props.dispatch(addCoinsActions.addCoins(cryptoNames));
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+
+      // 1-964-07653
+      // axios.post().then((data) => {
+      //   props.dispatch(addCoinsActions.addCoins(cryptoName));
+      //   // setcryptoName([]);
+      // });
+      setcryptoName([]);
     }
   }
 
@@ -195,7 +226,7 @@ function AddCoin(props) {
                 labelId="demo-mutiple-checkbox-label"
                 id="demo-mutiple-checkbox"
                 multiple
-                value={cryptoName}
+                value={cryptoNames}
                 onChange={handleChange}
                 input={<Input />}
                 renderValue={(selected) => selected.join(", ")}
@@ -203,7 +234,7 @@ function AddCoin(props) {
               >
                 {names.map((name) => (
                   <MenuItem key={name} value={name}>
-                    <Checkbox checked={cryptoName.indexOf(name) > -1} />
+                    <Checkbox checked={cryptoNames.indexOf(name) > -1} />
                     <ListItemText primary={name} />
                   </MenuItem>
                 ))}
@@ -215,7 +246,7 @@ function AddCoin(props) {
         return (
           <>
             <Card>
-              Is the list ok? {console.log(cryptoName)}
+              Is the list ok? {console.log(cryptoNames)}
               <CardContent>
                 <Typography
                   className={classes.title}
@@ -230,7 +261,7 @@ function AddCoin(props) {
                     >
                       <ul className={classes.ul}>
                         <ListSubheader>{`List`}</ListSubheader>
-                        {cryptoName.map((item) => (
+                        {cryptoNames.map((item) => (
                           <ListItem key={`crypto-${sectionId}-${item}`}>
                             <ListItemText primary={`${item}`} />
                           </ListItem>
@@ -306,7 +337,7 @@ function AddCoin(props) {
   /*SELECT CONST & FUNCTIONS */
   /* const classes = useStyles(); */
   const theme = useTheme();
-  const [cryptoName, setcryptoName] = React.useState([]);
+  const [cryptoNames, setcryptoName] = React.useState([]);
 
   const handleChange = (event) => {
     setcryptoName(event.target.value);
@@ -401,7 +432,7 @@ function AddCoin(props) {
                           handleNext();
                           activeStep === steps.length - 1
                             ? handleClick()
-                            : console.log("No toca");
+                            : console.log("");
                         }}
                         className={classes.button}
                       >

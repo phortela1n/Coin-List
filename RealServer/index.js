@@ -11,9 +11,13 @@ app.use(bodyParser.json());
 
 const PORT = 3003;
 
-const coinRoutes = require("./src/routes/coinRoutes")();
+const coinsRoutes = require("./src/routes/coinsRoutes")();
 
-app.use("/movements", coinRoutes);
+app.use("/coins", coinsRoutes);
+
+const movementsRoutes = require("./src/routes/movementsRoutes")();
+
+app.use("/movements", movementsRoutes);
 
 const populateDb = require("./src/routes/dbRoutes")();
 

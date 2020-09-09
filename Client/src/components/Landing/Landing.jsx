@@ -40,7 +40,7 @@ function Landing(props) {
 
   useEffect(() => {
     if (props.movements.length === 0) {
-      fetch("http://localhost:3003/movements/")
+      fetch("http://localhost:3003/coins")
         .then((response) => response.json())
         .then((data) => {
           /* let data2 = data.filter((elem) => elem.name === "Bitcoin"); */
@@ -91,9 +91,6 @@ function Landing(props) {
                   </CardActions>
                 </Card>
               </NavLink>
-            ))}
-            {props.newCoins.map((elem) => (
-              <p>{elem}</p>
             ))}
           </Container>
         </Container>

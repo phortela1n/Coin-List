@@ -19,4 +19,5 @@ body {
   display: flex !important;
   justify-content: space-between;
   align-items: center !important;
+  flex-wrap: wrap;
 }
