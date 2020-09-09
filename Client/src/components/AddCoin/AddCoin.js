@@ -176,10 +176,7 @@ function AddCoin(props) {
     }); */
     if (cryptoName.length > 0) {
       console.log("pulsaste");
-      let prueba = cryptoName;
-      console.log("La prueba es", prueba);
       props.dispatch(addCoinsActions.addCoins(cryptoName));
-      setcryptoName([]);
     }
   }
 
@@ -402,7 +399,9 @@ function AddCoin(props) {
                         color="primary"
                         onClick={(e) => {
                           handleNext();
-                          handleClick();
+                          activeStep === steps.length - 1
+                            ? handleClick()
+                            : console.log("No toca");
                         }}
                         className={classes.button}
                       >
