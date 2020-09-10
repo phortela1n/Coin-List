@@ -12,7 +12,6 @@ function router() {
       const db = await getDB();
       const collection = await db.collection(collectionName);
       const response = await collection.find().toArray();
-      console.log(response);
       res.json(response);
     })();
   });
@@ -20,7 +19,6 @@ function router() {
   dbRouter.route("/").post((req, res) => {
     (async () => {
       const { coins, userID } = req.body;
-      console.log(coins);
 
       const newCoins = coins.map((coin) => getCoinDetails(coin, userID));
 
