@@ -1,6 +1,6 @@
 const express = require("express");
 const getDB = require("../config/db");
-const movements = require("../../public/mocks/db.json");
+// const movements = require("../../public/mocks/db.json");
 const getCoinDetails = require("../../public/api/getCoinDetails");
 
 const dbRouter = express.Router();

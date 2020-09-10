@@ -162,8 +162,25 @@ function AddCoin(props) {
   const [skipped, setSkipped] = React.useState(new Set());
   const [loading, setLoading] = React.useState(false);
   const [success, setSuccess] = React.useState(false);
+  const [coinsUserCurrentlyHas, setCoinsUserCurrentlyHas] = React.useState(
+    null
+  );
 
-  /* useEffect(() => {}, []); */
+  function setCurrentCoins() {
+    return axios("http://localhost:3003/coins")
+      .then(function ({ data }) {
+        const coinNames = data.map((coin) => coin.name);
+        const coinsNamesAsSet = new Set(coinNames);
+        setCoinsUserCurrentlyHas(coinsNamesAsSet);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
+  useEffect(() => {
+    setCurrentCoins();
+  }, []);
 
   const classes = useStyles();
   const timer = React.useRef();
@@ -179,36 +196,35 @@ function AddCoin(props) {
       console.log("pulsaste");
       // make axios call, and when the call returns, dispatch the action (extra credit: show a spinner while call is happening)
       // can use "thunk"
-
-      const data = JSON.stringify({
-        userID: user.email,
-        coins: cryptoNames,
-      });
-      const config = {
-        method: "post",
-        url: "http://localhost:3003/coins",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        data: data,
-      };
-
-      axios(config)
+      axios
+        .post("http://localhost:3003/coins", {
+          userID: user.email,
+          coins: cryptoNames,
+        })
         .then(function (response) {
           console.log(JSON.stringify(response.data));
+          setcryptoName([]);
           props.dispatch(addCoinsActions.addCoins(cryptoNames));
         })
         .catch(function (error) {
           console.log(error);
         });
-
-      // 1-964-07653
-      // axios.post().then((data) => {
-      //   props.dispatch(addCoinsActions.addCoins(cryptoName));
-      //   // setcryptoName([]);
-      // });
-      setcryptoName([]);
     }
+  }
+
+  function getMenuItems(names) {
+    // do the intersecting
+    // 1. get the coins the user already has, from the backend
+
+    return names.map((name) => {
+      const isDisabled = coinsUserCurrentlyHas.has(name);
+      return (
+        <MenuItem key={name} value={name} disabled={isDisabled}>
+          <Checkbox checked={cryptoNames.indexOf(name) > -1} />
+          <ListItemText primary={name} />
+        </MenuItem>
+      );
+    });
   }
 
   /*STEPPER FUNCTIONS */
@@ -232,12 +248,7 @@ function AddCoin(props) {
                 renderValue={(selected) => selected.join(", ")}
                 MenuProps={MenuProps}
               >
-                {names.map((name) => (
-                  <MenuItem key={name} value={name}>
-                    <Checkbox checked={cryptoNames.indexOf(name) > -1} />
-                    <ListItemText primary={name} />
-                  </MenuItem>
-                ))}
+                {getMenuItems(names)}
               </Select>
             </FormControl>
           </section>
@@ -310,7 +321,9 @@ function AddCoin(props) {
   };
 
   const handleReset = () => {
-    setActiveStep(0);
+    setCurrentCoins().then(() => {
+      setActiveStep(0);
+    });
   };
 
   const buttonClassname = clsx({
@@ -354,6 +367,10 @@ function AddCoin(props) {
     setcryptoName(value);
   };
   /*SELECT CONST & FUNCTIONS */
+
+  if (coinsUserCurrentlyHas === null) {
+    return null;
+  }
 
   return (
     (isAuthenticated && (

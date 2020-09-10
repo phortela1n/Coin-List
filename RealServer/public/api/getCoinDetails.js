@@ -31,3 +31,5 @@ function getCoinDetails(coin, userID) {
       throw new Error("Coin details lookup failed");
   }
 }
+
+module.exports = getCoinDetails;
