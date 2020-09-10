@@ -31,7 +31,11 @@ a {
 .MuiButton-textPrimary {
   color: #ff144b !important;
 }
-
+/*Load Circle*/
+.loadcircle {
+  position: absolute;
+  top: 50%;
+}
 /* Common */
 
 .green_text {

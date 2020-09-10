@@ -23,6 +23,7 @@ import LocationOnIcon from "@material-ui/icons/LocationOn";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 import CreateIcon from "@material-ui/icons/Create";
 import { useAuth0 } from "@auth0/auth0-react";
+import { CircularProgress } from "@material-ui/core";
 import "../../App.css";
 import "./Landing.scss";
 
@@ -51,6 +52,15 @@ function Landing(props) {
 
   console.log(props);
   const classes = useStyles();
+  if (isLoading) {
+    return (
+      <center>
+        <>
+          <CircularProgress className="loadcircle" color="secondary" />
+        </>
+      </center>
+    );
+  }
   return (
     (isAuthenticated && (
       <>

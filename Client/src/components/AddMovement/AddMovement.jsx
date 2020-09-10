@@ -5,9 +5,19 @@ import Header from "../Common/Header/Header";
 import SubMenu from "../Common/SubMenu/SubMenu";
 import NoAuthorized from "../Common/NoAuthorized/NoAuthorized";
 import { Container } from "@material-ui/core/";
+import { CircularProgress } from "@material-ui/core";
 
 export default function AddMovement() {
   const { user, isAuthenticated, isLoading } = useAuth0();
+  if (isLoading) {
+    return (
+      <center>
+        <>
+          <CircularProgress className="loadcircle" color="secondary" />
+        </>
+      </center>
+    );
+  }
   return (
     (isAuthenticated && (
       <>

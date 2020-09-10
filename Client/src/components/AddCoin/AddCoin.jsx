@@ -27,6 +27,7 @@ import {
   MenuItem,
   FormControl,
 } from "@material-ui/core/";
+import { CircularProgress } from "@material-ui/core";
 import { useAuth0 } from "@auth0/auth0-react";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { green } from "@material-ui/core/colors";
@@ -360,6 +361,15 @@ function AddCoin(props) {
     return null;
   }
 
+  if (isLoading) {
+    return (
+      <center>
+        <>
+          <CircularProgress className="loadcircle" color="secondary" />
+        </>
+      </center>
+    );
+  }
   return (
     (isAuthenticated && (
       <>
