@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-
+import StepperForm from "./StepperForm/StepperForm";
 import {
   Stepper,
   Step,
@@ -25,13 +25,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function getSteps() {
-  return ["Select campaign settings", "Create an ad group", "Create an ad"];
+  return ["Movement details", "Confirm Movement"];
 }
 
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return "Select campaign settings...";
+      return <StepperForm />;
     case 1:
       return "What is an ad group anyways?";
     case 2:
@@ -100,18 +100,25 @@ export default function AddMovement() {
       </Stepper>
       <div>
         {activeStep === steps.length ? (
-          <div>
+          <div className="addCoin-box--reset-status">
             <Typography className={classes.instructions}>
-              All steps completed
+              <center className="green_text">
+                <a href="...">{"\u2705"}</a> All right - New Coin/s added
+              </center>
             </Typography>
-            <Button onClick={handleReset}>Reset</Button>
+            <center>
+              {" "}
+              <Button onClick={handleReset} className={classes.button}>
+                Reset
+              </Button>
+            </center>
           </div>
         ) : (
           <div>
             <Typography className={classes.instructions}>
               {getStepContent(activeStep)}
             </Typography>
-            <div>
+            <div className="button-box">
               <Button
                 disabled={activeStep === 0}
                 onClick={handleBack}
@@ -120,7 +127,7 @@ export default function AddMovement() {
                 Back
               </Button>
               <Button variant="contained" color="primary" onClick={handleNext}>
-                {activeStep === steps.length - 1 ? "Finish" : "Next"}
+                {activeStep === steps.length - 1 ? "Confirm" : "Next"}
               </Button>
             </div>
           </div>
