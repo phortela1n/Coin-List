@@ -22,6 +22,11 @@ body {
   flex-wrap: wrap;
 }
 
+.big-container__coin-container a {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
 .no-coins {
   display: flex;
   justify-content: center;

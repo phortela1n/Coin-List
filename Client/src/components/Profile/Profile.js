@@ -87,11 +87,7 @@ const Profile = () => {
               image={user.picture}
               title="Paella dish"
             />
-            <CardContent>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Standard user
-              </Typography>
-            </CardContent>
+            <CardContent></CardContent>
             <CardActions disableSpacing>
               {/*               <IconButton aria-label="add to favorites">
                 <FavoriteIcon />
@@ -112,13 +108,8 @@ const Profile = () => {
             </CardActions>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
               <CardContent>
-                <Typography paragraph>Title:</Typography>
-                <Typography paragraph>
-                  Heat 1/2 cup of the broth in a pot until simmering, add
-                  saffron and set aside for 10 minutes.
-                </Typography>
-                <Typography paragraph>
-                  Heat oil in a (14- to 16-inch)
+                <Typography variant="body2" color="textSecondary" component="p">
+                  Standard user
                 </Typography>
               </CardContent>
             </Collapse>
