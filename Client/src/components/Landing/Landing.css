@@ -21,3 +21,9 @@ body {
   align-items: center !important;
   flex-wrap: wrap;
 }
+
+.no-coins {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}

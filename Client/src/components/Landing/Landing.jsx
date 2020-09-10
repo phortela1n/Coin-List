@@ -48,6 +48,7 @@ function Landing(props) {
         });
     }
   }, []);
+
   console.log(props);
   const classes = useStyles();
   return (
@@ -92,6 +93,11 @@ function Landing(props) {
                 </Card>
               </NavLink>
             ))}
+            {props.movements.length === 0 && (
+              <div className="no-coins">
+                You have no coins, please add one or more
+              </div>
+            )}
           </Container>
         </Container>
       </>

@@ -27,6 +27,14 @@ function getCoinDetails(coin, userID) {
         img:
           "https://w7.pngwing.com/pngs/777/875/png-transparent-bitcoin-computer-icons-cryptocurrency-litecoin-bitcoin-text-trademark-logo.png",
       };
+    case "Swipe":
+      return {
+        userID,
+        name: coin,
+        description: "SXP",
+        moves: [],
+        img: "https://swipe.io/images/network-img.svg",
+      };
     default:
       throw new Error("Coin details lookup failed");
   }

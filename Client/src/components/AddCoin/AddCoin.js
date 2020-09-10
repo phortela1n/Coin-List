@@ -189,9 +189,6 @@ function AddCoin(props) {
 
   /*HANDLE CLICK*/
   function handleClick() {
-    /* props.dispatch({
-      type: "INCREMENT",
-    }); */
     if (cryptoNames.length > 0) {
       console.log("pulsaste");
       // make axios call, and when the call returns, dispatch the action (extra credit: show a spinner while call is happening)
@@ -200,20 +197,6 @@ function AddCoin(props) {
       props.dispatch(
         addCoinsActions.addCoins(cryptoNames, user.email, setcryptoName)
       );
-
-      // axios
-      //   .post("http://localhost:3003/coins", {
-      //     userID: user.email,
-      //     coins: cryptoNames,
-      //   })
-      //   .then(function (response) {
-      //     console.log(JSON.stringify(response.data));
-      //     setcryptoName([]);
-      //     props.dispatch(addCoinsActions.addCoins(cryptoNames));
-      //   })
-      //   .catch(function (error) {
-      //     console.log(error);
-      //   });
     }
   }
 
