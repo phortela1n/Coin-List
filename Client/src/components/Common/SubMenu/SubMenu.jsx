@@ -5,7 +5,7 @@ import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 import FormatListBulletedIcon from "@material-ui/icons/FormatListBulleted";
 import CreateIcon from "@material-ui/icons/Create";
 import { makeStyles } from "@material-ui/core/styles";
-import "./SubMenu.css";
+import "./SubMenu.scss";
 
 const useStyles = makeStyles({
   root: {

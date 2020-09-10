@@ -19,7 +19,7 @@ import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { Button, CircularProgress } from "@material-ui/core";
-import "./Profile.css";
+import "./Profile.scss";
 
 const useStyles = makeStyles((theme) => ({
   root: {

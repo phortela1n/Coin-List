@@ -20,11 +20,11 @@ body {
   justify-content: space-between;
   align-items: center !important;
   flex-wrap: wrap;
-}
 
-.big-container__coin-container a {
-  padding-top: 20px;
-  padding-bottom: 10px;
+  a {
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
 }
 
 .no-coins {

@@ -15,7 +15,7 @@ import {
 } from "@material-ui/core/";
 import { connect } from "react-redux";
 import "../../App.css";
-import "./CoinDetail.css";
+import "./CoinDetail.scss";
 
 const StyledTableCell = withStyles((theme) => ({
   head: {

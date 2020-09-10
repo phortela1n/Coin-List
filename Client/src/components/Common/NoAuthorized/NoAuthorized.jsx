@@ -3,7 +3,7 @@ import Header from "../Header/Header";
 import { Redirect } from "react-router-dom";
 import LoginButton from "../../LoginButton/LoginButton";
 import { Container } from "@material-ui/core/";
-import "./NoAuthorized.css";
+import "./NoAuthorized.scss";
 
 function NoAuthorized() {
   return (

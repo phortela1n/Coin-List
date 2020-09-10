@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../Common/Header/Header";
 import { Container } from "@material-ui/core/";
 import Profile from "../Profile/Profile";
-import "./ShowProfile.css";
+import "./ShowProfile.scss";
 
 function ShowProfile() {
   return (

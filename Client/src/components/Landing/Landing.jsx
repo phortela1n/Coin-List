@@ -24,7 +24,7 @@ import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 import CreateIcon from "@material-ui/icons/Create";
 import { useAuth0 } from "@auth0/auth0-react";
 import "../../App.css";
-import "./Landing.css";
+import "./Landing.scss";
 
 const useStyles = makeStyles({
   root: {

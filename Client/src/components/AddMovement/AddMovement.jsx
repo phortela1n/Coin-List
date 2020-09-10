@@ -31,7 +31,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { green } from "@material-ui/core/colors";
 
-import "./AddMovement.css";
+import "./AddMovement.scss";
 
 //Styling Material Components
 const useStyles = makeStyles((theme) => ({
