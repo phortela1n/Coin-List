@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import StepperForm from "./StepperForm/StepperForm";
+import StepperCard from "./StepperCard/StepperCard";
 import {
   Stepper,
   Step,
@@ -33,15 +34,13 @@ function getStepContent(step) {
     case 0:
       return <StepperForm />;
     case 1:
-      return "What is an ad group anyways?";
-    case 2:
-      return "This is the bit I really care about!";
+      return <StepperCard />;
     default:
       return "Unknown step";
   }
 }
 
-export default function AddMovement() {
+export default function TwoPhasesStepper(props) {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
@@ -89,6 +88,10 @@ export default function AddMovement() {
     setActiveStep(0);
   };
 
+  function handleMovementsClick() {
+    console.log();
+  }
+
   return (
     <div className={classes.root}>
       <Stepper activeStep={activeStep} alternativeLabel>
@@ -126,7 +129,17 @@ export default function AddMovement() {
               >
                 Back
               </Button>
-              <Button variant="contained" color="primary" onClick={handleNext}>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={(e) => {
+                  handleNext();
+                  activeStep === steps.length - 1
+                    ? handleMovementsClick()
+                    : console.log("");
+                }}
+                className={classes.button}
+              >
                 {activeStep === steps.length - 1 ? "Confirm" : "Next"}
               </Button>
             </div>

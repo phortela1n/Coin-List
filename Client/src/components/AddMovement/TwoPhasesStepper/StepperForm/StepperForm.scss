@@ -12,3 +12,8 @@
 .form-input-box * {
   padding-right: 10px !important;
 }
+
+.add-movements__form-box--radio {
+  display: flex;
+  justify-content: space-around;
+}

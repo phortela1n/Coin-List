@@ -64,6 +64,7 @@ export default function StepperForm() {
         handleDateChange={handleDateChange}
       />
       <div className="add-movements__form-box--radio">
+        <div>Hola</div>
         <RadioForm value={value} handleChange={handleChange} />
       </div>
       <div className="form-input-box">

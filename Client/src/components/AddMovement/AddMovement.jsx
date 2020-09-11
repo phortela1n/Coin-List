@@ -1,5 +1,5 @@
 import React from "react";
-import Stepper from "./Stepper/Stepper";
+import TwoPhasesStepper from "./TwoPhasesStepper/TwoPhasesStepper";
 import { useAuth0 } from "@auth0/auth0-react";
 import Header from "../Common/Header/Header";
 import SubMenu from "../Common/SubMenu/SubMenu";
@@ -8,7 +8,7 @@ import { Container } from "@material-ui/core/";
 import { CircularProgress } from "@material-ui/core";
 
 export default function AddMovement() {
-  const { user, isAuthenticated, isLoading } = useAuth0();
+  const { isAuthenticated, isLoading } = useAuth0();
   if (isLoading) {
     return (
       <center>
@@ -31,7 +31,7 @@ export default function AddMovement() {
             maxWidth="sm"
             className="big-container__coin-container big-container__movements"
           >
-            <Stepper />
+            <TwoPhasesStepper />
           </Container>
         </Container>
       </>
