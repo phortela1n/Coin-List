@@ -29,17 +29,6 @@ function getSteps() {
   return ["Movement details", "Confirm Movement"];
 }
 
-function getStepContent(step) {
-  switch (step) {
-    case 0:
-      return <StepperForm />;
-    case 1:
-      return <StepperCard />;
-    default:
-      return "Unknown step";
-  }
-}
-
 export default function TwoPhasesStepper(props) {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
@@ -88,10 +77,27 @@ export default function TwoPhasesStepper(props) {
     setActiveStep(0);
   };
 
-  function handleMovementsClick() {
-    console.log();
+  function getStepContent(step) {
+    switch (step) {
+      case 0:
+        return (
+          <StepperForm
+            selectedDate={props.selectedDate}
+            handleDateChange={props.handleDateChange}
+            value={props.value}
+            handleChange={props.handleChange}
+            quantityValues={props.quantityValues}
+            handleQuantity={props.handleQuantity}
+            priceValues={props.priceValues}
+            handlePrice={props.handlePrice}
+          />
+        );
+      case 1:
+        return <StepperCard />;
+      default:
+        return "Unknown step";
+    }
   }
-
   return (
     <div className={classes.root}>
       <Stepper activeStep={activeStep} alternativeLabel>
@@ -135,7 +141,7 @@ export default function TwoPhasesStepper(props) {
                 onClick={(e) => {
                   handleNext();
                   activeStep === steps.length - 1
-                    ? handleMovementsClick()
+                    ? props.handleMovementsClick()
                     : console.log("");
                 }}
                 className={classes.button}
