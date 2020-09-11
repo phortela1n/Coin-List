@@ -90,6 +90,8 @@ export default function TwoPhasesStepper(props) {
             handleQuantity={props.handleQuantity}
             priceValues={props.priceValues}
             handlePrice={props.handlePrice}
+            cryptoMovement={props.cryptoMovement}
+            handleChangeCryptoName={props.handleChangeCryptoName}
           />
         );
       case 1:

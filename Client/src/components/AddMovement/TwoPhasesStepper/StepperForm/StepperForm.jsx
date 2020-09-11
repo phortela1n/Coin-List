@@ -3,6 +3,7 @@ import RadioForm from "./RadioForm/RadioForm";
 import CallendarForm from "./CallendarForm/CallendarForm";
 import FormInput from "./FormInput/FormInput";
 import DollarInput from "./DollarInput/DollarInput";
+import SelectCrypto from "./SelectCrypto/SelectCrypto";
 import "./StepperForm.scss";
 
 export default function StepperForm(props) {
@@ -13,7 +14,10 @@ export default function StepperForm(props) {
         handleDateChange={props.handleDateChange}
       />
       <div className="add-movements__form-box--radio">
-        <div>Bitcoin</div>
+        <SelectCrypto
+          cryptoMovement={props.cryptoMovement}
+          handleChangeCryptoName={props.handleChangeCryptoName}
+        />
         <RadioForm value={props.value} handleChange={props.handleChange} />
       </div>
       <div className="form-input-box">

@@ -29,6 +29,7 @@ export default function CallendarForm(props) {
           margin="normal"
           id="time-picker"
           label="Operation's hour"
+          disabled={true}
           value={props.selectedDate}
           onChange={props.handleDateChange}
           KeyboardButtonProps={{

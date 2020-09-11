@@ -29,6 +29,13 @@ export default function AddMovement() {
 
   //Inputs State
 
+  //NAME
+  const [cryptoMovement, setcryptoMovement] = React.useState("Ten");
+
+  const handleChangeCryptoName = (event) => {
+    setcryptoMovement(event.target.value);
+  };
+
   //QUANTITY
 
   const [quantityValues, setquantityValues] = React.useState({
@@ -99,6 +106,8 @@ export default function AddMovement() {
               priceValues={priceValues}
               handlePrice={handlePrice}
               handleMovementsClick={handleMovementsClick}
+              cryptoMovement={cryptoMovement}
+              handleChangeCryptoName={handleChangeCryptoName}
             />
           </Container>
         </Container>
