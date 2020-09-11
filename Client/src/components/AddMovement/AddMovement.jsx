@@ -1,14 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { connect } from "react-redux";
 import TwoPhasesStepper from "./TwoPhasesStepper/TwoPhasesStepper";
 import { useAuth0 } from "@auth0/auth0-react";
+import * as coinActions from "../../redux/actions/coinactions";
 import Header from "../Common/Header/Header";
 import SubMenu from "../Common/SubMenu/SubMenu";
 import NoAuthorized from "../Common/NoAuthorized/NoAuthorized";
 import { Container } from "@material-ui/core/";
 import { CircularProgress } from "@material-ui/core";
 
-export default function AddMovement() {
+function AddMovement(props) {
   const { isAuthenticated, isLoading } = useAuth0();
+
+  useEffect(() => {
+    if (props.movements.length === 0) {
+      fetch("http://localhost:3003/coins")
+        .then((response) => response.json())
+        .then((data) => {
+          /* let data2 = data.filter((elem) => elem.name === "Bitcoin"); */
+          props.dispatch(coinActions.getCoinMovements(data));
+        });
+    }
+  }, []);
 
   /**
    * FORM STATE
@@ -115,3 +128,12 @@ export default function AddMovement() {
     )) || <NoAuthorized />
   );
 }
+
+function mapStateToProps(state) {
+  return {
+    movements: state.movements,
+    newCoins: state.newCoins,
+  };
+}
+
+export default connect(mapStateToProps)(AddMovement);
