@@ -15,8 +15,10 @@ import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import HomeIcon from "@material-ui/icons/MoveToInbox";
+
+import HomeIcon from "@material-ui/icons/Home";
+import PersonIcon from "@material-ui/icons/Person";
+import MeetingRoomIcon from "@material-ui/icons/MeetingRoom";
 import "./Header.scss";
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -42,7 +44,7 @@ export default function Header() {
   const { user, isAuthenticated, isLoading } = useAuth0();
   const classes = useStyles();
   const [state, setState] = React.useState({
-    left: false,
+    right: false,
   });
 
   const toggleDrawer = (anchor, open) => (event) => {
@@ -73,7 +75,7 @@ export default function Header() {
         >
           <ListItem button>
             <ListItemIcon>
-              <HomeIcon></HomeIcon>
+              <HomeIcon />
             </ListItemIcon>
             <ListItemText primary={"Landing"} />
           </ListItem>
@@ -87,7 +89,7 @@ export default function Header() {
         >
           <ListItem button>
             <ListItemIcon>
-              <InboxIcon />
+              <PersonIcon />
             </ListItemIcon>
             <ListItemText primary={"Profile"} />
           </ListItem>
@@ -97,7 +99,7 @@ export default function Header() {
       <List>
         <ListItem button>
           <ListItemIcon>
-            <InboxIcon />
+            <MeetingRoomIcon />
           </ListItemIcon>
           <LogOut />
         </ListItem>
@@ -122,7 +124,7 @@ export default function Header() {
               <Typography variant="h6" className={classes.title}>
                 CoinList
               </Typography>
-              {["left"].map((anchor) => (
+              {["right"].map((anchor) => (
                 <React.Fragment key={anchor}>
                   <Button
                     onClick={toggleDrawer(anchor, true)}
@@ -158,7 +160,7 @@ export default function Header() {
               <Typography variant="h6" className={classes.title}>
                 CoinList
               </Typography>
-              {["left"].map((anchor) => (
+              {["right"].map((anchor) => (
                 <React.Fragment key={anchor}>
                   <Drawer
                     anchor={anchor}

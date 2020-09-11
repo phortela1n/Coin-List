@@ -3,7 +3,6 @@ import { Button } from "@material-ui/core";
 import Header from "../Common/Header/Header";
 import SubMenu from "../Common/SubMenu/SubMenu";
 import NoAuthorized from "../Common/NoAuthorized/NoAuthorized";
-import Example from "../Common/Carrousel/Carrousel";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import * as coinActions from "../../redux/actions/coinactions";
@@ -16,8 +15,6 @@ import {
   Typography,
   CardContent,
   CardActionArea,
-  BottomNavigation,
-  BottomNavigationAction,
 } from "@material-ui/core/";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
