@@ -20,8 +20,6 @@ function SubMenu(props) {
   const classes = useStyles();
 
   const [value, setValue] = React.useState(props.changeValue);
-
-  console.log("El valor es" + value);
   return (
     <>
       <BottomNavigation

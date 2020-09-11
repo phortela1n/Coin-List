@@ -79,7 +79,7 @@ const Profile = () => {
                 </IconButton>
               }
               title={user.name[0].toUpperCase() + user.name.substring(1)}
-              subheader="September 14, 2020"
+              subheader={new Date().toISOString().substring(0, 10)}
             />
             <CardMedia
               className={classes.media}

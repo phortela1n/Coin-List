@@ -23,10 +23,11 @@ const useStyles = makeStyles({
   },
 });
 
-export default function StepperCard() {
+export default function StepperCard(props) {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
 
+  console.log("Mira este", props);
   return (
     <Card className={classes.root}>
       <CardContent>
@@ -38,13 +39,13 @@ export default function StepperCard() {
           Confirm the info below:
         </Typography>
         <Typography variant="body2" component="p">
-          Date:
+          Date: {props.selectedDate}
           <br />
-          {"Coin:"}
+          Coin: {props.name}
           <br />
-          {"Quantity:"}
+          Quantity: {props.quantityValues}
           <br />
-          {"Price:"}
+          Price: {props.priceValues}
         </Typography>
       </CardContent>
       <CardActions></CardActions>

@@ -93,7 +93,15 @@ export default function TwoPhasesStepper(props) {
           />
         );
       case 1:
-        return <StepperCard />;
+        return (
+          <StepperCard
+            selectedDate={props.selectedDate}
+            name="Bitcoin"
+            value={props.value}
+            quantityValues={props.quantityValues.quantity}
+            priceValues={props.priceValues.amount}
+          />
+        );
       default:
         return "Unknown step";
     }
@@ -112,7 +120,7 @@ export default function TwoPhasesStepper(props) {
           <div className="addCoin-box--reset-status">
             <Typography className={classes.instructions}>
               <center className="green_text">
-                <a href="...">{"\u2705"}</a> All right - New Coin/s added
+                <a href="...">{"\u2705"}</a> All right - New Move added
               </center>
             </Typography>
             <center>

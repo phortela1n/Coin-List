@@ -15,9 +15,9 @@ export default function AddMovement() {
    **/
 
   // Radio State
-  const [value, setValue] = React.useState("Buy");
+  const [OperationType, setOperationType] = React.useState("Buy");
   const handleChange = (event) => {
-    setValue(event.target.value);
+    setOperationType(event.target.value);
   };
 
   // Callendar State
@@ -58,6 +58,13 @@ export default function AddMovement() {
    */
   function handleMovementsClick() {
     console.log(selectedDate);
+    let newMovement = {
+      type: OperationType,
+      buyPrice: priceValues.amount,
+      quantity: quantityValues.quantity,
+      date: selectedDate.toISOString().substring(0, 10),
+    };
+    console.log(newMovement);
   }
 
   if (isLoading) {
@@ -83,9 +90,9 @@ export default function AddMovement() {
             className="big-container__coin-container big-container__movements"
           >
             <TwoPhasesStepper
-              selectedDate={selectedDate}
+              selectedDate={selectedDate.toISOString().substring(0, 10)}
               handleDateChange={handleDateChange}
-              value={value}
+              value={OperationType}
               handleChange={handleChange}
               quantityValues={quantityValues}
               handleQuantity={handleQuantity}
