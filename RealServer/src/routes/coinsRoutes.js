@@ -16,9 +16,24 @@ function router() {
     })();
   });
 
+  //    Get all coins from one user
+
+  dbRouter.route("/user").post((req, res) => {
+    (async () => {
+      const { userID } = req.body;
+      console.log("HEY", userID);
+      console.log(req.body);
+      const db = await getDB();
+      const collection = await db.collection(collectionName);
+      const response = await collection.find({ userID }).toArray();
+      /*         .insertOne(moves); */
+      res.json(response);
+    })();
+  });
+
   //  Find only one coin for a user
 
-  dbRouter.route("/chanethis").get((req, res) => {
+  dbRouter.route("/chanethis2").get((req, res) => {
     (async () => {
       const { selectedCrypto, moves, userID } = req.body;
       const name = selectedCrypto;

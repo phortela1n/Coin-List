@@ -6,6 +6,7 @@ import NoAuthorized from "../Common/NoAuthorized/NoAuthorized";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import * as coinActions from "../../redux/actions/coinactions";
+import * as getUserCoinsactions from "../../redux/actions/getUserCoinsactions";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Container,
@@ -45,12 +46,19 @@ function Landing(props) {
         .then((data) => {
           /* let data2 = data.filter((elem) => elem.name === "Bitcoin"); */
           props.dispatch(coinActions.getCoinMovements(data));
+          /* ; */
         });
     }
   }, []);
   useEffect(() => {
-    newUser = user;
+    if (user) {
+      console.log(user);
+      props.dispatch(getUserCoinsactions.getCoins(user.email || user.sub));
+    }
   }, [user]);
+  /*   useEffect(() => {
+    newUser = user;
+  }, [user]); */
 
   /* console.log(props); */
   const classes = useStyles();
@@ -118,6 +126,8 @@ function Landing(props) {
 }
 
 function mapStateToProps(state) {
+  /*
+  Option redux
   let newStuff = [];
   if (state.movements.length) {
     newStuff = state.movements.filter(
@@ -125,9 +135,12 @@ function mapStateToProps(state) {
     );
     console.log(newStuff);
   }
-
+  */
   return {
-    movements: newStuff,
+    /*  Option redux
+   movements: newStuff, */
+    movements: state.movements,
+    userMovements: state.userMovements,
     newCoins: state.newCoins,
   };
 }
