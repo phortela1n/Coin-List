@@ -29,7 +29,7 @@ export default function SelectCrypto(props) {
           value={props.cryptoMovement}
           onChange={props.handleChangeCryptoName}
         >
-          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={"Bitcoin"}>Bitcoin</MenuItem>
         </Select>
       </FormControl>
     </div>

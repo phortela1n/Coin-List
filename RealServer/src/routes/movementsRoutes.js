@@ -1,25 +1,26 @@
 const express = require("express");
 const getDB = require("../config/db");
 
-const coinRouter = express.Router();
+const movesRouter = express.Router();
 
 function router() {
-  const collectionName = "movements";
-
-  coinRouter.route("/:coin").get((req, res) => {
-    const { coin } = req.params;
-    (async function doQuery() {
+  const collectionName = "coins";
+  movesRouter.route("/").post((req, res) => {
+    (async () => {
+      const { selectedCrypto, moves, userID } = req.body;
+      const name = selectedCrypto;
+      console.log(moves);
       const db = await getDB();
-      await db
-        .collection(collectionName)
-        .find({ name: coin })
-        .toArray((err, theArray) => {
-          res.json(theArray);
-        });
+      const collection = await db.collection(collectionName);
+      const response = await collection.updateOne(
+        { userID, name },
+        { $push: { moves } }
+      );
+      res.json(response);
     })();
   });
 
-  coinRouter.route("/").get((req, res) => {
+  movesRouter.route("/").get((req, res) => {
     (async function doQuery() {
       const db = await getDB();
       await db
@@ -30,7 +31,7 @@ function router() {
         });
     })();
   });
-  return coinRouter;
+  return movesRouter;
 }
 
 module.exports = router;

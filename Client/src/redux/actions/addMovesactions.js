@@ -1,18 +1,18 @@
 import axios from "axios";
 
-export function addCoins(cryptoNames, userID, setcryptoName) {
+export function addMoves(selectedCrypto, newMovement, userID) {
   return function (dispatch) {
     return axios
-      .post("http://localhost:3003/coins", {
+      .post("http://localhost:3003/movements", {
+        selectedCrypto,
         userID,
-        coins: cryptoNames,
+        moves: newMovement,
       })
       .then(
         (response) => {
           debugger;
           console.log(response.data);
-          setcryptoName([]);
-          dispatch({ type: "INCREMENT", newCoins: cryptoNames });
+          dispatch({ type: "INCREMENTMOVE", moves: newMovement });
         },
         (error) => console.log(error)
       );

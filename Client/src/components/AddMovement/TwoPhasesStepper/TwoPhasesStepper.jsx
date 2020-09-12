@@ -98,7 +98,7 @@ export default function TwoPhasesStepper(props) {
         return (
           <StepperCard
             selectedDate={props.selectedDate}
-            name="Bitcoin"
+            name={props.cryptoMovement}
             value={props.value}
             quantityValues={props.quantityValues.quantity}
             priceValues={props.priceValues.amount}

@@ -33,6 +33,8 @@ const useStyles = makeStyles({
   },
 });
 
+let newUser;
+
 function Landing(props) {
   const { user, isAuthenticated, isLoading } = useAuth0();
 
@@ -46,8 +48,11 @@ function Landing(props) {
         });
     }
   }, []);
+  useEffect(() => {
+    newUser = user;
+  }, [user]);
 
-  console.log(props);
+  /* console.log(props); */
   const classes = useStyles();
   if (isLoading) {
     return (
@@ -113,8 +118,16 @@ function Landing(props) {
 }
 
 function mapStateToProps(state) {
+  let newStuff = [];
+  if (state.movements.length) {
+    newStuff = state.movements.filter(
+      (elem) => elem.userID === "pablohortelano2@gmail.com"
+    );
+    console.log(newStuff);
+  }
+
   return {
-    movements: state.movements,
+    movements: newStuff,
     newCoins: state.newCoins,
   };
 }

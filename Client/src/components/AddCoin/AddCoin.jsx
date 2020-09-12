@@ -196,7 +196,11 @@ function AddCoin(props) {
       // can use "thunk"
 
       props.dispatch(
-        addCoinsActions.addCoins(cryptoNames, user.email, setcryptoName)
+        addCoinsActions.addCoins(
+          cryptoNames,
+          user.email || user.sub,
+          setcryptoName
+        )
       );
     }
   }

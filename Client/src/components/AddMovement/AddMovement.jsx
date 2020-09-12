@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import TwoPhasesStepper from "./TwoPhasesStepper/TwoPhasesStepper";
 import { useAuth0 } from "@auth0/auth0-react";
 import * as coinActions from "../../redux/actions/coinactions";
+import * as addMovesactions from "../../redux/actions/addMovesactions";
 import Header from "../Common/Header/Header";
 import SubMenu from "../Common/SubMenu/SubMenu";
 import NoAuthorized from "../Common/NoAuthorized/NoAuthorized";
@@ -10,7 +11,7 @@ import { Container } from "@material-ui/core/";
 import { CircularProgress } from "@material-ui/core";
 
 function AddMovement(props) {
-  const { isAuthenticated, isLoading } = useAuth0();
+  const { user, isAuthenticated, isLoading } = useAuth0();
 
   useEffect(() => {
     if (props.movements.length === 0) {
@@ -18,7 +19,7 @@ function AddMovement(props) {
         .then((response) => response.json())
         .then((data) => {
           /* let data2 = data.filter((elem) => elem.name === "Bitcoin"); */
-          props.dispatch(coinActions.getCoinMovements(data));
+          /* props.dispatch(retrieveCoinActions.getCoinsReducer(user.email)); */
         });
     }
   }, []);
@@ -43,7 +44,7 @@ function AddMovement(props) {
   //Inputs State
 
   //NAME
-  const [cryptoMovement, setcryptoMovement] = React.useState("Ten");
+  const [cryptoMovement, setcryptoMovement] = React.useState("Bitcoin");
 
   const handleChangeCryptoName = (event) => {
     setcryptoMovement(event.target.value);
@@ -78,13 +79,21 @@ function AddMovement(props) {
    */
   function handleMovementsClick() {
     console.log(selectedDate);
+    let selectedCrypto = cryptoMovement;
     let newMovement = {
       type: OperationType,
       buyPrice: priceValues.amount,
       quantity: quantityValues.quantity,
       date: selectedDate.toISOString().substring(0, 10),
     };
-    console.log(newMovement);
+    console.log(newMovement, selectedCrypto);
+    props.dispatch(
+      addMovesactions.addMoves(
+        selectedCrypto,
+        newMovement,
+        user.email || user.sub
+      )
+    );
   }
 
   if (isLoading) {
@@ -132,6 +141,7 @@ function AddMovement(props) {
 function mapStateToProps(state) {
   return {
     movements: state.movements,
+    moves: state.newMoves,
     newCoins: state.newCoins,
   };
 }
