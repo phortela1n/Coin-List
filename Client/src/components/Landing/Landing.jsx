@@ -38,7 +38,12 @@ let newUser;
 
 function Landing(props) {
   const { user, isAuthenticated, isLoading } = useAuth0();
-
+  useEffect(() => {
+    if (user) {
+      console.log(user);
+      props.dispatch(getUserCoinsactions.getCoins(user.email || user.sub));
+    }
+  }, [user]);
   useEffect(() => {
     if (props.movements.length === 0) {
       fetch("http://localhost:3003/coins")
@@ -50,18 +55,14 @@ function Landing(props) {
         });
     }
   }, []);
-  useEffect(() => {
-    if (user) {
-      console.log(user);
-      props.dispatch(getUserCoinsactions.getCoins(user.email || user.sub));
-    }
-  }, [user]);
+
   /*   useEffect(() => {
     newUser = user;
   }, [user]); */
 
   /* console.log(props); */
   const classes = useStyles();
+
   if (isLoading) {
     return (
       <center>
@@ -71,6 +72,7 @@ function Landing(props) {
       </center>
     );
   }
+  console.log("userMovements", props.userMovements);
   return (
     (isAuthenticated && (
       <>
