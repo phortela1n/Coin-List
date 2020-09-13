@@ -110,7 +110,6 @@ export default function Header() {
   return (
     (isAuthenticated && (
       <>
-        <div></div>
         <div className={classes.root}>
           <AppBar position="static" className="test">
             <Toolbar>
