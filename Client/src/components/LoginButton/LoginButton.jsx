@@ -6,9 +6,12 @@ const LoginButton = () => {
   const { loginWithRedirect } = useAuth0();
 
   return (
-    <a className="login-anchor pointer" onClick={() => loginWithRedirect()}>
+    <button
+      className="login-anchor pointer"
+      onClick={() => loginWithRedirect()}
+    >
       Log In
-    </a>
+    </button>
   );
 };
 

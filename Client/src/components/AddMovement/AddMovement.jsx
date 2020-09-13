@@ -1,27 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import TwoPhasesStepper from "./TwoPhasesStepper/TwoPhasesStepper";
 import { useAuth0 } from "@auth0/auth0-react";
-import * as coinActions from "../../redux/actions/coinactions";
 import * as addMovesactions from "../../redux/actions/addMovesactions";
 import Header from "../Common/Header/Header";
 import SubMenu from "../Common/SubMenu/SubMenu";
 import NoAuthorized from "../Common/NoAuthorized/NoAuthorized";
 import { Container } from "@material-ui/core/";
 import { CircularProgress } from "@material-ui/core";
+/* import refreshList from "../../api/refreshList"; */
 
 function AddMovement(props) {
   const { user, isAuthenticated, isLoading } = useAuth0();
 
   useEffect(() => {
-    if (props.movements.length === 0) {
-      fetch("http://localhost:3003/coins")
-        .then((response) => response.json())
-        .then((data) => {
-          /* let data2 = data.filter((elem) => elem.name === "Bitcoin"); */
-          /* props.dispatch(retrieveCoinActions.getCoinsReducer(user.email)); */
-        });
-    }
+    fetch("http://localhost:3003/coins")
+      .then((response) => response.json())
+      .then((data) => {
+        /* let data2 = data.filter((elem) => elem.name === "Bitcoin"); */
+        /* props.dispatch(retrieveCoinActions.getCoinsReducer(user.email)); */
+      });
   }, []);
 
   /**

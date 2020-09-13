@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import StepperForm from "./StepperForm/StepperForm";
 import StepperCard from "./StepperCard/StepperCard";
 import {
@@ -8,9 +8,7 @@ import {
   Button,
   Typography,
 } from "@material-ui/core/";
-import { useAuth0 } from "@auth0/auth0-react";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
-import { green } from "@material-ui/core/colors";
+import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,10 +33,6 @@ export default function TwoPhasesStepper(props) {
   const [skipped, setSkipped] = React.useState(new Set());
   const steps = getSteps();
 
-  const isStepOptional = (step) => {
-    return step === 1;
-  };
-
   const isStepSkipped = (step) => {
     return skipped.has(step);
   };
@@ -56,21 +50,6 @@ export default function TwoPhasesStepper(props) {
 
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
-
-  const handleSkip = () => {
-    if (!isStepOptional(activeStep)) {
-      // You probably want to guard against something like this,
-      // it should never occur unless someone's actively trying to break something.
-      throw new Error("You can't skip a step that isn't optional.");
-    }
-
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    setSkipped((prevSkipped) => {
-      const newSkipped = new Set(prevSkipped.values());
-      newSkipped.add(activeStep);
-      return newSkipped;
-    });
   };
 
   const handleReset = () => {

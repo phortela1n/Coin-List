@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import clsx from "clsx";
 import Header from "../Common/Header/Header";
 import NoAuthorized from "../Common/NoAuthorized/NoAuthorized";
 import SubMenu from "../Common/SubMenu/SubMenu";
@@ -29,7 +28,7 @@ import {
 } from "@material-ui/core/";
 import { CircularProgress } from "@material-ui/core";
 import { useAuth0 } from "@auth0/auth0-react";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import { green } from "@material-ui/core/colors";
 
 import "./addCoin.scss";
@@ -143,15 +142,6 @@ const names = [
   "MIOTA",
 ];
 
-function getStyles(name, cryptoName, theme) {
-  return {
-    fontWeight:
-      cryptoName.indexOf(name) === -1
-        ? theme.typography.fontWeightRegular
-        : theme.typography.fontWeightMedium,
-  };
-}
-
 /* END SELECT CONST & FUNCTIONS */
 /*CARD FUNCTIONS*/
 
@@ -161,8 +151,6 @@ function AddCoin(props) {
   const { user, isAuthenticated, isLoading } = useAuth0();
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
-  const [loading, setLoading] = React.useState(false);
-  const [success, setSuccess] = React.useState(false);
   const [coinsUserCurrentlyHas, setCoinsUserCurrentlyHas] = React.useState(
     null
   );
@@ -186,7 +174,6 @@ function AddCoin(props) {
   const classes = useStyles();
   const timer = React.useRef();
   const steps = getSteps();
-  const bull = <span className={classes.bullet}>•</span>;
 
   /*HANDLE CLICK*/
   function handleClick() {
@@ -304,24 +291,11 @@ function AddCoin(props) {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
-  const handleSkip = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    setSkipped((prevSkipped) => {
-      const newSkipped = new Set(prevSkipped.values());
-      newSkipped.add(activeStep);
-      return newSkipped;
-    });
-  };
-
   const handleReset = () => {
     setCurrentCoins().then(() => {
       setActiveStep(0);
     });
   };
-
-  const buttonClassname = clsx({
-    [classes.buttonSuccess]: success,
-  });
 
   React.useEffect(() => {
     return () => {
@@ -329,36 +303,15 @@ function AddCoin(props) {
     };
   }, []);
 
-  const handleButtonClick = () => {
-    if (!loading) {
-      setSuccess(false);
-      setLoading(true);
-      timer.current = setTimeout(() => {
-        setSuccess(true);
-        setLoading(false);
-      }, 1000);
-    }
-  };
   /*END STEPPER FUNCTIONS */
   /*SELECT CONST & FUNCTIONS */
   /* const classes = useStyles(); */
-  const theme = useTheme();
   const [cryptoNames, setcryptoName] = React.useState([]);
 
   const handleChange = (event) => {
     setcryptoName(event.target.value);
   };
 
-  const handleChangeMultiple = (event) => {
-    const { options } = event.target;
-    const value = [];
-    for (let i = 0, l = options.length; i < l; i += 1) {
-      if (options[i].selected) {
-        value.push(options[i].value);
-      }
-    }
-    setcryptoName(value);
-  };
   /*SELECT CONST & FUNCTIONS */
 
   if (coinsUserCurrentlyHas === null) {

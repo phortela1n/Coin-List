@@ -1,5 +1,4 @@
 import React from "react";
-import Login from "../../LoginButton/LoginButton";
 import LogOut from "../../LogOut/LogOut";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -41,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Header() {
-  const { user, isAuthenticated, isLoading } = useAuth0();
+  const { isAuthenticated } = useAuth0();
   const classes = useStyles();
   const [state, setState] = React.useState({
     right: false,

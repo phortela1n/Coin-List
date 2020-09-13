@@ -32,7 +32,7 @@ const useStyles = makeStyles({
   },
 });
 
-let newUser;
+/* let newUser; */
 
 function Landing(props) {
   const { user, isAuthenticated, isLoading } = useAuth0();
