@@ -10,7 +10,7 @@ export function getCoins(userID) {
         (response) => {
           debugger;
           console.log(response.data);
-          dispatch({ type: "USERMOVEMENTS", userMovements: response.data });
+          dispatch({ type: "USER_COINS", userCoins: response.data });
         },
         (error) => console.log(error)
       );

@@ -22,7 +22,9 @@ export default function StepperForm(props) {
       </div>
       <div className="form-input-box">
         <FormInput
-          name="Quantity"
+          name="Quantity 4"
+          type="number"
+          minimum={0}
           values={props.quantityValues}
           handleQuantity={props.handleQuantity}
         />

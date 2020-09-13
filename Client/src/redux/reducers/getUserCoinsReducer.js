@@ -1,7 +1,7 @@
 export default function getUserCoins(state = [], action) {
   switch (action.type) {
-    case "USERMOVEMENTS":
-      return [...state, ...action.userMovements];
+    case "USER_COINS":
+      return [...state, ...action.userCoins];
     default:
       return state;
   }

@@ -88,6 +88,7 @@ function CoinDetail(props) {
 function mapStateToProps(state) {
   return {
     movements: state.movements,
+    userCoins: state.userCoins,
   };
 }
 

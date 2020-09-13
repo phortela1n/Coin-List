@@ -43,17 +43,11 @@ function Landing(props) {
     }
   }, [user]);
   useEffect(() => {
-    if (props.movements.length === 0) {
+    if (props.userCoins.length === 0) {
       //  Fetch call to localhost/3003/coins, get all the coins
       refreshList(props, coinActions);
     }
   }, []);
-
-  /*   useEffect(() => {
-    newUser = user;
-  }, [user]); */
-
-  /* console.log(props); */
   const classes = useStyles();
 
   if (isLoading) {
@@ -65,7 +59,7 @@ function Landing(props) {
       </center>
     );
   }
-  console.log("userMovements", props.userMovements);
+  console.log("userCoins", props.userCoins);
   return (
     (isAuthenticated && (
       <>
@@ -73,7 +67,7 @@ function Landing(props) {
         <Container maxWidth="sm" className="big-container">
           <SubMenu changeValue={0} />
           <Container maxWidth="sm" className="big-container__coin-container">
-            {props.movements.map((coin) => (
+            {props.userCoins.map((coin) => (
               <NavLink
                 to={{
                   pathname: "/CoinDetail",
@@ -109,7 +103,7 @@ function Landing(props) {
               </NavLink>
             ))}
 
-            {props.movements.length === 0 && (
+            {props.userCoins.length === 0 && (
               <div className="no-coins">
                 You have no coins, please add one or more
               </div>
@@ -122,26 +116,10 @@ function Landing(props) {
 }
 
 function mapStateToProps(state) {
-  /*
-  Option redux
-  let newStuff = [];
-  if (state.movements.length) {
-    newStuff = state.movements.filter(
-      (elem) => elem.userID === "pablohortelano2@gmail.com"
-    );
-    console.log(newStuff);
-  }
-  */
-  let newArr = [];
-  if (state.movements.length) {
-    newArr = state.movements.map((elem) => elem.name);
-    debugger;
-  }
   return {
-    /*  Option redux
-   movements: newStuff, */
     movements: state.movements,
-    userMovements: state.userMovements,
+    userCoins: state.userCoins,
+    wholeState: state,
     newCoins: state.newCoins,
   };
 }
