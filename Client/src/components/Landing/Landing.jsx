@@ -6,6 +6,7 @@ import NoAuthorized from "../Common/NoAuthorized/NoAuthorized";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import * as coinActions from "../../redux/actions/coinactions";
+import refreshList from "../../api/refreshList";
 import * as getUserCoinsactions from "../../redux/actions/getUserCoinsactions";
 import { makeStyles } from "@material-ui/core/styles";
 import {
@@ -17,9 +18,6 @@ import {
   CardContent,
   CardActionArea,
 } from "@material-ui/core/";
-import LocationOnIcon from "@material-ui/icons/LocationOn";
-import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
-import CreateIcon from "@material-ui/icons/Create";
 import { useAuth0 } from "@auth0/auth0-react";
 import { CircularProgress } from "@material-ui/core";
 import "../../App.css";
@@ -46,13 +44,8 @@ function Landing(props) {
   }, [user]);
   useEffect(() => {
     if (props.movements.length === 0) {
-      fetch("http://localhost:3003/coins")
-        .then((response) => response.json())
-        .then((data) => {
-          /* let data2 = data.filter((elem) => elem.name === "Bitcoin"); */
-          props.dispatch(coinActions.getCoinMovements(data));
-          /* ; */
-        });
+      //  Fetch call to coins route, get all the coins
+      refreshList(props, coinActions);
     }
   }, []);
 
@@ -115,6 +108,7 @@ function Landing(props) {
                 </Card>
               </NavLink>
             ))}
+
             {props.movements.length === 0 && (
               <div className="no-coins">
                 You have no coins, please add one or more
@@ -138,6 +132,11 @@ function mapStateToProps(state) {
     console.log(newStuff);
   }
   */
+  let newArr = [];
+  if (state.movements.length) {
+    newArr = state.movements.map((elem) => elem.name);
+    debugger;
+  }
   return {
     /*  Option redux
    movements: newStuff, */
