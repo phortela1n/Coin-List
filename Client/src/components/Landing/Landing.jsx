@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Button } from "@material-ui/core";
 import Header from "../Common/Header/Header";
 import SubMenu from "../Common/SubMenu/SubMenu";
@@ -44,7 +44,7 @@ function Landing(props) {
   }, [user]);
   useEffect(() => {
     if (props.movements.length === 0) {
-      //  Fetch call to coins route, get all the coins
+      //  Fetch call to localhost/3003/coins, get all the coins
       refreshList(props, coinActions);
     }
   }, []);
