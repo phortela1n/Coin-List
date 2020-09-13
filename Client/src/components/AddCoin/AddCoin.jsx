@@ -156,7 +156,15 @@ function AddCoin(props) {
   );
 
   function setCurrentCoins() {
-    return axios("http://localhost:3003/coins")
+    axios();
+    return axios({
+      method: "post",
+      url: "http://localhost:3003/coins/user",
+      headers: {},
+      data: {
+        userID: user.email || user.sub,
+      },
+    })
       .then(function ({ data }) {
         const coinNames = data.map((coin) => coin.name);
         const coinsNamesAsSet = new Set(coinNames);
@@ -168,8 +176,10 @@ function AddCoin(props) {
   }
 
   useEffect(() => {
-    setCurrentCoins();
-  }, []);
+    if (user) {
+      setCurrentCoins();
+    }
+  }, [user]);
 
   const classes = useStyles();
   const timer = React.useRef();

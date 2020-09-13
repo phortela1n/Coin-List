@@ -36,18 +36,17 @@ const useStyles = makeStyles({
 
 function Landing(props) {
   const { user, isAuthenticated, isLoading } = useAuth0();
-  useEffect(() => {
-    if (user) {
-      console.log(user);
-      props.dispatch(getUserCoinsactions.getCoins(user.email || user.sub));
-    }
-  }, [user]);
+  useEffect(() => {}, []);
   useEffect(() => {
     if (props.userCoins.length === 0) {
+      if (user) {
+        console.log(user);
+        props.dispatch(getUserCoinsactions.getCoins(user.email || user.sub));
+      }
       //  Fetch call to localhost/3003/coins, get all the coins
       refreshList(props, coinActions);
     }
-  }, []);
+  }, [user]);
   const classes = useStyles();
 
   if (isLoading) {

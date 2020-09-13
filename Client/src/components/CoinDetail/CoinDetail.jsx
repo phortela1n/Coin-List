@@ -34,7 +34,7 @@ const StyledTableRow = withStyles((theme) => ({
 }))(TableRow);
 
 function CoinDetail(props) {
-  const properCoin = props.movements.find(
+  const properCoin = props.userCoins.find(
     (elem) => elem.name === props.location.coinDetailProps
   );
   console.log(properCoin);
