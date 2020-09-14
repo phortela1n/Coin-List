@@ -5,6 +5,7 @@ import SubMenu from "../Common/SubMenu/SubMenu";
 import { connect } from "react-redux";
 import axios from "axios";
 import * as addCoinsActions from "../../redux/actions/addCoinsactions";
+import setCurrentCoins from "../../api/setCurrentCoins";
 import {
   Container,
   List,
@@ -155,29 +156,10 @@ function AddCoin(props) {
     null
   );
 
-  function setCurrentCoins() {
-    axios();
-    return axios({
-      method: "post",
-      url: "http://localhost:3003/coins/user",
-      headers: {},
-      data: {
-        userID: user.email || user.sub,
-      },
-    })
-      .then(function ({ data }) {
-        const coinNames = data.map((coin) => coin.name);
-        const coinsNamesAsSet = new Set(coinNames);
-        setCoinsUserCurrentlyHas(coinsNamesAsSet);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
-
   useEffect(() => {
     if (user) {
-      setCurrentCoins();
+      //This function get coins and set is as the coins that user has
+      setCurrentCoins(user, setCoinsUserCurrentlyHas);
     }
   }, [user]);
 

@@ -29,6 +29,9 @@ export default function SelectCrypto(props) {
           onChange={props.handleChangeCryptoName}
         >
           <MenuItem value={"Bitcoin"}>Bitcoin</MenuItem>
+          <MenuItem value={"Ethereum"}>Ethereum</MenuItem>
+          <MenuItem value={"LiteCoin"}>LiteCoin</MenuItem>
+          <MenuItem value={"Swipe"}>Swipe</MenuItem>
         </Select>
       </FormControl>
     </div>

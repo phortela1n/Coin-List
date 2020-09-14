@@ -1,12 +1,13 @@
 import axios from "axios";
 
-export default function setCurrentCoins(setCoinsUserCurrentlyHas, user) {
+export default function setCurrentCoins(user, setCoinsUserCurrentlyHas) {
+  axios();
   return axios({
     method: "post",
     url: "http://localhost:3003/coins/user",
     headers: {},
     data: {
-      userID: user,
+      userID: user.email || user.sub,
     },
   })
     .then(function ({ data }) {

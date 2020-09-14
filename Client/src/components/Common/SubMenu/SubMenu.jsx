@@ -1,8 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { Button } from "@material-ui/core";
 import { BottomNavigation, BottomNavigationAction } from "@material-ui/core/";
 import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
 import FormatListBulletedIcon from "@material-ui/icons/FormatListBulleted";
+import RefreshIcon from "@material-ui/icons/Refresh";
 import CreateIcon from "@material-ui/icons/Create";
 import { makeStyles } from "@material-ui/core/styles";
 import "./SubMenu.scss";
@@ -50,6 +52,14 @@ function SubMenu(props) {
           label="Add Move"
           icon={<CreateIcon />}
         />
+        <BottomNavigationAction label="Refresh" icon={<RefreshIcon />} />
+        {/*         <BottomNavigationAction
+          component={NavLink}
+          to="/Refresh"
+          className=""
+          label="Refresh"
+          icon={<RefreshIcon />}
+        /> */}
       </BottomNavigation>
     </>
   );

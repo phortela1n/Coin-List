@@ -6,7 +6,6 @@ import NoAuthorized from "../Common/NoAuthorized/NoAuthorized";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import * as coinActions from "../../redux/actions/coinactions";
-import refreshList from "../../api/refreshList";
 import * as getUserCoinsactions from "../../redux/actions/getUserCoinsactions";
 import { makeStyles } from "@material-ui/core/styles";
 import {
@@ -44,7 +43,6 @@ function Landing(props) {
         props.dispatch(getUserCoinsactions.getCoins(user.email || user.sub));
       }
       //  Fetch call to localhost/3003/coins, get all the coins
-      refreshList(props, coinActions);
     }
   }, [user]);
   const classes = useStyles();
@@ -118,7 +116,6 @@ function mapStateToProps(state) {
   return {
     movements: state.movements,
     userCoins: state.userCoins,
-    wholeState: state,
     newCoins: state.newCoins,
   };
 }

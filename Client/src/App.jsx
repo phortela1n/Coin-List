@@ -6,6 +6,7 @@ import CoinDetail from "./components/CoinDetail/CoinDetail";
 import AddCoin from "./components/AddCoin/AddCoin";
 import AddMovement from "./components/AddMovement/AddMovement";
 import ShowProfile from "./components/ShowProfile/ShowProfile";
+import Refresh from "./components/Common/Refresh/Refresh";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/AddCoin" component={AddCoin} />
         <Route path="/AddMovement" component={AddMovement} />
         <Route path="/Profile" component={ShowProfile} />
+        <Route path="/Refresh" component={Refresh} />
         {/* <Route
           path="/external"
           component={() => {
