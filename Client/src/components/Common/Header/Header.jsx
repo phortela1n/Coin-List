@@ -5,6 +5,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
+import BarChartIcon from "@material-ui/icons/BarChart";
 import { NavLink } from "react-router-dom";
 import clsx from "clsx";
 import Drawer from "@material-ui/core/Drawer";
@@ -91,6 +92,20 @@ export default function Header() {
               <PersonIcon />
             </ListItemIcon>
             <ListItemText primary={"Profile"} />
+          </ListItem>
+        </NavLink>
+      </List>
+      <List>
+        <NavLink
+          to={{
+            pathname: "/Stats",
+          }}
+        >
+          <ListItem button>
+            <ListItemIcon>
+              <BarChartIcon />
+            </ListItemIcon>
+            <ListItemText primary={"Stats"} />
           </ListItem>
         </NavLink>
       </List>
