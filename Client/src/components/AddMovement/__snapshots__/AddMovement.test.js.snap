@@ -1,5 +1,1387 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`AddMovement renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="makeStyles-root-6"
+  >
+    <header
+      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary test MuiPaper-elevation4"
+    >
+      <div
+        class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+      >
+        <button
+          aria-label="menu"
+          class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-7 MuiIconButton-colorInherit MuiIconButton-edgeStart"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiIconButton-label"
+          />
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+        <h5
+          class="MuiTypography-root makeStyles-title-8 MuiTypography-h5"
+        >
+          CoinList
+        </h5>
+        <button
+          class="MuiButtonBase-root MuiButton-root MuiButton-text header__button"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            MENU
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </header>
+  </div>
+  <div
+    class="MuiContainer-root big-container big-container--addCoin MuiContainer-maxWidthSm"
+  >
+    <div
+      class="MuiBottomNavigation-root makeStyles-root-11"
+    >
+      <a
+        aria-current="page"
+        aria-disabled="false"
+        class="MuiButtonBase-root MuiBottomNavigationAction-root active"
+        href="/"
+        role="button"
+        tabindex="0"
+      >
+        <span
+          class="MuiBottomNavigationAction-wrapper"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M4 10.5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5zm0-6c-.83 0-1.5.67-1.5 1.5S3.17 7.5 4 7.5 5.5 6.83 5.5 6 4.83 4.5 4 4.5zm0 12c-.83 0-1.5.68-1.5 1.5s.68 1.5 1.5 1.5 1.5-.68 1.5-1.5-.67-1.5-1.5-1.5zM7 19h14v-2H7v2zm0-6h14v-2H7v2zm0-8v2h14V5H7z"
+            />
+          </svg>
+          <span
+            class="MuiBottomNavigationAction-label"
+          >
+            Your Coins
+          </span>
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </a>
+      <a
+        aria-disabled="false"
+        class="MuiButtonBase-root MuiBottomNavigationAction-root"
+        href="/AddCoin"
+        role="button"
+        tabindex="0"
+      >
+        <span
+          class="MuiBottomNavigationAction-wrapper"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+            />
+          </svg>
+          <span
+            class="MuiBottomNavigationAction-label"
+          >
+            Add Coin
+          </span>
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </a>
+      <a
+        aria-disabled="false"
+        class="MuiButtonBase-root MuiBottomNavigationAction-root big-container__sub-menu--third Mui-selected"
+        href="/AddMovement"
+        role="button"
+        tabindex="0"
+      >
+        <span
+          class="MuiBottomNavigationAction-wrapper"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+            />
+          </svg>
+          <span
+            class="MuiBottomNavigationAction-label Mui-selected"
+          >
+            Add Move
+          </span>
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </a>
+      <button
+        class="MuiButtonBase-root MuiBottomNavigationAction-root"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="MuiBottomNavigationAction-wrapper"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"
+            />
+          </svg>
+          <span
+            class="MuiBottomNavigationAction-label"
+          >
+            Refresh
+          </span>
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+    </div>
+    <div
+      class="MuiContainer-root big-container__coin-container big-container__movements MuiContainer-maxWidthSm"
+    >
+      <div
+        class="makeStyles-root-13"
+      >
+        <div
+          class="MuiPaper-root MuiStepper-root MuiStepper-horizontal MuiStepper-alternativeLabel MuiPaper-elevation0"
+        >
+          <div
+            class="MuiStep-root MuiStep-horizontal MuiStep-alternativeLabel"
+          >
+            <span
+              class="MuiStepLabel-root MuiStepLabel-horizontal MuiStepLabel-alternativeLabel"
+            >
+              <span
+                class="MuiStepLabel-iconContainer MuiStepLabel-alternativeLabel"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiStepIcon-root MuiStepIcon-active"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                  />
+                  <text
+                    class="MuiStepIcon-text"
+                    text-anchor="middle"
+                    x="12"
+                    y="16"
+                  >
+                    1
+                  </text>
+                </svg>
+              </span>
+              <span
+                class="MuiStepLabel-labelContainer"
+              >
+                <span
+                  class="MuiTypography-root MuiStepLabel-label MuiStepLabel-alternativeLabel MuiStepLabel-active MuiTypography-body2 MuiTypography-displayBlock"
+                >
+                  Movement details
+                </span>
+              </span>
+            </span>
+          </div>
+          <div
+            class="MuiStep-root MuiStep-horizontal MuiStep-alternativeLabel"
+          >
+            <div
+              class="MuiStepConnector-root MuiStepConnector-horizontal MuiStepConnector-alternativeLabel Mui-disabled"
+            >
+              <span
+                class="MuiStepConnector-line MuiStepConnector-lineHorizontal"
+              />
+            </div>
+            <span
+              class="MuiStepLabel-root MuiStepLabel-horizontal Mui-disabled MuiStepLabel-alternativeLabel"
+            >
+              <span
+                class="MuiStepLabel-iconContainer MuiStepLabel-alternativeLabel"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiStepIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                  />
+                  <text
+                    class="MuiStepIcon-text"
+                    text-anchor="middle"
+                    x="12"
+                    y="16"
+                  >
+                    2
+                  </text>
+                </svg>
+              </span>
+              <span
+                class="MuiStepLabel-labelContainer"
+              >
+                <span
+                  class="MuiTypography-root MuiStepLabel-label MuiStepLabel-alternativeLabel MuiTypography-body2 MuiTypography-displayBlock"
+                >
+                  Confirm Movement
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+        <div>
+          <div>
+            <p
+              class="MuiTypography-root makeStyles-instructions-15 MuiTypography-body1"
+            />
+            <div
+              class="add-movements__form-box"
+            >
+              <div
+                class="MuiGrid-root MuiGrid-container MuiGrid-justify-xs-space-around"
+              >
+                <div
+                  class="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+                >
+                  <label
+                    class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiFormLabel-filled"
+                    data-shrink="true"
+                    for="date-picker-dialog"
+                    id="date-picker-dialog-label"
+                  >
+                    Operation's day
+                  </label>
+                  <div
+                    class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl MuiInputBase-adornedEnd"
+                  >
+                    <input
+                      aria-invalid="false"
+                      class="MuiInputBase-input MuiInput-input MuiInputBase-inputAdornedEnd"
+                      id="date-picker-dialog"
+                      type="text"
+                      value="16/09/2020"
+                    />
+                    <div
+                      class="MuiInputAdornment-root MuiInputAdornment-positionEnd"
+                    >
+                      <button
+                        aria-label="change date"
+                        class="MuiButtonBase-root MuiIconButton-root"
+                        tabindex="0"
+                        type="button"
+                      >
+                        <span
+                          class="MuiIconButton-label"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"
+                            />
+                            <path
+                              d="M0 0h24v24H0z"
+                              fill="none"
+                            />
+                          </svg>
+                        </span>
+                        <span
+                          class="MuiTouchRipple-root"
+                        />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+                >
+                  <label
+                    class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink Mui-disabled Mui-disabled MuiFormLabel-filled"
+                    data-shrink="true"
+                    for="time-picker"
+                    id="time-picker-label"
+                  >
+                    Operation's hour
+                  </label>
+                  <div
+                    class="MuiInputBase-root MuiInput-root MuiInput-underline Mui-disabled Mui-disabled MuiInputBase-formControl MuiInput-formControl MuiInputBase-adornedEnd"
+                  >
+                    <input
+                      aria-invalid="false"
+                      class="MuiInputBase-input MuiInput-input Mui-disabled Mui-disabled MuiInputBase-inputAdornedEnd"
+                      disabled=""
+                      id="time-picker"
+                      type="text"
+                      value="02:00 AM"
+                    />
+                    <div
+                      class="MuiInputAdornment-root MuiInputAdornment-positionEnd"
+                    >
+                      <button
+                        aria-label="change time"
+                        class="MuiButtonBase-root MuiIconButton-root Mui-disabled Mui-disabled"
+                        disabled=""
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          class="MuiIconButton-label"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"
+                            />
+                            <path
+                              d="M0 0h24v24H0z"
+                              fill="none"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="add-movements__form-box--radio"
+              >
+                <div>
+                  <div
+                    class="MuiFormControl-root makeStyles-formControl-16"
+                  >
+                    <label
+                      class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
+                      data-shrink="false"
+                      id="demo-simple-select-filled-label"
+                    >
+                      Crypto
+                    </label>
+                    <div
+                      class="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-formControl"
+                    >
+                      <div
+                        aria-haspopup="listbox"
+                        aria-labelledby="demo-simple-select-filled-label demo-simple-select-filled"
+                        class="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiSelect-filled MuiInputBase-input MuiFilledInput-input"
+                        id="demo-simple-select-filled"
+                        role="button"
+                        tabindex="0"
+                      >
+                        <span>
+                          ​
+                        </span>
+                      </div>
+                      <input
+                        aria-hidden="true"
+                        class="MuiSelect-nativeInput"
+                        tabindex="-1"
+                        value=""
+                      />
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSelect-icon MuiSelect-iconFilled"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M7 10l5 5 5-5z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <fieldset
+                  class="MuiFormControl-root"
+                >
+                  <legend
+                    class="MuiFormLabel-root"
+                  >
+                    Operation
+                  </legend>
+                  <div
+                    aria-label="operation"
+                    class="MuiFormGroup-root"
+                    role="radiogroup"
+                  >
+                    <label
+                      class="MuiFormControlLabel-root"
+                    >
+                      <span
+                        aria-disabled="false"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-18 MuiRadio-root MuiRadio-colorSecondary PrivateSwitchBase-checked-19 Mui-checked MuiIconButton-colorSecondary"
+                      >
+                        <span
+                          class="MuiIconButton-label"
+                        >
+                          <input
+                            checked=""
+                            class="PrivateSwitchBase-input-21"
+                            name="Operation"
+                            type="radio"
+                            value="Buy"
+                          />
+                          <div
+                            class="PrivateRadioButtonIcon-root-22 PrivateRadioButtonIcon-checked-24"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+                              />
+                            </svg>
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root PrivateRadioButtonIcon-layer-23"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M8.465 8.465C9.37 7.56 10.62 7 12 7C14.76 7 17 9.24 17 12C17 13.38 16.44 14.63 15.535 15.535C14.63 16.44 13.38 17 12 17C9.24 17 7 14.76 7 12C7 10.62 7.56 9.37 8.465 8.465Z"
+                              />
+                            </svg>
+                          </div>
+                        </span>
+                        <span
+                          class="MuiTouchRipple-root"
+                        />
+                      </span>
+                      <span
+                        class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+                      >
+                        Buy
+                      </span>
+                    </label>
+                    <label
+                      class="MuiFormControlLabel-root"
+                    >
+                      <span
+                        aria-disabled="false"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-18 MuiRadio-root MuiRadio-colorSecondary MuiIconButton-colorSecondary"
+                      >
+                        <span
+                          class="MuiIconButton-label"
+                        >
+                          <input
+                            class="PrivateSwitchBase-input-21"
+                            name="Operation"
+                            type="radio"
+                            value="Sell"
+                          />
+                          <div
+                            class="PrivateRadioButtonIcon-root-22"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+                              />
+                            </svg>
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root PrivateRadioButtonIcon-layer-23"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M8.465 8.465C9.37 7.56 10.62 7 12 7C14.76 7 17 9.24 17 12C17 13.38 16.44 14.63 15.535 15.535C14.63 16.44 13.38 17 12 17C9.24 17 7 14.76 7 12C7 10.62 7.56 9.37 8.465 8.465Z"
+                              />
+                            </svg>
+                          </div>
+                        </span>
+                        <span
+                          class="MuiTouchRipple-root"
+                        />
+                      </span>
+                      <span
+                        class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+                      >
+                        Sell
+                      </span>
+                    </label>
+                  </div>
+                </fieldset>
+              </div>
+              <div
+                class="form-input-box"
+              >
+                <div
+                  class="MuiFormControl-root MuiFormControl-fullWidth"
+                >
+                  <label
+                    class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined"
+                    data-shrink="true"
+                    for="outlined-adornment-amount"
+                  >
+                    Quantity
+                  </label>
+                  <div
+                    class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-adornedStart MuiOutlinedInput-adornedStart"
+                  >
+                    <div
+                      class="MuiInputAdornment-root MuiInputAdornment-positionStart"
+                    >
+                      <p
+                        class="MuiTypography-root MuiTypography-body1 MuiTypography-colorTextSecondary"
+                      >
+                        ✏
+                      </p>
+                    </div>
+                    <input
+                      aria-invalid="false"
+                      class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedStart MuiOutlinedInput-inputAdornedStart"
+                      id="outlined-adornment-amount"
+                      type="number"
+                      value=""
+                    />
+                    <fieldset
+                      aria-hidden="true"
+                      class="PrivateNotchedOutline-root-26 MuiOutlinedInput-notchedOutline"
+                      style="padding-left: 8px;"
+                    >
+                      <legend
+                        class="PrivateNotchedOutline-legend-27"
+                        style="width: 53px;"
+                      >
+                        <span>
+                          ​
+                        </span>
+                      </legend>
+                    </fieldset>
+                  </div>
+                </div>
+                <div
+                  class="MuiFormControl-root MuiFormControl-fullWidth"
+                >
+                  <label
+                    class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined"
+                    data-shrink="true"
+                    for="outlined-adornment-amount"
+                  >
+                    Amount
+                  </label>
+                  <div
+                    class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-adornedStart MuiOutlinedInput-adornedStart"
+                  >
+                    <div
+                      class="MuiInputAdornment-root MuiInputAdornment-positionStart"
+                    >
+                      <p
+                        class="MuiTypography-root MuiTypography-body1 MuiTypography-colorTextSecondary"
+                      >
+                        $
+                      </p>
+                    </div>
+                    <input
+                      aria-invalid="false"
+                      class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedStart MuiOutlinedInput-inputAdornedStart"
+                      id="outlined-adornment-amount"
+                      type="text"
+                      value=""
+                    />
+                    <fieldset
+                      aria-hidden="true"
+                      class="PrivateNotchedOutline-root-26 MuiOutlinedInput-notchedOutline"
+                      style="padding-left: 8px;"
+                    >
+                      <legend
+                        class="PrivateNotchedOutline-legend-27"
+                        style="width: 53px;"
+                      >
+                        <span>
+                          ​
+                        </span>
+                      </legend>
+                    </fieldset>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p />
+            <div
+              class="button-box"
+            >
+              <button
+                class="MuiButtonBase-root MuiButton-root MuiButton-text Mui-disabled Mui-disabled"
+                disabled=""
+                tabindex="-1"
+                type="button"
+              >
+                <span
+                  class="MuiButton-label"
+                >
+                  Back
+                </span>
+              </button>
+              <button
+                class="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-button-14 MuiButton-containedPrimary Mui-disabled Mui-disabled"
+                disabled=""
+                tabindex="-1"
+                type="button"
+              >
+                <span
+                  class="MuiButton-label"
+                >
+                  Next
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Should handle date selection 1`] = `
+<DocumentFragment>
+  <div
+    class="makeStyles-root-31"
+  >
+    <header
+      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary test MuiPaper-elevation4"
+    >
+      <div
+        class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+      >
+        <button
+          aria-label="menu"
+          class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-32 MuiIconButton-colorInherit MuiIconButton-edgeStart"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiIconButton-label"
+          />
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+        <h5
+          class="MuiTypography-root makeStyles-title-33 MuiTypography-h5"
+        >
+          CoinList
+        </h5>
+        <button
+          class="MuiButtonBase-root MuiButton-root MuiButton-text header__button"
+          tabindex="0"
+          type="button"
+        >
+          <span
+            class="MuiButton-label"
+          >
+            MENU
+          </span>
+          <span
+            class="MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </header>
+  </div>
+  <div
+    class="MuiContainer-root big-container big-container--addCoin MuiContainer-maxWidthSm"
+  >
+    <div
+      class="MuiBottomNavigation-root makeStyles-root-36"
+    >
+      <a
+        aria-current="page"
+        aria-disabled="false"
+        class="MuiButtonBase-root MuiBottomNavigationAction-root active"
+        href="/"
+        role="button"
+        tabindex="0"
+      >
+        <span
+          class="MuiBottomNavigationAction-wrapper"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M4 10.5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5zm0-6c-.83 0-1.5.67-1.5 1.5S3.17 7.5 4 7.5 5.5 6.83 5.5 6 4.83 4.5 4 4.5zm0 12c-.83 0-1.5.68-1.5 1.5s.68 1.5 1.5 1.5 1.5-.68 1.5-1.5-.67-1.5-1.5-1.5zM7 19h14v-2H7v2zm0-6h14v-2H7v2zm0-8v2h14V5H7z"
+            />
+          </svg>
+          <span
+            class="MuiBottomNavigationAction-label"
+          >
+            Your Coins
+          </span>
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </a>
+      <a
+        aria-disabled="false"
+        class="MuiButtonBase-root MuiBottomNavigationAction-root"
+        href="/AddCoin"
+        role="button"
+        tabindex="0"
+      >
+        <span
+          class="MuiBottomNavigationAction-wrapper"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
+            />
+          </svg>
+          <span
+            class="MuiBottomNavigationAction-label"
+          >
+            Add Coin
+          </span>
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </a>
+      <a
+        aria-disabled="false"
+        class="MuiButtonBase-root MuiBottomNavigationAction-root big-container__sub-menu--third Mui-selected"
+        href="/AddMovement"
+        role="button"
+        tabindex="0"
+      >
+        <span
+          class="MuiBottomNavigationAction-wrapper"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+            />
+          </svg>
+          <span
+            class="MuiBottomNavigationAction-label Mui-selected"
+          >
+            Add Move
+          </span>
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </a>
+      <button
+        class="MuiButtonBase-root MuiBottomNavigationAction-root"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="MuiBottomNavigationAction-wrapper"
+        >
+          <svg
+            aria-hidden="true"
+            class="MuiSvgIcon-root"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"
+            />
+          </svg>
+          <span
+            class="MuiBottomNavigationAction-label"
+          >
+            Refresh
+          </span>
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+    </div>
+    <div
+      class="MuiContainer-root big-container__coin-container big-container__movements MuiContainer-maxWidthSm"
+    >
+      <div
+        class="makeStyles-root-38"
+      >
+        <div
+          class="MuiPaper-root MuiStepper-root MuiStepper-horizontal MuiStepper-alternativeLabel MuiPaper-elevation0"
+        >
+          <div
+            class="MuiStep-root MuiStep-horizontal MuiStep-alternativeLabel"
+          >
+            <span
+              class="MuiStepLabel-root MuiStepLabel-horizontal MuiStepLabel-alternativeLabel"
+            >
+              <span
+                class="MuiStepLabel-iconContainer MuiStepLabel-alternativeLabel"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiStepIcon-root MuiStepIcon-active"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                  />
+                  <text
+                    class="MuiStepIcon-text"
+                    text-anchor="middle"
+                    x="12"
+                    y="16"
+                  >
+                    1
+                  </text>
+                </svg>
+              </span>
+              <span
+                class="MuiStepLabel-labelContainer"
+              >
+                <span
+                  class="MuiTypography-root MuiStepLabel-label MuiStepLabel-alternativeLabel MuiStepLabel-active MuiTypography-body2 MuiTypography-displayBlock"
+                >
+                  Movement details
+                </span>
+              </span>
+            </span>
+          </div>
+          <div
+            class="MuiStep-root MuiStep-horizontal MuiStep-alternativeLabel"
+          >
+            <div
+              class="MuiStepConnector-root MuiStepConnector-horizontal MuiStepConnector-alternativeLabel Mui-disabled"
+            >
+              <span
+                class="MuiStepConnector-line MuiStepConnector-lineHorizontal"
+              />
+            </div>
+            <span
+              class="MuiStepLabel-root MuiStepLabel-horizontal Mui-disabled MuiStepLabel-alternativeLabel"
+            >
+              <span
+                class="MuiStepLabel-iconContainer MuiStepLabel-alternativeLabel"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="MuiSvgIcon-root MuiStepIcon-root"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="12"
+                  />
+                  <text
+                    class="MuiStepIcon-text"
+                    text-anchor="middle"
+                    x="12"
+                    y="16"
+                  >
+                    2
+                  </text>
+                </svg>
+              </span>
+              <span
+                class="MuiStepLabel-labelContainer"
+              >
+                <span
+                  class="MuiTypography-root MuiStepLabel-label MuiStepLabel-alternativeLabel MuiTypography-body2 MuiTypography-displayBlock"
+                >
+                  Confirm Movement
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+        <div>
+          <div>
+            <p
+              class="MuiTypography-root makeStyles-instructions-40 MuiTypography-body1"
+            />
+            <div
+              class="add-movements__form-box"
+            >
+              <div
+                class="MuiGrid-root MuiGrid-container MuiGrid-justify-xs-space-around"
+              >
+                <div
+                  class="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+                >
+                  <label
+                    class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiFormLabel-filled"
+                    data-shrink="true"
+                    for="date-picker-dialog"
+                    id="date-picker-dialog-label"
+                  >
+                    Operation's day
+                  </label>
+                  <div
+                    class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-formControl MuiInput-formControl MuiInputBase-adornedEnd"
+                  >
+                    <input
+                      aria-invalid="false"
+                      class="MuiInputBase-input MuiInput-input MuiInputBase-inputAdornedEnd"
+                      id="date-picker-dialog"
+                      type="text"
+                      value="16/09/2020"
+                    />
+                    <div
+                      class="MuiInputAdornment-root MuiInputAdornment-positionEnd"
+                    >
+                      <button
+                        aria-label="change date"
+                        class="MuiButtonBase-root MuiIconButton-root"
+                        tabindex="0"
+                        type="button"
+                      >
+                        <span
+                          class="MuiIconButton-label"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"
+                            />
+                            <path
+                              d="M0 0h24v24H0z"
+                              fill="none"
+                            />
+                          </svg>
+                        </span>
+                        <span
+                          class="MuiTouchRipple-root"
+                        />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="MuiFormControl-root MuiTextField-root MuiFormControl-marginNormal"
+                >
+                  <label
+                    class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink Mui-disabled Mui-disabled MuiFormLabel-filled"
+                    data-shrink="true"
+                    for="time-picker"
+                    id="time-picker-label"
+                  >
+                    Operation's hour
+                  </label>
+                  <div
+                    class="MuiInputBase-root MuiInput-root MuiInput-underline Mui-disabled Mui-disabled MuiInputBase-formControl MuiInput-formControl MuiInputBase-adornedEnd"
+                  >
+                    <input
+                      aria-invalid="false"
+                      class="MuiInputBase-input MuiInput-input Mui-disabled Mui-disabled MuiInputBase-inputAdornedEnd"
+                      disabled=""
+                      id="time-picker"
+                      type="text"
+                      value="02:00 AM"
+                    />
+                    <div
+                      class="MuiInputAdornment-root MuiInputAdornment-positionEnd"
+                    >
+                      <button
+                        aria-label="change time"
+                        class="MuiButtonBase-root MuiIconButton-root Mui-disabled Mui-disabled"
+                        disabled=""
+                        tabindex="-1"
+                        type="button"
+                      >
+                        <span
+                          class="MuiIconButton-label"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            class="MuiSvgIcon-root"
+                            focusable="false"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"
+                            />
+                            <path
+                              d="M0 0h24v24H0z"
+                              fill="none"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="add-movements__form-box--radio"
+              >
+                <div>
+                  <div
+                    class="MuiFormControl-root makeStyles-formControl-41"
+                  >
+                    <label
+                      class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-filled"
+                      data-shrink="false"
+                      id="demo-simple-select-filled-label"
+                    >
+                      Crypto
+                    </label>
+                    <div
+                      class="MuiInputBase-root MuiFilledInput-root MuiFilledInput-underline MuiInputBase-formControl"
+                    >
+                      <div
+                        aria-haspopup="listbox"
+                        aria-labelledby="demo-simple-select-filled-label demo-simple-select-filled"
+                        class="MuiSelect-root MuiSelect-select MuiSelect-selectMenu MuiSelect-filled MuiInputBase-input MuiFilledInput-input"
+                        id="demo-simple-select-filled"
+                        role="button"
+                        tabindex="0"
+                      >
+                        <span>
+                          ​
+                        </span>
+                      </div>
+                      <input
+                        aria-hidden="true"
+                        class="MuiSelect-nativeInput"
+                        tabindex="-1"
+                        value=""
+                      />
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSelect-icon MuiSelect-iconFilled"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M7 10l5 5 5-5z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <fieldset
+                  class="MuiFormControl-root"
+                >
+                  <legend
+                    class="MuiFormLabel-root"
+                  >
+                    Operation
+                  </legend>
+                  <div
+                    aria-label="operation"
+                    class="MuiFormGroup-root"
+                    role="radiogroup"
+                  >
+                    <label
+                      class="MuiFormControlLabel-root"
+                    >
+                      <span
+                        aria-disabled="false"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-43 MuiRadio-root MuiRadio-colorSecondary PrivateSwitchBase-checked-44 Mui-checked MuiIconButton-colorSecondary"
+                      >
+                        <span
+                          class="MuiIconButton-label"
+                        >
+                          <input
+                            checked=""
+                            class="PrivateSwitchBase-input-46"
+                            name="Operation"
+                            type="radio"
+                            value="Buy"
+                          />
+                          <div
+                            class="PrivateRadioButtonIcon-root-47 PrivateRadioButtonIcon-checked-49"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+                              />
+                            </svg>
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root PrivateRadioButtonIcon-layer-48"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M8.465 8.465C9.37 7.56 10.62 7 12 7C14.76 7 17 9.24 17 12C17 13.38 16.44 14.63 15.535 15.535C14.63 16.44 13.38 17 12 17C9.24 17 7 14.76 7 12C7 10.62 7.56 9.37 8.465 8.465Z"
+                              />
+                            </svg>
+                          </div>
+                        </span>
+                        <span
+                          class="MuiTouchRipple-root"
+                        />
+                      </span>
+                      <span
+                        class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+                      >
+                        Buy
+                      </span>
+                    </label>
+                    <label
+                      class="MuiFormControlLabel-root"
+                    >
+                      <span
+                        aria-disabled="false"
+                        class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-43 MuiRadio-root MuiRadio-colorSecondary MuiIconButton-colorSecondary"
+                      >
+                        <span
+                          class="MuiIconButton-label"
+                        >
+                          <input
+                            class="PrivateSwitchBase-input-46"
+                            name="Operation"
+                            type="radio"
+                            value="Sell"
+                          />
+                          <div
+                            class="PrivateRadioButtonIcon-root-47"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+                              />
+                            </svg>
+                            <svg
+                              aria-hidden="true"
+                              class="MuiSvgIcon-root PrivateRadioButtonIcon-layer-48"
+                              focusable="false"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M8.465 8.465C9.37 7.56 10.62 7 12 7C14.76 7 17 9.24 17 12C17 13.38 16.44 14.63 15.535 15.535C14.63 16.44 13.38 17 12 17C9.24 17 7 14.76 7 12C7 10.62 7.56 9.37 8.465 8.465Z"
+                              />
+                            </svg>
+                          </div>
+                        </span>
+                        <span
+                          class="MuiTouchRipple-root"
+                        />
+                      </span>
+                      <span
+                        class="MuiTypography-root MuiFormControlLabel-label MuiTypography-body1"
+                      >
+                        Sell
+                      </span>
+                    </label>
+                  </div>
+                </fieldset>
+              </div>
+              <div
+                class="form-input-box"
+              >
+                <div
+                  class="MuiFormControl-root MuiFormControl-fullWidth"
+                >
+                  <label
+                    class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined"
+                    data-shrink="true"
+                    for="outlined-adornment-amount"
+                  >
+                    Quantity
+                  </label>
+                  <div
+                    class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-adornedStart MuiOutlinedInput-adornedStart"
+                  >
+                    <div
+                      class="MuiInputAdornment-root MuiInputAdornment-positionStart"
+                    >
+                      <p
+                        class="MuiTypography-root MuiTypography-body1 MuiTypography-colorTextSecondary"
+                      >
+                        ✏
+                      </p>
+                    </div>
+                    <input
+                      aria-invalid="false"
+                      class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedStart MuiOutlinedInput-inputAdornedStart"
+                      id="outlined-adornment-amount"
+                      type="number"
+                      value=""
+                    />
+                    <fieldset
+                      aria-hidden="true"
+                      class="PrivateNotchedOutline-root-51 MuiOutlinedInput-notchedOutline"
+                      style="padding-left: 8px;"
+                    >
+                      <legend
+                        class="PrivateNotchedOutline-legend-52"
+                        style="width: 53px;"
+                      >
+                        <span>
+                          ​
+                        </span>
+                      </legend>
+                    </fieldset>
+                  </div>
+                </div>
+                <div
+                  class="MuiFormControl-root MuiFormControl-fullWidth"
+                >
+                  <label
+                    class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined"
+                    data-shrink="true"
+                    for="outlined-adornment-amount"
+                  >
+                    Amount
+                  </label>
+                  <div
+                    class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-adornedStart MuiOutlinedInput-adornedStart"
+                  >
+                    <div
+                      class="MuiInputAdornment-root MuiInputAdornment-positionStart"
+                    >
+                      <p
+                        class="MuiTypography-root MuiTypography-body1 MuiTypography-colorTextSecondary"
+                      >
+                        $
+                      </p>
+                    </div>
+                    <input
+                      aria-invalid="false"
+                      class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedStart MuiOutlinedInput-inputAdornedStart"
+                      id="outlined-adornment-amount"
+                      type="text"
+                      value=""
+                    />
+                    <fieldset
+                      aria-hidden="true"
+                      class="PrivateNotchedOutline-root-51 MuiOutlinedInput-notchedOutline"
+                      style="padding-left: 8px;"
+                    >
+                      <legend
+                        class="PrivateNotchedOutline-legend-52"
+                        style="width: 53px;"
+                      >
+                        <span>
+                          ​
+                        </span>
+                      </legend>
+                    </fieldset>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p />
+            <div
+              class="button-box"
+            >
+              <button
+                class="MuiButtonBase-root MuiButton-root MuiButton-text Mui-disabled Mui-disabled"
+                disabled=""
+                tabindex="-1"
+                type="button"
+              >
+                <span
+                  class="MuiButton-label"
+                >
+                  Back
+                </span>
+              </button>
+              <button
+                class="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-button-39 MuiButton-containedPrimary Mui-disabled Mui-disabled"
+                disabled=""
+                tabindex="-1"
+                type="button"
+              >
+                <span
+                  class="MuiButton-label"
+                >
+                  Next
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`Should redirect to login when user is not Authenticated 1`] = `
 <DocumentFragment>
   <section
