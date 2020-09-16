@@ -4,12 +4,13 @@ import { connect } from "react-redux";
 import * as d3 from "d3";
 import { CircularProgress } from "@material-ui/core";
 import Header from "../Common/Header/Header";
+import TableElement from "./TableElement/TableElement";
 import NoAuthorized from "../Common/NoAuthorized/NoAuthorized";
 import { Container } from "@material-ui/core/";
 
 import { select } from "d3";
 
-export default function DataTable() {
+function DataTable() {
   const { user, isAuthenticated, isLoading } = useAuth0();
   if (isLoading) {
     return (
@@ -25,12 +26,18 @@ export default function DataTable() {
       <>
         <Header />
         <Container maxWidth="sm" className="big-container">
-          <Container
-            maxWidth="sm"
-            className="big-container__coin-container"
-          ></Container>
+          <TableElement />
         </Container>
       </>
     )) || <NoAuthorized />
   );
 }
+
+function mapStateToProps(state) {
+  return {
+    movements: state.movements,
+    userCoins: state.userCoins,
+  };
+}
+
+export default connect(mapStateToProps)(DataTable);

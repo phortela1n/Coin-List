@@ -60,7 +60,8 @@ function CoinDetail(props) {
               </TableRow>
             </TableHead>
             <TableBody>
-              {properCoin &&
+              {(properCoin &&
+                properCoin.moves.length > 0 &&
                 properCoin.moves.map((row) => (
                   <StyledTableRow key={row.type}>
                     <StyledTableCell component="th" scope="row">
@@ -82,7 +83,11 @@ function CoinDetail(props) {
                     {/*<StyledTableCell align="left">{row.price}</StyledTableCell>
                   <StyledTableCell align="right">{row.price}</StyledTableCell> */}
                   </StyledTableRow>
-                ))}
+                ))) || (
+                <StyledTableRow key={"unique"}>
+                  No {props.location.coinDetailProps} Movements
+                </StyledTableRow>
+              )}
             </TableBody>
           </Table>
         </TableContainer>
