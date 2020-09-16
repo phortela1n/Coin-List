@@ -7,6 +7,7 @@ import Header from "../Common/Header/Header";
 import NoAuthorized from "../Common/NoAuthorized/NoAuthorized";
 import { Container } from "@material-ui/core/";
 import BarChartShareControl from "./Stats2";
+import Stats3 from "./Stats3";
 
 import { select } from "d3";
 
@@ -22,6 +23,8 @@ export default function Stats() {
       .selectAll("circle")
       .data(data)
       .join("circle")
+      .transition()
+      .duration(1500)
       .attr("r", (value) => value)
       .attr("cx", (value) => value * 2)
       .attr("cy", (value) => value * 2)
@@ -55,6 +58,7 @@ export default function Stats() {
           Filter data
         </button>
         <BarChartShareControl data={dataForStats2} width={120} height={300} />
+        <Stats3 />
       </>
     )) || <NoAuthorized />
   );

@@ -37,7 +37,7 @@ function CoinDetail(props) {
   const properCoin = props.userCoins.find(
     (elem) => elem.name === props.location.coinDetailProps
   );
-  console.log(properCoin);
+  console.log("proper coin ->", properCoin);
   return (
     <>
       <Header />
@@ -56,6 +56,7 @@ function CoinDetail(props) {
                 </StyledTableCell>
                 <StyledTableCell align="left">Quantity</StyledTableCell>
                 <StyledTableCell align="right">Price</StyledTableCell>
+                <StyledTableCell align="right">Date</StyledTableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -71,6 +72,11 @@ function CoinDetail(props) {
                     {
                       <StyledTableCell align="right">
                         {row.buyPrice || row.sellPrice}€
+                      </StyledTableCell>
+                    }
+                    {
+                      <StyledTableCell align="right">
+                        {row.date || "No date"}
                       </StyledTableCell>
                     }
                     {/*<StyledTableCell align="left">{row.price}</StyledTableCell>

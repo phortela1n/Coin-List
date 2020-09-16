@@ -15,6 +15,7 @@ import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
+import TableChartIcon from "@material-ui/icons/TableChart";
 
 import HomeIcon from "@material-ui/icons/Home";
 import PersonIcon from "@material-ui/icons/Person";
@@ -92,6 +93,20 @@ export default function Header() {
               <PersonIcon />
             </ListItemIcon>
             <ListItemText primary={"Profile"} />
+          </ListItem>
+        </NavLink>
+      </List>
+      <List>
+        <NavLink
+          to={{
+            pathname: "/DataTable",
+          }}
+        >
+          <ListItem button>
+            <ListItemIcon>
+              <TableChartIcon />
+            </ListItemIcon>
+            <ListItemText primary={"Data Centre"} />
           </ListItem>
         </NavLink>
       </List>

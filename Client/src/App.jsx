@@ -8,6 +8,7 @@ import AddCoin from "./components/AddCoin/AddCoin";
 import AddMovement from "./components/AddMovement/AddMovement";
 import ShowProfile from "./components/ShowProfile/ShowProfile";
 import Stats from "./components/Stats/Stats";
+import DataTable from "./components/DataTable/DataTable";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/AddMovement" component={AddMovement} />
         <Route path="/Profile" component={ShowProfile} />
         <Route path="/Stats" component={Stats} />
+        <Route path="/DataTable" component={DataTable} />
       </Switch>
     </>
   );
