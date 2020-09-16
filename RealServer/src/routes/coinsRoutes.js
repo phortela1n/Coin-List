@@ -44,18 +44,6 @@ function router() {
 
   //  Find only one coin for a user
 
-  dbRouter.route("/chanethis2").get((req, res) => {
-    (async () => {
-      const { selectedCrypto, moves, userID } = req.body;
-      const name = selectedCrypto;
-      const db = await getDB();
-      const collection = await db.collection(collectionName);
-      const response = await collection.find({ userID, name }).toArray();
-      /*         .insertOne(moves); */
-      res.json(response);
-    })();
-  });
-
   dbRouter.route("/").post((req, res) => {
     (async () => {
       const { coins, userID } = req.body;
