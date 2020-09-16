@@ -149,7 +149,7 @@ export default function Header() {
                 color="inherit"
                 aria-label="menu"
               ></IconButton>
-              <Typography variant="h6" className={classes.title}>
+              <Typography variant="h5" className={classes.title}>
                 CoinList
               </Typography>
               {["right"].map((anchor) => (

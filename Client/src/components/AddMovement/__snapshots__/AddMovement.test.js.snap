@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should redirect to login when user is not Authenticated 1`] = `
+<DocumentFragment>
+  <section
+    class="full-page"
+  >
+    <div />
+    <div
+      class="makeStyles-root-1"
+    >
+      <header
+        class="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary test MuiPaper-elevation4"
+      >
+        <div
+          class="MuiToolbar-root MuiToolbar-regular MuiToolbar-gutters"
+        >
+          <button
+            aria-label="menu"
+            class="MuiButtonBase-root MuiIconButton-root makeStyles-menuButton-2 MuiIconButton-colorInherit MuiIconButton-edgeStart"
+            tabindex="0"
+            type="button"
+          >
+            <span
+              class="MuiIconButton-label"
+            />
+            <span
+              class="MuiTouchRipple-root"
+            />
+          </button>
+          <h6
+            class="MuiTypography-root makeStyles-title-3 MuiTypography-h6"
+          >
+            CoinList
+          </h6>
+        </div>
+      </header>
+    </div>
+    <div
+      class="Container"
+    >
+      <video
+        autoplay=""
+        class="Video"
+        loop=""
+      >
+        <source
+          src="https://assets.mixkit.co/videos/preview/mixkit-rotating-shot-of-cryptocurrency-coins-over-dollar-bills-30660-large.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+      <div
+        class="Content"
+      >
+        <div
+          class="SubContent"
+        >
+          <buttom>
+            <button
+              class="login-anchor pointer"
+            >
+              Log In
+            </button>
+          </buttom>
+        </div>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;

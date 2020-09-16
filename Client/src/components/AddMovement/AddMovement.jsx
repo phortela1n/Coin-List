@@ -10,7 +10,7 @@ import NoAuthorized from "../Common/NoAuthorized/NoAuthorized";
 import { Container } from "@material-ui/core/";
 import { CircularProgress } from "@material-ui/core";
 
-function AddMovement(props) {
+export function AddMovement(props) {
   const { user, isAuthenticated, isLoading } = useAuth0();
 
   useEffect(() => {

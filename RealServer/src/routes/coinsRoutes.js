@@ -23,7 +23,7 @@ function router() {
       console.log("uid and coin name", userID, coinName);
       const db = await getDB();
       const collection = await db.collection(collectionName);
-      const response = await collection.deleteOne({ userID, coinName });
+      const response = await collection.deleteOne({ userID, name: coinName });
 
       res.json(response);
       // 1. delete from coins collection, for that user and coin combination

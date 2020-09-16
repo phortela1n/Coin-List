@@ -28,7 +28,8 @@ a {
   background-color: #ff144b !important;
 }
 
-.MuiButton-textPrimary {
+.MuiButton-textPrimary,
+.MuiTypography-h6 {
   color: #ff144b !important;
 }
 /*Load Circle*/

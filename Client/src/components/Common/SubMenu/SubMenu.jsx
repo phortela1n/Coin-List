@@ -21,6 +21,10 @@ const useStyles = makeStyles({
 function SubMenu(props) {
   const classes = useStyles();
 
+  function handleClick() {
+    window.location.reload();
+  }
+
   const [value, setValue] = React.useState(props.changeValue);
   return (
     <>
@@ -52,14 +56,11 @@ function SubMenu(props) {
           label="Add Move"
           icon={<CreateIcon />}
         />
-        <BottomNavigationAction label="Refresh" icon={<RefreshIcon />} />
-        {/*         <BottomNavigationAction
-          component={NavLink}
-          to="/Refresh"
-          className=""
+        <BottomNavigationAction
           label="Refresh"
+          onClick={handleClick}
           icon={<RefreshIcon />}
-        /> */}
+        />
       </BottomNavigation>
     </>
   );
