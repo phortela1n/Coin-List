@@ -161,7 +161,7 @@ function AddCoin(props) {
   function handleClick() {
     if (cryptoNames.length > 0) {
       console.log("pulsaste");
-      // make axios call, and when the call returns, dispatch the action (extra credit: show a spinner while call is happening)
+      // make axios call, and when the call returns, dispatch the action)
       // can use "thunk"
 
       props.dispatch(
@@ -174,7 +174,7 @@ function AddCoin(props) {
     }
   }
 
-  function getMenuItems(names) {
+  function getMenuItems() {
     // do the intersecting
     // 1. get the coins the user already has, from the backend
 
@@ -210,7 +210,7 @@ function AddCoin(props) {
                 renderValue={(selected) => selected.join(", ")}
                 MenuProps={MenuProps}
               >
-                {getMenuItems(names)}
+                {getMenuItems()}
               </Select>
             </FormControl>
           </section>
@@ -244,9 +244,7 @@ function AddCoin(props) {
                   ))}
                 </List>
               </CardContent>
-              <CardActions>
-                {/* <Button size="small">Learn More</Button> */}
-              </CardActions>
+              <CardActions></CardActions>
             </Card>
           </>
         );
@@ -319,21 +317,6 @@ function AddCoin(props) {
         >
           <SubMenu changeValue={1} />
           <Container maxWidth="sm" className="big-container__coin-container">
-            {/* Save Button -> <div className={classes.root}>
-              <div className={classes.wrapper}>
-                <Fab
-                  aria-label="save"
-                  color="primary"
-                  className={buttonClassname}
-                  onClick={handleButtonClick}
-                >
-                  {success ? <CheckIcon /> : <SaveIcon />}
-                </Fab>
-                {loading && (
-                  <CircularProgress size={68} className={classes.fabProgress} />
-                )}
-              </div>
-            </div> */}
             <div className={classes.root2}>
               <Stepper activeStep={activeStep}>
                 {steps.map((label, index) => {

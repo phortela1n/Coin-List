@@ -21,8 +21,8 @@ export default function FormInput(props) {
   const classes = useStyles();
 
   function handleQuantity(event) {
-    const { value } = event.target;
-    if (value < props.minimum) {
+    const { handleValue } = event.target;
+    if (handleValue < props.minimum) {
       setValue(0);
     }
     props.handleQuantity("quantity")(event);

@@ -1,6 +1,8 @@
 .add-movements__form-box--radio {
   padding-top: 15px;
   padding-bottom: 15px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .form-input-box {
@@ -11,11 +13,6 @@
 
 .form-input-box * {
   padding-right: 10px !important;
-}
-
-.add-movements__form-box--radio {
-  display: flex;
-  justify-content: space-around;
 }
 
 .Mui-focused,

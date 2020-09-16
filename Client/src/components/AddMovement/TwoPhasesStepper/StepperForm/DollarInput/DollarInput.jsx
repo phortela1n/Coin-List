@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function FormInput(props) {
+export default function DollarInput(props) {
   const classes = useStyles();
 
   return (

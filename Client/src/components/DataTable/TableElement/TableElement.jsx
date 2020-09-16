@@ -69,7 +69,7 @@ function TableElement(props) {
     columns: [
       { title: "Coin Name", field: "name" },
       { title: "Type", field: "type" },
-      { title: "Price $", field: "price", type: "numeric" },
+      { title: "Price €", field: "price", type: "numeric" },
       { title: "Quantity", field: "quantity", type: "numeric" },
       { title: "Date", field: "date", type: "numeric" },
     ],
