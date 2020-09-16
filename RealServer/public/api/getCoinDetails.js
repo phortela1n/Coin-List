@@ -7,7 +7,7 @@ function getCoinDetails(coin, userID) {
         description: "BTC",
         moves: [],
         img:
-          "https://img2.freepng.es/20171220/bhe/bitcoin-png-5a3a2702388611.73714972151376051423153857.jpg",
+          "https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_512/4caf2b16a0174e26a3482cea69c34cba.png",
       };
     case "Ethereum":
       return {
@@ -16,7 +16,7 @@ function getCoinDetails(coin, userID) {
         description: "ETH",
         moves: [],
         img:
-          "https://i0.pngocean.com/files/906/776/980/ethereum-blockchain-bitcoin-logo-see-you-there.jpg",
+          "https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_512/604ae4533d9f4ad09a489905cce617c2.png",
       };
     case "Litecoin":
       return {
@@ -25,7 +25,7 @@ function getCoinDetails(coin, userID) {
         description: "LTC",
         moves: [],
         img:
-          "https://w7.pngwing.com/pngs/777/875/png-transparent-bitcoin-computer-icons-cryptocurrency-litecoin-bitcoin-text-trademark-logo.png",
+          "https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_512/a201762f149941ef9b84e0742cd00e48.png",
       };
     case "Swipe":
       return {
@@ -35,6 +35,43 @@ function getCoinDetails(coin, userID) {
         moves: [],
         img: "https://swipe.io/images/network-img.svg",
       };
+    case "XLM":
+      return {
+        userID,
+        name: coin,
+        description: "XLM",
+        moves: [],
+        img:
+          "https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_512/99ab21c646f04f17b919a433eeeb816d.png",
+      };
+    case "IOTA":
+      return {
+        userID,
+        name: coin,
+        description: "IOTA",
+        moves: [],
+        img:
+          "https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_512/77e3e9252ad046eeb2c4d5e5c6bb504c.png",
+      };
+    case "XRP":
+      return {
+        userID,
+        name: coin,
+        description: "XRP",
+        moves: [],
+        img:
+          "https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_512/ba90bcb0cafb4801ac5dd310f47d6411.png",
+      };
+    case "USDT":
+      return {
+        userID,
+        name: coin,
+        description: "USDT",
+        moves: [],
+        img:
+          "https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_512/5ed65416963e4e57998a3c302da8936e.png",
+      };
+
     default:
       throw new Error("Coin details lookup failed");
   }
