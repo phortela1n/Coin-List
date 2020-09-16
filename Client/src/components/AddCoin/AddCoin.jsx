@@ -132,16 +132,7 @@ const MenuProps = {
   },
 };
 
-const names = [
-  "Bitcoin",
-  "Ethereum",
-  "Litecoin",
-  "Swipe",
-  "BNB",
-  "Monero",
-  "XRP",
-  "MIOTA",
-];
+const names = ["Bitcoin", "Ethereum", "Litecoin", "XLM", "IOTA", "XRP", "USDT"];
 
 /* END SELECT CONST & FUNCTIONS */
 /*CARD FUNCTIONS*/

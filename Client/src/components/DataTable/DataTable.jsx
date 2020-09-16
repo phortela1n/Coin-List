@@ -10,7 +10,7 @@ import { Container } from "@material-ui/core/";
 
 import { select } from "d3";
 
-function DataTable() {
+function DataTable(props) {
   const { user, isAuthenticated, isLoading } = useAuth0();
   if (isLoading) {
     return (
@@ -26,7 +26,7 @@ function DataTable() {
       <>
         <Header />
         <Container maxWidth="sm" className="big-container">
-          <TableElement />
+          <TableElement userCoins={props.userCoins} />
         </Container>
       </>
     )) || <NoAuthorized />

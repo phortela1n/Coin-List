@@ -43,33 +43,45 @@ const tableIcons = {
   ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />),
 };
 
-export default function TableElement() {
+export default function TableElement(props) {
+  let start = [];
+  props.userCoins.map((elem) => {
+    elem.moves.map((item) => {
+      let newObject = {};
+      newObject.name = elem.name;
+      newObject.quantity = item.quantity;
+      newObject.price = item.buyPrice;
+      newObject.date = item.date;
+      newObject.type = item.type;
+      start.push(newObject);
+      return newObject;
+    });
+  });
+
+  console.log("start->", start);
   const [state, setState] = React.useState({
     columns: [
-      { title: "Coin Name", field: "coin" },
+      { title: "Coin Name", field: "name" },
+      { title: "Type", field: "type" },
       { title: "Price $", field: "price", type: "numeric" },
       { title: "Quantity", field: "quantity", type: "numeric" },
-      {
-        title: "Date",
-        field: "birthCity",
-        lookup: { 34: "17/08/2020", 63: "17/09/2020" },
-      },
+      { title: "Date", field: "date", type: "numeric" },
     ],
-    data: [
-      { coin: "Bitcoin", price: 10000, quantity: 1387, birthCity: 63 },
+    data: /* [
+      { name: "Bitcoin", price: 10000, quantity: 1387, birthCity: 63 },
       {
-        coin: "Ethereum",
+        name: "Ethereum",
         price: 325,
         quantity: 1017,
         birthCity: 34,
       },
-    ],
+    ] */ start,
   });
 
   return (
     <MaterialTable
       icons={tableIcons}
-      title="Data"
+      title="Data Centre  "
       columns={state.columns}
       data={state.data}
       editable={
