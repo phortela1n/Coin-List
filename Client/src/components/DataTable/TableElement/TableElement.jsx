@@ -1,7 +1,8 @@
 import React from "react";
+import { connect } from "react-redux";
 import MaterialTable from "material-table";
 import { forwardRef } from "react";
-
+import { useAuth0 } from "@auth0/auth0-react";
 import AddBox from "@material-ui/icons/AddBox";
 import ArrowDownward from "@material-ui/icons/ArrowDownward";
 import Check from "@material-ui/icons/Check";
@@ -17,6 +18,7 @@ import Remove from "@material-ui/icons/Remove";
 import SaveAlt from "@material-ui/icons/SaveAlt";
 import Search from "@material-ui/icons/Search";
 import ViewColumn from "@material-ui/icons/ViewColumn";
+import { deleteSingleMovement } from "../../../redux/actions/deleteSingleMovement";
 import "./TableElement.scss";
 
 const tableIcons = {
@@ -43,7 +45,8 @@ const tableIcons = {
   ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />),
 };
 
-export default function TableElement(props) {
+function TableElement(props) {
+  const { user, isAuthenticated, isLoading } = useAuth0();
   let start = [];
   props.userCoins.map((elem) => {
     elem.moves.map((item) => {
@@ -53,12 +56,14 @@ export default function TableElement(props) {
       newObject.price = item.buyPrice;
       newObject.date = item.date;
       newObject.type = item.type;
+      newObject.movementID = item.movementID;
       start.push(newObject);
       return newObject;
     });
   });
 
   console.log("start->", start);
+  console.log("User coins here->", props.userCoins);
   const [state, setState] = React.useState({
     columns: [
       { title: "Coin Name", field: "name" },
@@ -67,15 +72,7 @@ export default function TableElement(props) {
       { title: "Quantity", field: "quantity", type: "numeric" },
       { title: "Date", field: "date", type: "numeric" },
     ],
-    data: /* [
-      { name: "Bitcoin", price: 10000, quantity: 1387, birthCity: 63 },
-      {
-        name: "Ethereum",
-        price: 325,
-        quantity: 1017,
-        birthCity: 34,
-      },
-    ] */ start,
+    data: start,
   });
 
   return (
@@ -84,9 +81,8 @@ export default function TableElement(props) {
       title="Data Centre  "
       columns={state.columns}
       data={state.data}
-      editable={
-        {
-          /* onRowAdd: (newData) =>
+      editable={{
+        /* onRowAdd: (newData) =>
           new Promise((resolve) => {
             setTimeout(() => {
               resolve();
@@ -97,7 +93,7 @@ export default function TableElement(props) {
               });
             }, 600);
           }), */
-          /*  onRowUpdate: (newData, oldData) =>
+        /*  onRowUpdate: (newData, oldData) =>
           new Promise((resolve) => {
             setTimeout(() => {
               resolve();
@@ -110,19 +106,28 @@ export default function TableElement(props) {
               }
             }, 600);
           }),
+          */
         onRowDelete: (oldData) =>
           new Promise((resolve) => {
             setTimeout(() => {
-              resolve();
-              setState((prevState) => {
-                const data = [...prevState.data];
-                data.splice(data.indexOf(oldData), 1);
-                return { ...prevState, data };
-              });
+              const userID = user.email || user.sub;
+              console.log("in delete", oldData, userID);
+              const { movementID, name } = oldData;
+              props
+                .dispatch(deleteSingleMovement(userID, name, movementID))
+                .then(() => {
+                  resolve();
+                  setState((prevState) => {
+                    const data = [...prevState.data];
+                    data.splice(data.indexOf(oldData), 1);
+                    return { ...prevState, data };
+                  });
+                });
             }, 600);
-          }), */
-        }
-      }
+          }),
+      }}
     />
   );
 }
+
+export default connect()(TableElement);

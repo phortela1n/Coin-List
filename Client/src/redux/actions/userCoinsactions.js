@@ -33,7 +33,7 @@ export function deleteCoin(userID, coinName) {
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
-    const raw = JSON.stringify({ userID: "pablohortelano2@gmail.com" });
+    const raw = JSON.stringify({ userID });
 
     const requestOptions = {
       method: "DELETE",

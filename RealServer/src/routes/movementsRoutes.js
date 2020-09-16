@@ -31,6 +31,32 @@ function router() {
         });
     })();
   });
+
+  movesRouter.route("/:movementID").delete((req, res) => {
+    (async () => {
+      const { userID, coinName } = req.body;
+      const { movementID } = req.params;
+      console.log(
+        "UUID of movement and coin name and user id",
+        userID,
+        movementID,
+        coinName
+      );
+      const db = await getDB();
+      const collection = await db.collection(collectionName);
+      const response = await collection.updateOne(
+        { userID, name: coinName },
+        { $pull: { moves: { movementID } } }
+      );
+
+      res.json(response);
+
+      // res.json(response);
+      // 1. delete from coins collection, for that user and coin combination
+      // 2. return {}
+    })();
+  });
+
   return movesRouter;
 }
 

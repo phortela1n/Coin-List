@@ -37,8 +37,6 @@ function Landing(props) {
   const { user, isAuthenticated, isLoading } = useAuth0();
   useEffect(() => {}, []);
 
-  // const userID = user.email || user.sub;
-
   useEffect(() => {
     if (props.userCoins.length === 0) {
       if (user) {

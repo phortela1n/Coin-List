@@ -9,6 +9,7 @@ import SubMenu from "../Common/SubMenu/SubMenu";
 import NoAuthorized from "../Common/NoAuthorized/NoAuthorized";
 import { Container } from "@material-ui/core/";
 import { CircularProgress } from "@material-ui/core";
+import { v4 as uuidv4 } from "uuid";
 
 export function AddMovement(props) {
   const { user, isAuthenticated, isLoading } = useAuth0();
@@ -42,7 +43,7 @@ export function AddMovement(props) {
   //Inputs State
 
   //NAME
-  const [cryptoMovement, setcryptoMovement] = React.useState("Bitcoin");
+  const [cryptoMovement, setcryptoMovement] = React.useState("");
 
   const handleChangeCryptoName = (event) => {
     setcryptoMovement(event.target.value);
@@ -68,6 +69,17 @@ export function AddMovement(props) {
     setpriceValues({ ...priceValues, [prop]: event.target.value });
   };
 
+  //  FORM VALIDATION
+
+  const [isFormValid, setIsFormValid] = useState(false);
+  useEffect(() => {
+    const formIsValid =
+      cryptoMovement !== "" &&
+      quantityValues.quantity !== "" &&
+      priceValues.amount !== "";
+    setIsFormValid(formIsValid);
+  }, [cryptoMovement, quantityValues.quantity, priceValues.amount]);
+
   /**
    * END FORM STATE
    **/
@@ -83,6 +95,7 @@ export function AddMovement(props) {
       buyPrice: priceValues.amount,
       quantity: quantityValues.quantity,
       date: selectedDate.toISOString().substring(0, 10),
+      movementID: uuidv4(),
     };
     /* console.log(newMovement, selectedCrypto); */
     props.dispatch(
@@ -129,6 +142,7 @@ export function AddMovement(props) {
               handleMovementsClick={handleMovementsClick}
               cryptoMovement={cryptoMovement}
               handleChangeCryptoName={handleChangeCryptoName}
+              isFormValid={isFormValid}
             />
           </Container>
         </Container>

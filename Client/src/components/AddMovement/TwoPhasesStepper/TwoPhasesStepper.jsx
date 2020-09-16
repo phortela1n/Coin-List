@@ -127,6 +127,7 @@ export default function TwoPhasesStepper(props) {
               <Button
                 variant="contained"
                 color="primary"
+                disabled={!props.isFormValid}
                 onClick={(e) => {
                   handleNext();
                   activeStep === steps.length - 1
