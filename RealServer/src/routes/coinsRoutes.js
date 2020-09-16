@@ -16,6 +16,21 @@ function router() {
     })();
   });
 
+  dbRouter.route("/:coinName").delete((req, res) => {
+    (async () => {
+      const { userID } = req.body;
+      const { coinName } = req.params;
+      console.log("uid and coin name", userID, coinName);
+      const db = await getDB();
+      const collection = await db.collection(collectionName);
+      const response = await collection.deleteOne({ userID, coinName });
+
+      res.json(response);
+      // 1. delete from coins collection, for that user and coin combination
+      // 2. return {}
+    })();
+  });
+
   //    Get all coins from one user
 
   dbRouter.route("/user").post((req, res) => {

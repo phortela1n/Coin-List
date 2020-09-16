@@ -6,7 +6,7 @@ import NoAuthorized from "../Common/NoAuthorized/NoAuthorized";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import * as coinActions from "../../redux/actions/coinactions";
-import * as getUserCoinsactions from "../../redux/actions/getUserCoinsactions";
+import * as userCoinsactions from "../../redux/actions/userCoinsactions";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Container,
@@ -36,16 +36,33 @@ const useStyles = makeStyles({
 function Landing(props) {
   const { user, isAuthenticated, isLoading } = useAuth0();
   useEffect(() => {}, []);
+
+  // const userID = user.email || user.sub;
+
   useEffect(() => {
     if (props.userCoins.length === 0) {
       if (user) {
         console.log(user);
-        props.dispatch(getUserCoinsactions.getCoins(user.email || user.sub));
+        props.dispatch(userCoinsactions.getCoins(user.email || user.sub));
       }
       //  Fetch call to localhost/3003/coins, get all the coins
     }
   }, [user]);
   const classes = useStyles();
+
+  // function handleDelete(coin) {
+  //   return function handleDeleteClickEvent(event) {
+  //     event.preventDefault();
+  //     console.log("event:", event, "coin", coin);
+  //     do delete here
+  //   };
+  // }
+
+  function handleDelete(coin, event) {
+    event.preventDefault();
+    console.log("userid", user.email || user.sub, "coin", coin);
+    props.dispatch(userCoinsactions.deleteCoin(user.email || user.sub, coin));
+  }
 
   if (isLoading) {
     return (
@@ -56,6 +73,7 @@ function Landing(props) {
       </center>
     );
   }
+
   console.log("userCoins", props.userCoins);
   return (
     (isAuthenticated && (
@@ -92,8 +110,12 @@ function Landing(props) {
                     </CardContent>
                   </CardActionArea>
                   <CardActions>
-                    <Button size="small" color="primary">
-                      Coin Details
+                    <Button
+                      size="small"
+                      color="primary"
+                      onClick={(event) => handleDelete(coin.name, event)}
+                    >
+                      Delete
                     </Button>
                   </CardActions>
                 </Card>

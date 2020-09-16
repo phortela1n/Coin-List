@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -15,8 +16,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SelectCrypto(props) {
+function SelectCrypto(props) {
   const classes = useStyles();
+
+  const menuItems = props.userCoins
+    .map((item) => item.name)
+    .map((userCoin) => <MenuItem value={userCoin}>{userCoin}</MenuItem>);
 
   return (
     <div>
@@ -28,12 +33,17 @@ export default function SelectCrypto(props) {
           value={props.cryptoMovement}
           onChange={props.handleChangeCryptoName}
         >
-          <MenuItem value={"Bitcoin"}>Bitcoin</MenuItem>
-          <MenuItem value={"Ethereum"}>Ethereum</MenuItem>
-          <MenuItem value={"LiteCoin"}>LiteCoin</MenuItem>
-          <MenuItem value={"Swipe"}>Swipe</MenuItem>
+          {menuItems}
         </Select>
       </FormControl>
     </div>
   );
 }
+
+function mapStateToProps(state) {
+  return {
+    userCoins: state.userCoins,
+  };
+}
+
+export default connect(mapStateToProps)(SelectCrypto);
