@@ -1,16 +1,11 @@
-import React, { useRef, useEffect, useState } from "react";
-import { useAuth0 } from "@auth0/auth0-react";
+import React, { useRef, useEffect } from "react";
 /* import { connect } from "react-redux"; */
 import * as d3 from "d3";
-
-import { select } from "d3";
 
 const BarChartShareControl = ({ width, height, data }) => {
   debugger;
   /*   const { user, isAuthenticated, isLoading } = useAuth0(); */
   let svgRef = useRef(null);
-
-  useEffect(() => draw(), []);
 
   const draw = () => {
     //    Define scales

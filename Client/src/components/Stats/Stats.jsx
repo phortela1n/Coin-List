@@ -1,11 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import { connect } from "react-redux";
-import * as d3 from "d3";
 import { CircularProgress } from "@material-ui/core";
 import Header from "../Common/Header/Header";
 import NoAuthorized from "../Common/NoAuthorized/NoAuthorized";
-import { Container } from "@material-ui/core/";
 import BarChartShareControl from "./Stats2";
 import Stats3 from "./Stats3";
 

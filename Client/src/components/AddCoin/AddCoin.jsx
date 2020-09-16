@@ -3,7 +3,6 @@ import Header from "../Common/Header/Header";
 import NoAuthorized from "../Common/NoAuthorized/NoAuthorized";
 import SubMenu from "../Common/SubMenu/SubMenu";
 import { connect } from "react-redux";
-import axios from "axios";
 import * as addCoinsActions from "../../redux/actions/addCoinsactions";
 import setCurrentCoins from "../../api/setCurrentCoins";
 import {
