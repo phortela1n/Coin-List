@@ -9,7 +9,6 @@ function router() {
     (async () => {
       const { selectedCrypto, moves, userID } = req.body;
       const name = selectedCrypto;
-      console.log(moves);
       const db = await getDB();
       const collection = await db.collection(collectionName);
       const response = await collection.updateOne(
@@ -36,12 +35,6 @@ function router() {
     (async () => {
       const { userID, coinName } = req.body;
       const { movementID } = req.params;
-      console.log(
-        "UUID of movement and coin name and user id",
-        userID,
-        movementID,
-        coinName
-      );
       const db = await getDB();
       const collection = await db.collection(collectionName);
       const response = await collection.updateOne(
@@ -50,10 +43,6 @@ function router() {
       );
 
       res.json(response);
-
-      // res.json(response);
-      // 1. delete from coins collection, for that user and coin combination
-      // 2. return {}
     })();
   });
 

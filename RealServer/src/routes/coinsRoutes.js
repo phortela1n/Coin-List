@@ -1,6 +1,5 @@
 const express = require("express");
 const getDB = require("../config/db");
-// const movements = require("../../public/mocks/db.json");
 const getCoinDetails = require("../../public/api/getCoinDetails");
 
 const dbRouter = express.Router();
@@ -20,7 +19,6 @@ function router() {
     (async () => {
       const { userID } = req.body;
       const { coinName } = req.params;
-      console.log("uid and coin name", userID, coinName);
       const db = await getDB();
       const collection = await db.collection(collectionName);
       const response = await collection.deleteOne({ userID, name: coinName });
@@ -36,8 +34,6 @@ function router() {
   dbRouter.route("/user").post((req, res) => {
     (async () => {
       const { userID } = req.body;
-      console.log("HEY", userID);
-      console.log(req.body);
       const db = await getDB();
       const collection = await db.collection(collectionName);
       const response = await collection.find({ userID }).toArray();
@@ -52,7 +48,6 @@ function router() {
     (async () => {
       const { selectedCrypto, moves, userID } = req.body;
       const name = selectedCrypto;
-      console.log(moves);
       const db = await getDB();
       const collection = await db.collection(collectionName);
       const response = await collection.find({ userID, name }).toArray();
