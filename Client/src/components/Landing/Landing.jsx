@@ -5,7 +5,6 @@ import SubMenu from "../Common/SubMenu/SubMenu";
 import NoAuthorized from "../Common/NoAuthorized/NoAuthorized";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
-import * as coinActions from "../../redux/actions/coinactions";
 import * as userCoinsactions from "../../redux/actions/userCoinsactions";
 import { makeStyles } from "@material-ui/core/styles";
 import {

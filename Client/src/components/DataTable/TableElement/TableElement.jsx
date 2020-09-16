@@ -46,7 +46,7 @@ const tableIcons = {
 };
 
 function TableElement(props) {
-  const { user, isAuthenticated, isLoading } = useAuth0();
+  const { user } = useAuth0();
   let start = [];
   props.userCoins.map((elem) => {
     elem.moves.map((item) => {
@@ -60,6 +60,7 @@ function TableElement(props) {
       start.push(newObject);
       return newObject;
     });
+    return null;
   });
 
   console.log("start->", start);
@@ -82,31 +83,6 @@ function TableElement(props) {
       columns={state.columns}
       data={state.data}
       editable={{
-        /* onRowAdd: (newData) =>
-          new Promise((resolve) => {
-            setTimeout(() => {
-              resolve();
-              setState((prevState) => {
-                const data = [...prevState.data];
-                data.push(newData);
-                return { ...prevState, data };
-              });
-            }, 600);
-          }), */
-        /*  onRowUpdate: (newData, oldData) =>
-          new Promise((resolve) => {
-            setTimeout(() => {
-              resolve();
-              if (oldData) {
-                setState((prevState) => {
-                  const data = [...prevState.data];
-                  data[data.indexOf(oldData)] = newData;
-                  return { ...prevState, data };
-                });
-              }
-            }, 600);
-          }),
-          */
         onRowDelete: (oldData) =>
           new Promise((resolve) => {
             setTimeout(() => {

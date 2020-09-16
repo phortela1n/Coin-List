@@ -9,7 +9,7 @@ import Stats3 from "./Stats3";
 import { select } from "d3";
 
 export default function Stats() {
-  const { user, isAuthenticated, isLoading } = useAuth0();
+  const { isAuthenticated, isLoading } = useAuth0();
   const [data, setData] = useState([25, 30, 45, 60, 20]);
   const svgRef = useRef();
 
@@ -29,7 +29,7 @@ export default function Stats() {
   }, [data]);
   useEffect(() => {
     setData(data.map((value) => value));
-  }, []);
+  }, [data]);
   if (isLoading) {
     return (
       <center>

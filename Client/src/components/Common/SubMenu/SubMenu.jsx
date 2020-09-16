@@ -34,7 +34,7 @@ function SubMenu(props) {
           setValue(newValue);
         }}
         showLabels
-        className={classes.root}
+        className={classes.root }
       >
         <BottomNavigationAction
           label="Your Coins"

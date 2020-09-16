@@ -1,15 +1,14 @@
 import React, { useRef, useEffect, useState } from "react";
-/* import "./App.css"; */
 import { select, axisBottom, axisRight, scaleLinear, scaleBand } from "d3";
 
 function Stats3() {
   const [data, setData] = useState([25, 30, 45, 60, 10, 65, 75]);
-  const data2 = [
+/*   const data2 = [
     { value: 25, index: "ETH" },
     { value: 50, index: "BTC" },
     { value: 75, index: "BTC" },
   ];
-  const symbols = ["ETH, LTC, LTC, LTC, LTC, LTC, LTC"];
+  const symbols = ["ETH, LTC, LTC, LTC, LTC, LTC, LTC"]; */
   const svgRef = useRef();
 
   // will be called initially and on every data change
@@ -44,7 +43,6 @@ function Stats3() {
       .style("transform", "scale(1, -1)")
       .style("fill", (d) => d.color)
       .attr("x", (value, index) => xScale(index))
-      /* symbols.map(symbol => {}) */
       .attr("y", -150)
       .attr("width", xScale.bandwidth())
       .transition()
