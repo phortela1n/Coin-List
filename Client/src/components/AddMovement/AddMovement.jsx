@@ -88,7 +88,6 @@ export function AddMovement(props) {
    **Handle Click confirm form
    */
   function handleMovementsClick() {
-    /* console.log(selectedDate); */
     let selectedCrypto = cryptoMovement;
     let newMovement = {
       type: OperationType,
@@ -97,7 +96,6 @@ export function AddMovement(props) {
       date: selectedDate.toISOString().substring(0, 10),
       movementID: uuidv4(),
     };
-    /* console.log(newMovement, selectedCrypto); */
     props.dispatch(
       addMovesactions.addMoves(
         selectedCrypto,

@@ -39,7 +39,6 @@ function Landing(props) {
   useEffect(() => {
     if (props.userCoins.length === 0) {
       if (user) {
-        console.log(user);
         props.dispatch(userCoinsactions.getCoins(user.email || user.sub));
       }
       //  Fetch call to localhost/3003/coins, get all the coins
@@ -49,7 +48,6 @@ function Landing(props) {
 
   function handleDelete(coin, event) {
     event.preventDefault();
-    console.log("userid", user.email || user.sub, "coin", coin);
     props.dispatch(userCoinsactions.deleteCoin(user.email || user.sub, coin));
   }
 
@@ -62,8 +60,6 @@ function Landing(props) {
       </center>
     );
   }
-
-  console.log("userCoins", props.userCoins);
   return (
     (isAuthenticated && (
       <>

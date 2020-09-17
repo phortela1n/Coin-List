@@ -25,7 +25,6 @@ const useStyles = makeStyles({
 export default function StepperCard(props) {
   const classes = useStyles();
 
-  console.log("Mira este", props);
   return (
     <Card className={classes.root}>
       <CardContent>

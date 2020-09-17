@@ -173,7 +173,6 @@ export function AddCoin(props) {
   /*HANDLE CLICK*/
   function handleClick() {
     if (cryptoNames.length > 0) {
-      console.log("pulsaste");
       // make axios call, and when the call returns, dispatch the action)
       // can use "thunk"
 
@@ -232,7 +231,7 @@ export function AddCoin(props) {
         return (
           <>
             <Card>
-              Is the list ok? {console.log(cryptoNames)}
+              Is the list ok?
               <CardContent>
                 <Typography
                   className={classes.title}

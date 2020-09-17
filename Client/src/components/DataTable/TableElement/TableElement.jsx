@@ -63,8 +63,6 @@ function TableElement(props) {
     return null;
   });
 
-  console.log("start->", start);
-  console.log("User coins here->", props.userCoins);
   const [state, setState] = React.useState({
     columns: [
       { title: "Coin Name", field: "name" },
@@ -88,7 +86,6 @@ function TableElement(props) {
           new Promise((resolve) => {
             setTimeout(() => {
               const userID = user.email || user.sub;
-              console.log("in delete", oldData, userID);
               const { movementID, name } = oldData;
               props
                 .dispatch(deleteSingleMovement(userID, name, movementID))

@@ -60,7 +60,6 @@ const Profile = () => {
       </center>
     );
   }
-  console.log(user);
   return (
     (isAuthenticated && (
       <section className="profile-container">

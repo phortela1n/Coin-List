@@ -37,7 +37,6 @@ function CoinDetail(props) {
   const properCoin = props.userCoins.find(
     (elem) => elem.name === props.location.coinDetailProps
   );
-  console.log("proper coin ->", properCoin);
   return (
     <>
       <Header />

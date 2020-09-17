@@ -10,7 +10,6 @@ export function addCoins(cryptoNames, userID, setcryptoName) {
       .then(
         (response) => {
           debugger;
-          console.log(response.data);
           setcryptoName([]);
           dispatch({ type: "INCREMENT", newCoins: cryptoNames });
         },

@@ -11,7 +11,6 @@ export function addMoves(selectedCrypto, newMovement, userID) {
       .then(
         (response) => {
           debugger;
-          console.log(response.data);
           dispatch({ type: "INCREMENTMOVE", moves: newMovement });
         },
         (error) => console.log(error)
