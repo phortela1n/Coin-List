@@ -72,6 +72,55 @@ function getCoinDetails(coin, userID) {
           "https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_512/5ed65416963e4e57998a3c302da8936e.png",
       };
 
+    case "EOS":
+      return {
+        userID,
+        name: coin,
+        description: "EOS",
+        moves: [],
+        img:
+          "https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_512/ae00905dc9d74f40876ad59e7da32e81.png",
+      };
+
+    case "TRON":
+      return {
+        userID,
+        name: coin,
+        description: "TRON",
+        moves: [],
+        img:
+          "https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_512/1de619dbc75c42e8902c48a517dd35ee.png",
+      };
+
+    case "NEO":
+      return {
+        userID,
+        name: coin,
+        description: "NEO",
+        moves: [],
+        img:
+          "https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_512/5aeb2323d78f4de5acc379a09a3e13f0.png",
+      };
+    case "DASH":
+      return {
+        userID,
+        name: coin,
+        description: "DASH",
+        moves: [],
+        img:
+          "https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_512/73fb6d7915a24f51930809b9e2b84c8f.png",
+      };
+
+    case "Monero":
+      return {
+        userID,
+        name: coin,
+        description: "XMR",
+        moves: [],
+        img:
+          "https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_512/e342d99d4648423e9fb5f68785dd2adf.png",
+      };
+
     default:
       throw new Error("Coin details lookup failed");
   }

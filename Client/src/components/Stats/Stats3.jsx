@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import { select, axisBottom, axisRight, scaleLinear, scaleBand } from "d3";
 
 function Stats3() {
-  const [data, setData] = useState([25, 30, 45, 60, 10, 65, 75]);
+  const [data] = useState([25, 30, 45, 60, 10, 65, 75]);
   /*   const data2 = [
     { value: 25, index: "ETH" },
     { value: 50, index: "BTC" },
