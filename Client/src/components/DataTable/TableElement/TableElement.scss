@@ -3,7 +3,9 @@
   display: none !important;
 }
 
-.data-table,
-.MuiPaper-rounded {
+.big-container__table .MuiPaper-rounded {
   margin-top: 100px !important;
+  width: 100%;
+  max-width: 800px;
+  min-width: 700px;
 }

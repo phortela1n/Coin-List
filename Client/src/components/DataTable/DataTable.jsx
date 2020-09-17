@@ -22,7 +22,7 @@ function DataTable(props) {
     (isAuthenticated && (
       <>
         <Header />
-        <Container maxWidth="sm" className="big-container">
+        <Container maxWidth="sm" className="big-container big-container__table">
           <TableElement userCoins={props.userCoins} />
         </Container>
       </>

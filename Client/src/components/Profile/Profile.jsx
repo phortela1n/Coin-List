@@ -14,7 +14,6 @@ import Collapse from "@material-ui/core/Collapse";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import { red } from "@material-ui/core/colors";
-import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { Button, CircularProgress } from "@material-ui/core";
@@ -84,16 +83,10 @@ const Profile = () => {
             <CardMedia
               className={classes.media}
               image={user.picture}
-              title="Paella dish"
+              title="Profile user"
             />
             <CardContent></CardContent>
             <CardActions disableSpacing>
-              {/*               <IconButton aria-label="add to favorites">
-                <FavoriteIcon />
-              </IconButton> */}
-              <IconButton aria-label="share">
-                <ShareIcon />
-              </IconButton>
               <IconButton
                 className={clsx(classes.expand, {
                   [classes.expandOpen]: expanded,

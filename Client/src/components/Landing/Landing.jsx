@@ -47,14 +47,6 @@ function Landing(props) {
   }, [user]);
   const classes = useStyles();
 
-  // function handleDelete(coin) {
-  //   return function handleDeleteClickEvent(event) {
-  //     event.preventDefault();
-  //     console.log("event:", event, "coin", coin);
-  //     do delete here
-  //   };
-  // }
-
   function handleDelete(coin, event) {
     event.preventDefault();
     console.log("userid", user.email || user.sub, "coin", coin);
