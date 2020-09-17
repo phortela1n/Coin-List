@@ -33,8 +33,8 @@ test("Should redirect to login when user is not Authenticated", () => {
   );
 
   expect(asFragment()).toMatchSnapshot();
-  expect(screen.getByText("Log In")).toBeInTheDocument(); // existencia
-  expect(screen.queryByText("Movement details")).toBeNull(); // no existencia
+  expect(screen.getByText("Log In")).toBeInTheDocument(); // exists
+  expect(screen.queryByText("Movement details")).toBeNull(); // !exists
 });
 
 test("AddMovement renders correctly", () => {

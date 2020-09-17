@@ -75,8 +75,8 @@ export function AddMovement(props) {
   useEffect(() => {
     const formIsValid =
       cryptoMovement !== "" &&
-      quantityValues.quantity !== "" &&
-      priceValues.amount !== "";
+      quantityValues.quantity !== 1 &&
+      priceValues.amount !== 0;
     setIsFormValid(formIsValid);
   }, [cryptoMovement, quantityValues.quantity, priceValues.amount]);
 

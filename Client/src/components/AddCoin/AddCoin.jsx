@@ -162,7 +162,7 @@ export function AddCoin(props) {
   useEffect(() => {
     if (user) {
       //This function get coins and set is as the coins that user has
-      setCurrentCoins(user, setCoinsUserCurrentlyHas);
+      setCurrentCoins(user.email||user.sub, setCoinsUserCurrentlyHas);
     }
   }, [user]);
 

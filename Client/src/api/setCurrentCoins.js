@@ -7,7 +7,7 @@ export default function setCurrentCoins(user, setCoinsUserCurrentlyHas) {
     url: "http://localhost:3003/coins/user",
     headers: {},
     data: {
-      userID: user.email || user.sub,
+      userID: user,
     },
   })
     .then(function ({ data }) {
