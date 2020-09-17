@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddCoin renders correctly 1`] = `<DocumentFragment />`;
+
+exports[`Should redirect to login when user is not Authenticated 1`] = `<DocumentFragment />`;

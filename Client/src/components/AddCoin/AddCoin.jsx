@@ -138,7 +138,7 @@ const names = ["Bitcoin", "Ethereum", "Litecoin", "XLM", "IOTA", "XRP", "USDT"];
 
 /*END CARD FUNCTIONS*/
 
-function AddCoin(props) {
+export function AddCoin(props) {
   const { user, isAuthenticated, isLoading } = useAuth0();
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
