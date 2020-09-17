@@ -3,7 +3,7 @@ import { select, axisBottom, axisRight, scaleLinear, scaleBand } from "d3";
 
 function Stats3() {
   const [data, setData] = useState([25, 30, 45, 60, 10, 65, 75]);
-/*   const data2 = [
+  /*   const data2 = [
     { value: 25, index: "ETH" },
     { value: 50, index: "BTC" },
     { value: 75, index: "BTC" },
@@ -57,9 +57,6 @@ function Stats3() {
         <g className="x-axis" />
         <g className="y-axis" />
       </svg>
-      <button onClick={() => setData(data.map((value) => value + 50))}>
-        Update data
-      </button>
     </React.Fragment>
   );
 }

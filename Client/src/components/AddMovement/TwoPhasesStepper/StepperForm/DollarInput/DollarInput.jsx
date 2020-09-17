@@ -20,12 +20,12 @@ export default function DollarInput(props) {
   return (
     <>
       <FormControl fullWidth className={classes.margin} variant="outlined">
-        <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
+        <InputLabel htmlFor="outlined-adornment-amount">Price</InputLabel>
         <OutlinedInput
           id="outlined-adornment-amount"
           value={props.priceValues.amount}
           onChange={props.handlePrice("amount")}
-          startAdornment={<InputAdornment position="start">$</InputAdornment>}
+          startAdornment={<InputAdornment position="start">€</InputAdornment>}
           labelWidth={60}
         />
       </FormControl>

@@ -52,7 +52,7 @@ export function AddMovement(props) {
   //QUANTITY
 
   const [quantityValues, setquantityValues] = React.useState({
-    quantity: "",
+    quantity: 1,
   });
 
   const handleQuantity = (prop) => (event) => {
@@ -62,7 +62,7 @@ export function AddMovement(props) {
   //PRICE
 
   const [priceValues, setpriceValues] = React.useState({
-    amount: "",
+    amount: 0,
   });
 
   const handlePrice = (prop) => (event) => {

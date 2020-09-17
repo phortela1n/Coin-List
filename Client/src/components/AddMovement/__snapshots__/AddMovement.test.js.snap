@@ -611,11 +611,11 @@ exports[`AddMovement renders correctly 1`] = `
                   class="MuiFormControl-root MuiFormControl-fullWidth"
                 >
                   <label
-                    class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined"
+                    class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-filled"
                     data-shrink="true"
                     for="outlined-adornment-amount"
                   >
-                    Amount
+                    Price
                   </label>
                   <div
                     class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-adornedStart MuiOutlinedInput-adornedStart"
@@ -626,7 +626,7 @@ exports[`AddMovement renders correctly 1`] = `
                       <p
                         class="MuiTypography-root MuiTypography-body1 MuiTypography-colorTextSecondary"
                       >
-                        $
+                        €
                       </p>
                     </div>
                     <input
@@ -634,7 +634,7 @@ exports[`AddMovement renders correctly 1`] = `
                       class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedStart MuiOutlinedInput-inputAdornedStart"
                       id="outlined-adornment-amount"
                       type="text"
-                      value=""
+                      value="0"
                     />
                     <fieldset
                       aria-hidden="true"
@@ -1302,11 +1302,11 @@ exports[`Should handle date selection 1`] = `
                   class="MuiFormControl-root MuiFormControl-fullWidth"
                 >
                   <label
-                    class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined"
+                    class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-filled"
                     data-shrink="true"
                     for="outlined-adornment-amount"
                   >
-                    Amount
+                    Price
                   </label>
                   <div
                     class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-adornedStart MuiOutlinedInput-adornedStart"
@@ -1317,7 +1317,7 @@ exports[`Should handle date selection 1`] = `
                       <p
                         class="MuiTypography-root MuiTypography-body1 MuiTypography-colorTextSecondary"
                       >
-                        $
+                        €
                       </p>
                     </div>
                     <input
@@ -1325,7 +1325,7 @@ exports[`Should handle date selection 1`] = `
                       class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedStart MuiOutlinedInput-inputAdornedStart"
                       id="outlined-adornment-amount"
                       type="text"
-                      value=""
+                      value="0"
                     />
                     <fieldset
                       aria-hidden="true"

@@ -79,6 +79,7 @@ function TableElement(props) {
   return (
     <MaterialTable
       icons={tableIcons}
+      className="data-table"
       title="Data Centre  "
       columns={state.columns}
       data={state.data}
