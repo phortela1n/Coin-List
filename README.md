@@ -40,10 +40,9 @@
 - Redux
 - ES6
 - API-Client
-- Jasmine
 - Jest
-- React Bootstrap
+- MaterialUI
 - flexBox
-- Css3
+- CSS3
 - SCSS
-- Html5
+- HTML5
