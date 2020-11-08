@@ -107,8 +107,8 @@ function Landing(props) {
               </NavLink>
             ))}
 
-            {props.userCoins.length === 0 && (
-              <div className="no-coins">
+            {props.userCoins.length === 0 &&  
+              (<div className="no-coins">
                 You have no coins, please add one or more
               </div>
             )}
