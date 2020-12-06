@@ -1,6 +1,6 @@
 # 💰COIN LIST
 
-## Crypto App to hanlde crypto inversions in a easy, visual and interactive way.
+## Crypto App to handle crypto inversions in a easy, visual and interactive way.
 
 ---
 
